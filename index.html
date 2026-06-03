@@ -6,1684 +6,826 @@
     <title>互联网洞察日报 | 系统化追踪国内互联网动态</title>
     <style>
         :root {
-            --bg: #f0f2f5;
-            --card-bg: #ffffff;
-            --text-primary: #1a1a2e;
-            --text-secondary: #6b7280;
-            --accent-green: #10b981;
-            --accent-purple: #8b5cf6;
-            --accent-orange: #f59e0b;
-            --accent-blue: #3b82f6;
-            --accent-red: #ef4444;
-            --accent-pink: #ec4899;
-            --accent-teal: #14b8a6;
-            --accent-indigo: #6366f1;
-            --border-radius: 16px;
-            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+            --bg: #f5f6f8;
+            --card: #fff;
+            --text-1: #111827;
+            --text-2: #6b7280;
+            --text-3: #9ca3af;
+            --green: #10b981;
+            --purple: #8b5cf6;
+            --blue: #3b82f6;
+            --red: #ef4444;
+            --orange: #f59e0b;
+            --pink: #ec4899;
+            --teal: #14b8a6;
+            --indigo: #6366f1;
+            --r: 12px;
+            --shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
-
-        .dark-mode {
+        .dark {
             --bg: #0f172a;
-            --card-bg: #1e293b;
-            --text-primary: #e2e8f0;
-            --text-secondary: #94a3b8;
-            --shadow: 0 4px 24px rgba(0,0,0,0.3);
+            --card: #1e293b;
+            --text-1: #f1f5f9;
+            --text-2: #94a3b8;
+            --text-3: #64748b;
+            --shadow: 0 2px 8px rgba(0,0,0,0.25);
         }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif; background:var(--bg); color:var(--text-1); line-height:1.5; transition:background .3s,color .3s; }
+        a { color:var(--purple); text-decoration:none; }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: var(--bg);
-            color: var(--text-primary);
-            line-height: 1.6;
-            transition: all 0.3s ease;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #10b981 0%, #8b5cf6 50%, #3b82f6 100%);
-            padding: 60px 20px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .dark-mode .hero {
-            background: linear-gradient(135deg, #065f46 0%, #4c1d95 50%, #1e3a5f 100%);
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
-            animation: heroGlow 8s ease-in-out infinite;
-        }
-
-        @keyframes heroGlow {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(30px, 30px); }
-        }
-
-        .hero-title {
-            font-size: 36px;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 12px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-title .brand-green { color: #10b981; }
-        .hero-title .brand-purple { color: #c4b5fd; }
-        .hero-title .brand-blue { color: #93c5fd; }
-
-        .hero-subtitle {
-            font-size: 16px;
-            color: rgba(255,255,255,0.85);
-            margin-bottom: 24px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-update-info {
-            font-size: 14px;
-            color: rgba(255,255,255,0.7);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Stats Bar */
-        .stats-bar {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 20px auto;
-            padding: 16px 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 24px;
-            font-weight: 700;
-            color: white;
-        }
-
-        .stat-label {
-            font-size: 13px;
-            color: rgba(255,255,255,0.7);
-        }
-
-        /* About Toggle */
-        .about-toggle {
-            background: rgba(255,255,255,0.15);
-            border: 1px solid rgba(255,255,255,0.25);
-            color: white;
-            padding: 10px 24px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 14px;
-            display: inline-block;
-            margin-top: 16px;
-            position: relative;
-            z-index: 1;
-            transition: all 0.3s;
-        }
-
-        .about-toggle:hover {
-            background: rgba(255,255,255,0.25);
-        }
-
-        .about-content {
-            display: none;
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 24px;
-            margin: 20px auto;
-            max-width: 800px;
-            box-shadow: var(--shadow);
-        }
-
-        .about-content.show { display: block; }
-
-        .about-section {
-            margin-bottom: 16px;
-        }
-
-        .about-section h3 {
-            font-size: 16px;
-            margin-bottom: 8px;
-        }
-
-        .about-section ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .about-section li {
-            font-size: 14px;
-            color: var(--text-secondary);
-            padding: 4px 0;
-            padding-left: 20px;
+        /* ===== TOP BAR ===== */
+        .topbar {
+            background: linear-gradient(135deg, #059669 0%, #7c3aed 60%, #2563eb 100%);
+            padding: 28px 24px 18px;
             position: relative;
         }
+        .dark .topbar { background: linear-gradient(135deg, #065f46, #4c1d95 60%, #1e3a5f); }
+        .topbar::after { content:''; position:absolute; inset:0; background:radial-gradient(circle at 30% 40%, rgba(255,255,255,.12), transparent 60%); }
+        .topbar-inner { max-width:1400px; margin:auto; position:relative; z-index:1; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+        .brand { display:flex; align-items:center; gap:12px; }
+        .brand-icon { font-size:28px; }
+        .brand-text h1 { font-size:22px; color:#fff; font-weight:800; }
+        .brand-text p { font-size:13px; color:rgba(255,255,255,.75); }
+        .topbar-stats { display:flex; gap:24px; flex-wrap:wrap; }
+        .ts-item { text-align:center; }
+        .ts-num { font-size:22px; font-weight:700; color:#fff; }
+        .ts-lab { font-size:11px; color:rgba(255,255,255,.65); }
+        .topbar-btns { display:flex; gap:8px; }
+        .tb-btn { width:36px; height:36px; border-radius:50%; border:none; cursor:pointer; font-size:16px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,.2); color:#fff; transition:all .2s; }
+        .tb-btn:hover { background:rgba(255,255,255,.35); transform:scale(1.08); }
 
-        .about-section li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--accent-green);
-        }
+        /* ===== TICKER ===== */
+        .ticker { background:var(--card); border-radius:var(--r); box-shadow:var(--shadow); padding:12px 20px; max-width:1400px; margin:16px auto 0; display:flex; align-items:center; gap:12px; }
+        .ticker-label { font-size:13px; font-weight:700; white-space:nowrap; color:var(--red); }
+        .ticker-track { overflow:hidden; flex:1; }
+        .ticker-scroll { display:flex; gap:12px; animation:scroll 40s linear infinite; }
+        @keyframes scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+        .tk-item { display:flex; align-items:center; gap:6px; white-space:nowrap; font-size:12px; padding:4px 10px; background:var(--bg); border-radius:6px; }
+        .tk-tag { font-size:10px; padding:1px 6px; border-radius:3px; font-weight:600; }
+        .tk-red { background:#fef2f2; color:#dc2626; }
+        .tk-orange { background:#fff7ed; color:#d97706; }
+        .tk-blue { background:#eff6ff; color:#2563eb; }
+        .tk-green { background:#ecfdf5; color:#059669; }
+        .tk-purple { background:#f5f3ff; color:#7c3aed; }
+        .tk-pink { background:#fdf2f8; color:#db2777; }
+        .dark .tk-red { background:#7f1d1d; color:#fca5a5; }
+        .dark .tk-orange { background:#78350f; color:#fbbf24; }
+        .dark .tk-blue { background:#1e3a5f; color:#93c5fd; }
+        .dark .tk-green { background:#064e3b; color:#6ee7b7; }
+        .dark .tk-purple { background:#4c1d95; color:#c4b5fd; }
+        .dark .tk-pink { background:#831843; color:#f9a8d4; }
 
-        /* Floating Buttons */
-        .floating-btns {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 100;
-            display: flex;
-            gap: 10px;
-        }
+        /* ===== MAIN GRID ===== */
+        .main { max-width:1400px; margin:16px auto; padding:0 16px; display:grid; grid-template-columns:280px 1fr 320px; gap:16px; }
 
-        .float-btn {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: var(--accent-green);
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(16,185,129,0.4);
-            transition: all 0.3s;
-        }
+        /* ===== LEFT SIDEBAR ===== */
+        .sidebar-left { display:flex; flex-direction:column; gap:16px; }
 
-        .float-btn:hover { transform: scale(1.1); }
+        /* Card base */
+        .card { background:var(--card); border-radius:var(--r); box-shadow:var(--shadow); overflow:hidden; }
+        .card-head { padding:12px 16px; font-size:14px; font-weight:700; display:flex; align-items:center; gap:8px; border-bottom:1px solid var(--bg); }
+        .card-body { padding:16px; }
 
-        .float-btn.dark-btn {
-            background: var(--accent-purple);
-            box-shadow: 0 4px 12px rgba(139,92,246,0.4);
-        }
+        /* Tier tracker */
+        .tier-group { margin-bottom:14px; }
+        .tier-group:last-child { margin-bottom:0; }
+        .tier-lab { font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px; display:inline-block; margin-bottom:6px; }
+        .tier-1 .tier-lab { background:#fef2f2; color:#dc2626; }
+        .tier-2 .tier-lab { background:#eff6ff; color:#2563eb; }
+        .tier-3 .tier-lab { background:#ecfdf5; color:#059669; }
+        .dark .tier-1 .tier-lab { background:#7f1d1d; color:#fca5a5; }
+        .dark .tier-2 .tier-lab { background:#1e3a5f; color:#93c5fd; }
+        .dark .tier-3 .tier-lab { background:#064e3b; color:#6ee7b7; }
+        .tier-list { display:flex; flex-wrap:wrap; gap:4px; }
+        .co-badge { font-size:11px; padding:3px 8px; border-radius:4px; background:var(--bg); cursor:pointer; transition:all .2s; border:1px solid transparent; }
+        .co-badge:hover { border-color:var(--green); background:rgba(16,185,129,.08); }
+        .co-badge.active { border-color:var(--green); background:rgba(16,185,129,.15); font-weight:600; }
 
-        /* Tab Navigation */
-        .tab-nav {
-            display: flex;
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            margin: 24px auto;
-            padding: 4px;
-            box-shadow: var(--shadow);
-            max-width: 600px;
-        }
+        /* Topic distribution */
+        .topic-row { display:flex; align-items:center; gap:6px; margin-bottom:8px; font-size:12px; }
+        .topic-row:last-child { margin-bottom:0; }
+        .topic-ico { width:18px; text-align:center; }
+        .topic-name { min-width:56px; }
+        .topic-bar-bg { flex:1; height:14px; background:var(--bg); border-radius:7px; overflow:hidden; }
+        .topic-fill { height:100%; border-radius:7px; }
+        .fill-r { background:linear-gradient(90deg,#ef4444,#dc2626); }
+        .fill-o { background:linear-gradient(90deg,#f59e0b,#d97706); }
+        .fill-pk { background:linear-gradient(90deg,#ec4899,#db2777); }
+        .fill-g { background:linear-gradient(90deg,#10b981,#059669); }
+        .fill-b { background:linear-gradient(90deg,#3b82f6,#2563eb); }
+        .fill-v { background:linear-gradient(90deg,#8b5cf6,#7c3aed); }
+        .topic-pct { min-width:28px; text-align:right; color:var(--text-2); }
 
-        .tab-btn {
-            flex: 1;
-            padding: 12px 16px;
-            border: none;
-            background: transparent;
-            color: var(--text-secondary);
-            font-size: 14px;
-            cursor: pointer;
-            border-radius: 12px;
-            transition: all 0.3s;
-        }
+        /* ===== CENTER CONTENT ===== */
+        .center { display:flex; flex-direction:column; gap:16px; }
 
-        .tab-btn.active {
-            background: var(--accent-green);
-            color: white;
-            font-weight: 600;
-        }
+        /* Tab nav */
+        .tabnav { display:flex; background:var(--card); border-radius:var(--r); box-shadow:var(--shadow); padding:3px; }
+        .tabbtn { flex:1; padding:10px; border:none; background:none; color:var(--text-2); font-size:13px; cursor:pointer; border-radius:10px; transition:all .2s; text-align:center; }
+        .tabbtn.active { background:var(--green); color:#fff; font-weight:600; }
+        .tabpanel { display:none; }
+        .tabpanel.active { display:flex; flex-direction:column; gap:16px; }
 
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
+        /* News grid - 2 columns */
+        .news-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+        .news-cat-head { font-size:13px; font-weight:700; padding:8px 0 4px; display:flex; align-items:center; gap:6px; grid-column:1/-1; }
+        .news-item { background:var(--card); border-radius:10px; padding:12px; box-shadow:var(--shadow); cursor:pointer; transition:all .2s; }
+        .news-item:hover { transform:translateY(-1px); box-shadow:0 4px 16px rgba(0,0,0,.1); }
+        .ni-top { display:flex; align-items:center; gap:6px; margin-bottom:4px; }
+        .ni-hot { font-size:10px; padding:1px 6px; border-radius:3px; background:var(--red); color:#fff; font-weight:600; }
+        .ni-co { font-size:10px; padding:1px 6px; border-radius:3px; font-weight:600; }
+        .co-bd { background:#fef2f2; color:#dc2626; }
+        .co-tx { background:#eff6ff; color:#2563eb; }
+        .co-al { background:#fff7ed; color:#d97706; }
+        .co-mt { background:#ecfdf5; color:#059669; }
+        .co-pdd { background:#fdf2f8; color:#db2777; }
+        .co-bd2 { background:#f5f3ff; color:#7c3aed; }
+        .co-xhs { background:#fff1f2; color:#e11d48; }
+        .co-dd { background:#f0fdf4; color:#16a34a; }
+        .co-ks { background:#fff1f2; color:#f43f5e; }
+        .co-jd { background:#dbeafe; color:#1d4ed8; }
+        .dark .co-bd { background:#7f1d1d; color:#fca5a5; }
+        .dark .co-tx { background:#1e3a5f; color:#93c5fd; }
+        .dark .co-al { background:#78350f; color:#fbbf24; }
+        .dark .co-mt { background:#064e3b; color:#6ee7b7; }
+        .dark .co-pdd { background:#831843; color:#f9a8d4; }
+        .dark .co-bd2 { background:#4c1d95; color:#c4b5fd; }
+        .dark .co-xhs { background:#7f1d1d; color:#fda4af; }
+        .dark .co-dd { background:#064e3b; color:#86efac; }
+        .dark .co-ks { background:#7f1d1d; color:#fb7185; }
+        .dark .co-jd { background:#1e3a5f; color:#93c5fd; }
+        .ni-date { font-size:10px; color:var(--text-3); }
+        .ni-title { font-size:13px; font-weight:600; margin-bottom:3px; line-height:1.4; }
+        .ni-desc { font-size:12px; color:var(--text-2); line-height:1.4; }
+        .ni-src { font-size:10px; color:var(--text-3); margin-top:4px; }
 
-        /* Ticker */
-        .ticker-section {
-            margin: 24px 0;
-            overflow: hidden;
-            border-radius: var(--border-radius);
-            background: var(--card-bg);
-            box-shadow: var(--shadow);
-            padding: 16px 20px;
-        }
+        /* Company detail cards - 2 col grid */
+        .co-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+        .co-card { background:var(--bg); border-radius:10px; padding:12px; }
+        .co-head { display:flex; align-items:center; gap:6px; margin-bottom:6px; }
+        .co-name { font-size:14px; font-weight:700; }
+        .co-tier { font-size:10px; padding:1px 6px; border-radius:3px; font-weight:600; }
+        .co-body { font-size:12px; color:var(--text-2); line-height:1.5; }
+        .co-body li { margin-left:14px; margin-bottom:2px; }
 
-        .ticker-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 12px;
-        }
+        /* Knowledge - 2 col */
+        .kn-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+        .kn-item { background:var(--card); border-radius:10px; padding:14px; box-shadow:var(--shadow); }
+        .kn-title { font-size:14px; font-weight:700; margin-bottom:6px; }
+        .kn-body { font-size:12px; color:var(--text-2); line-height:1.5; }
+        .kn-src { font-size:10px; color:var(--text-3); margin-top:6px; }
 
-        .ticker-label {
-            font-size: 16px;
-            font-weight: 700;
-        }
+        /* Tracking dimensions - 3 col compact */
+        .dim-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+        .dim-item { background:var(--bg); border-radius:8px; padding:10px; text-align:center; }
+        .dim-ico { font-size:20px; }
+        .dim-name { font-size:12px; font-weight:700; margin-top:4px; }
+        .dim-desc { font-size:10px; color:var(--text-3); }
 
-        .ticker-label .fire { color: var(--accent-red); }
+        /* ===== RIGHT SIDEBAR ===== */
+        .sidebar-right { display:flex; flex-direction:column; gap:16px; }
 
-        .ticker-track {
-            overflow: hidden;
-            position: relative;
-        }
-
-        .ticker-scroll {
-            display: flex;
-            gap: 16px;
-            animation: tickerScroll 30s linear infinite;
-        }
-
-        @keyframes tickerScroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .ticker-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            white-space: nowrap;
-            font-size: 13px;
-            padding: 6px 12px;
-            background: var(--bg);
-            border-radius: 8px;
-        }
-
-        .ticker-tag {
-            font-size: 11px;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        .tag-red { background: #fef2f2; color: #dc2626; }
-        .tag-blue { background: #eff6ff; color: #2563eb; }
-        .tag-green { background: #ecfdf5; color: #059669; }
-        .tag-orange { background: #fff7ed; color: #d97706; }
-        .tag-purple { background: #f5f3ff; color: #7c3aed; }
-        .tag-pink { background: #fdf2f8; color: #db2777; }
-
-        .dark-mode .tag-red { background: #7f1d1d; color: #fca5a5; }
-        .dark-mode .tag-blue { background: #1e3a5f; color: #93c5fd; }
-        .dark-mode .tag-green { background: #064e3b; color: #6ee7b7; }
-        .dark-mode .tag-orange { background: #78350f; color: #fbbf24; }
-        .dark-mode .tag-purple { background: #4c1d95; color: #c4b5fd; }
-        .dark-mode .tag-pink { background: #831843; color: #f9a8d4; }
-
-        /* Stats Cards Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin: 24px 0;
-        }
-
-        .stats-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 20px;
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .stats-card-icon { font-size: 24px; margin-bottom: 8px; }
-        .stats-card-number {
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--accent-green);
-        }
-        .stats-card-number.purple { color: var(--accent-purple); }
-        .stats-card-number.blue { color: var(--accent-blue); }
-        .stats-card-number.orange { color: var(--accent-orange); }
-        .stats-card-number.red { color: var(--accent-red); }
-
-        .stats-card-label {
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-top: 4px;
-        }
-
-        /* Topic Distribution */
-        .topic-section {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 24px;
-            margin: 24px 0;
-            box-shadow: var(--shadow);
-        }
-
-        .topic-section h2 {
-            font-size: 18px;
-            margin-bottom: 16px;
-        }
-
-        .topic-bar {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .topic-icon { font-size: 16px; width: 24px; text-align: center; }
-        .topic-name { font-size: 14px; min-width: 80px; }
-        .topic-percent { font-size: 13px; color: var(--text-secondary); min-width: 36px; }
-
-        .topic-progress {
-            flex: 1;
-            height: 20px;
-            background: var(--bg);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .topic-fill {
-            height: 100%;
-            border-radius: 10px;
-            transition: width 1s ease;
-        }
-
-        .fill-orange { background: linear-gradient(90deg, #f59e0b, #d97706); }
-        .fill-green { background: linear-gradient(90deg, #10b981, #059669); }
-        .fill-purple { background: linear-gradient(90deg, #8b5cf6, #7c3aed); }
-        .fill-blue { background: linear-gradient(90deg, #3b82f6, #2563eb); }
-        .fill-red { background: linear-gradient(90deg, #ef4444, #dc2626); }
-        .fill-pink { background: linear-gradient(90deg, #ec4899, #db2777); }
-
-        /* Company Tier Section */
-        .tier-section {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 24px;
-            margin: 24px 0;
-            box-shadow: var(--shadow);
-        }
-
-        .tier-section h2 {
-            font-size: 18px;
-            margin-bottom: 16px;
-        }
-
-        .tier-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-        }
-
-        .tier-label {
-            font-size: 13px;
-            font-weight: 700;
-            min-width: 60px;
-            padding: 4px 12px;
-            border-radius: 6px;
-        }
-
-        .tier-1 .tier-label { background: #fef2f2; color: #dc2626; }
-        .tier-2 .tier-label { background: #eff6ff; color: #2563eb; }
-        .tier-3 .tier-label { background: #ecfdf5; color: #059669; }
-
-        .dark-mode .tier-1 .tier-label { background: #7f1d1d; color: #fca5a5; }
-        .dark-mode .tier-2 .tier-label { background: #1e3a5f; color: #93c5fd; }
-        .dark-mode .tier-3 .tier-label { background: #064e3b; color: #6ee7b7; }
-
-        .tier-companies {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .company-badge {
-            font-size: 13px;
-            padding: 4px 12px;
-            border-radius: 6px;
-            background: var(--bg);
-            cursor: pointer;
-            transition: all 0.3s;
-            border: 1px solid transparent;
-        }
-
-        .company-badge:hover {
-            border-color: var(--accent-green);
-            background: rgba(16,185,129,0.1);
-        }
-
-        /* Daily Report Cards */
-        .daily-section {
-            margin: 24px 0;
-        }
-
-        .daily-section h2 {
-            font-size: 20px;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .daily-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 20px;
-            margin-bottom: 16px;
-            box-shadow: var(--shadow);
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .daily-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-        }
-
-        .daily-card-icon {
-            font-size: 24px;
-            width: 40px;
-            text-align: center;
-        }
-
-        .daily-card-content { flex: 1; }
-
-        .daily-card-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 8px;
-        }
-
-        .badge-date {
-            font-size: 12px;
-            padding: 2px 10px;
-            border-radius: 4px;
-            background: var(--accent-green);
-            color: white;
-        }
-
-        .badge-new {
-            font-size: 12px;
-            padding: 2px 10px;
-            border-radius: 4px;
-            background: var(--accent-red);
-            color: white;
-        }
-
-        .badge-weekly {
-            font-size: 12px;
-            padding: 2px 10px;
-            border-radius: 4px;
-            background: var(--accent-purple);
-            color: white;
-        }
-
-        .daily-card-title {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .daily-card-tags {
-            display: flex;
-            gap: 6px;
-            margin-bottom: 8px;
-            flex-wrap: wrap;
-        }
-
-        .daily-card-tag {
-            font-size: 12px;
-            padding: 2px 8px;
-            border-radius: 4px;
-        }
-
-        .daily-card-summary {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .daily-card-arrow {
-            font-size: 20px;
-            color: var(--accent-green);
-            align-self: center;
-        }
+        /* Daily report card */
+        .daily-card { background:var(--card); border-radius:var(--r); box-shadow:var(--shadow); padding:16px; cursor:pointer; transition:all .2s; }
+        .daily-card:hover { transform:translateY(-2px); }
+        .dc-badges { display:flex; gap:6px; margin-bottom:8px; }
+        .dc-badge { font-size:10px; padding:2px 8px; border-radius:4px; }
+        .dc-badge-g { background:var(--green); color:#fff; }
+        .dc-badge-r { background:var(--red); color:#fff; }
+        .dc-badge-v { background:var(--purple); color:#fff; }
+        .dc-title { font-size:15px; font-weight:700; margin-bottom:6px; }
+        .dc-tags { display:flex; gap:4px; flex-wrap:wrap; margin-bottom:6px; }
+        .dc-tag { font-size:10px; padding:2px 6px; border-radius:3px; }
+        .dc-sum { font-size:12px; color:var(--text-2); line-height:1.5; }
 
         /* Calendar */
-        .calendar-section {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 24px;
-            margin: 24px 0;
-            box-shadow: var(--shadow);
+        .cal-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:2px; }
+        .cal-hd { font-size:10px; color:var(--text-3); text-align:center; padding:4px 0; }
+        .cal-d { text-align:center; padding:6px 0; font-size:12px; border-radius:6px; position:relative; }
+        .cal-d.today { border:2px solid var(--green); font-weight:700; }
+        .cal-d.has-d::after { content:''; width:5px; height:5px; border-radius:50%; background:var(--green); position:absolute; bottom:1px; left:50%; transform:translateX(-50%); }
+        .cal-d.has-w::after { content:''; width:5px; height:5px; border-radius:50%; background:var(--purple); position:absolute; bottom:1px; left:50%; transform:translateX(-50%); }
+        .cal-legend { display:flex; gap:12px; font-size:11px; color:var(--text-3); margin-top:8px; }
+        .cal-leg { display:flex; align-items:center; gap:4px; }
+        .cal-dot { width:8px; height:8px; border-radius:50%; }
+
+        /* About toggle */
+        .about-toggle { background:var(--card); border-radius:var(--r); box-shadow:var(--shadow); padding:12px 16px; cursor:pointer; font-size:13px; transition:all .2s; }
+        .about-toggle:hover { background:rgba(16,185,129,.05); }
+        .about-content { display:none; padding:14px; font-size:12px; color:var(--text-2); line-height:1.5; }
+        .about-content.show { display:block; }
+        .about-section { margin-bottom:10px; }
+        .about-section h3 { font-size:13px; margin-bottom:4px; }
+        .about-section li { padding-left:14px; position:relative; margin-bottom:2px; }
+        .about-section li::before { content:'•'; position:absolute; left:0; color:var(--green); }
+
+        /* Quick stats mini */
+        .qs-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+        .qs-item { background:var(--bg); border-radius:8px; padding:10px; text-align:center; }
+        .qs-ico { font-size:18px; }
+        .qs-num { font-size:20px; font-weight:700; }
+        .qs-num.g { color:var(--green); }
+        .qs-num.o { color:var(--orange); }
+        .qs-num.b { color:var(--blue); }
+        .qs-num.v { color:var(--purple); }
+        .qs-num.r { color:var(--red); }
+        .qs-lab { font-size:11px; color:var(--text-2); }
+
+        /* ===== FOOTER ===== */
+        .footer { max-width:1400px; margin:24px auto 0; padding:16px; text-align:center; font-size:12px; color:var(--text-3); border-top:1px solid var(--bg); }
+
+        /* ===== SEARCH ===== */
+        .search-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.5); z-index:200; align-items:center; justify-content:center; }
+        .search-overlay.show { display:flex; }
+        .search-box { background:var(--card); border-radius:var(--r); padding:20px; width:90%; max-width:500px; box-shadow:0 20px 60px rgba(0,0,0,.3); }
+        .search-input { width:100%; padding:10px 14px; border:2px solid var(--bg); border-radius:8px; font-size:14px; background:var(--bg); color:var(--text-1); outline:none; }
+        .search-input:focus { border-color:var(--green); }
+        .search-results { margin-top:12px; max-height:250px; overflow-y:auto; }
+        .sr-item { padding:8px 0; border-bottom:1px solid var(--bg); cursor:pointer; }
+        .sr-item:last-child { border-bottom:none; }
+        .sr-title { font-size:13px; font-weight:600; }
+        .sr-meta { font-size:11px; color:var(--text-3); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width:1024px) {
+            .main { grid-template-columns:1fr; }
+            .sidebar-left, .sidebar-right { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
         }
-
-        .calendar-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 16px;
-        }
-
-        .calendar-header h2 { font-size: 18px; }
-
-        .calendar-nav-btn {
-            background: var(--bg);
-            border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            color: var(--text-primary);
-        }
-
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 4px;
-        }
-
-        .calendar-day-header {
-            font-size: 12px;
-            color: var(--text-secondary);
-            text-align: center;
-            padding: 8px 0;
-        }
-
-        .calendar-day {
-            text-align: center;
-            padding: 10px 0;
-            border-radius: 8px;
-            font-size: 14px;
-            position: relative;
-            cursor: default;
-        }
-
-        .calendar-day.today {
-            border: 2px solid var(--accent-green);
-            font-weight: 700;
-        }
-
-        .calendar-day.has-daily::after {
-            content: '';
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--accent-green);
-            position: absolute;
-            bottom: 2px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .calendar-day.has-weekly::after {
-            content: '';
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--accent-purple);
-            position: absolute;
-            bottom: 2px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .calendar-legend {
-            display: flex;
-            gap: 16px;
-            margin-top: 16px;
-            font-size: 13px;
-            color: var(--text-secondary);
-        }
-
-        .legend-item { display: flex; align-items: center; gap: 6px; }
-
-        .legend-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-
-        /* News Detail Cards */
-        .news-section {
-            margin: 24px 0;
-        }
-
-        .news-section h2 {
-            font-size: 20px;
-            margin-bottom: 16px;
-        }
-
-        .news-category {
-            margin-bottom: 24px;
-        }
-
-        .news-category-title {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .news-list {
-            display: grid;
-            gap: 12px;
-        }
-
-        .news-item {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 16px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .news-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(0,0,0,0.1);
-        }
-
-        .news-item-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 8px;
-        }
-
-        .news-hot {
-            font-size: 12px;
-            padding: 2px 8px;
-            border-radius: 4px;
-            background: var(--accent-red);
-            color: white;
-        }
-
-        .news-date {
-            font-size: 12px;
-            color: var(--text-secondary);
-        }
-
-        .news-company-tag {
-            font-size: 12px;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        .tag-bytedance { background: #fef2f2; color: #dc2626; }
-        .tag-tencent { background: #eff6ff; color: #2563eb; }
-        .tag-alibaba { background: #fff7ed; color: #d97706; }
-        .tag-meituan { background: #ecfdf5; color: #059669; }
-        .tag-pdd { background: #fdf2f8; color: #db2777; }
-        .tag-baidu { background: #f5f3ff; color: #7c3aed; }
-        .tag-xiaohongshu { background: #fef2f2; color: #e11d48; }
-        .tag-didi { background: #f0fdf4; color: #16a34a; }
-        .tag-kuaishou { background: #fff1f2; color: #f43f5e; }
-        .tag-jd { background: #eff6ff; color: #1d4ed8; }
-
-        .dark-mode .tag-bytedance { background: #7f1d1d; color: #fca5a5; }
-        .dark-mode .tag-tencent { background: #1e3a5f; color: #93c5fd; }
-        .dark-mode .tag-alibaba { background: #78350f; color: #fbbf24; }
-        .dark-mode .tag-meituan { background: #064e3b; color: #6ee7b7; }
-        .dark-mode .tag-pdd { background: #831843; color: #f9a8d4; }
-        .dark-mode .tag-baidu { background: #4c1d95; color: #c4b5fd; }
-        .dark-mode .tag-xiaohongshu { background: #7f1d1d; color: #fda4af; }
-        .dark-mode .tag-didi { background: #064e3b; color: #86efac; }
-        .dark-mode .tag-kuaishou { background: #7f1d1d; color: #fb7185; }
-        .dark-mode .tag-jd { background: #1e3a5f; color: #93c5fd; }
-
-        .news-item-title {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .news-item-summary {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-
-        .news-source {
-            font-size: 12px;
-            color: var(--text-secondary);
-            margin-top: 8px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 24px;
-            font-size: 13px;
-            color: var(--text-secondary);
-            border-top: 1px solid var(--bg);
-            margin-top: 40px;
-        }
-
-        .footer a {
-            color: var(--accent-purple);
-            text-decoration: none;
-        }
-
-        .footer a:hover { text-decoration: underline; }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .hero-title { font-size: 24px; }
-            .stats-bar { gap: 20px; }
-            .ticker-scroll { animation-duration: 20s; }
-            .tier-companies { gap: 6px; }
-            .calendar-grid { gap: 2px; }
-            .daily-card { flex-direction: column; }
-            .daily-card-arrow { align-self: flex-end; }
-        }
-
-        /* Search Overlay */
-        .search-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 200;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .search-overlay.show { display: flex; }
-
-        .search-box {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 24px;
-            width: 90%;
-            max-width: 600px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 12px 16px;
-            border: 2px solid var(--bg);
-            border-radius: 10px;
-            font-size: 16px;
-            background: var(--bg);
-            color: var(--text-primary);
-            outline: none;
-        }
-
-        .search-input:focus { border-color: var(--accent-green); }
-
-        .search-results {
-            margin-top: 16px;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .search-result-item {
-            padding: 10px 0;
-            border-bottom: 1px solid var(--bg);
-            cursor: pointer;
-        }
-
-        .search-result-item:last-child { border-bottom: none; }
-
-        .search-result-title {
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .search-result-source {
-            font-size: 12px;
-            color: var(--text-secondary);
+        @media (max-width:768px) {
+            .topbar-inner { flex-direction:column; text-align:center; }
+            .topbar-stats { justify-content:center; }
+            .sidebar-left, .sidebar-right { grid-template-columns:1fr; }
+            .news-grid, .co-grid, .kn-grid { grid-template-columns:1fr; }
+            .dim-grid { grid-template-columns:1fr 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Floating Buttons -->
-    <div class="floating-btns">
-        <button class="float-btn" onclick="toggleSearch()" title="搜索">🔍</button>
-        <button class="float-btn dark-btn" onclick="toggleDarkMode()" title="暗黑模式" id="darkBtn">🌙</button>
-    </div>
 
-    <!-- Search Overlay -->
-    <div class="search-overlay" id="searchOverlay">
-        <div class="search-box">
-            <input class="search-input" type="text" placeholder="搜索公司、事件、关键词..." id="searchInput" oninput="handleSearch(this.value)">
-            <div class="search-results" id="searchResults"></div>
+<!-- Search Overlay -->
+<div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)toggleSearch()">
+    <div class="search-box">
+        <input class="search-input" type="text" placeholder="搜索公司、事件、关键词..." id="searchInput" oninput="handleSearch(this.value)">
+        <div class="search-results" id="searchResults"></div>
+    </div>
+</div>
+
+<!-- Top Bar -->
+<div class="topbar">
+    <div class="topbar-inner">
+        <div class="brand">
+            <div class="brand-icon">🔬</div>
+            <div class="brand-text">
+                <h1>熏儿的<span style="color:#c4b5fd">互联网洞察</span></h1>
+                <p>系统化追踪国内互联网大厂·中厂·小厂动态 · 每日输出行业洞察</p>
+            </div>
+        </div>
+        <div class="topbar-stats">
+            <div class="ts-item"><div class="ts-num">🇨🇳 30+</div><div class="ts-lab">追踪公司</div></div>
+            <div class="ts-item"><div class="ts-num">🔥 15+</div><div class="ts-lab">今日热点</div></div>
+            <div class="ts-item"><div class="ts-num">📊 7</div><div class="ts-lab">核心板块</div></div>
+            <div class="ts-item"><div class="ts-num">📅 1</div><div class="ts-lab">累计日报</div></div>
+        </div>
+        <div class="topbar-btns">
+            <button class="tb-btn" onclick="toggleSearch()" title="搜索">🔍</button>
+            <button class="tb-btn" onclick="toggleDark()" id="darkBtn" title="暗黑模式">🌙</button>
         </div>
     </div>
+</div>
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="hero-title">
-            🔬 <span class="brand-green">熏儿</span>的<span class="brand-purple">互联网洞察</span>
-        </div>
-        <div class="hero-subtitle">
-            系统化追踪国内互联网大厂·中厂·小厂动态，每日输出行业洞察
-        </div>
-        <div class="hero-update-info">
-            ⏰ 2026年6月3日 更新 · 手动编辑 + AI辅助 · 持续迭代中
-        </div>
-        <div class="stats-bar">
-            <div class="stat-item">
-                <div class="stat-number">🇨🇳 30+</div>
-                <div class="stat-label">追踪公司</div>
+<!-- Ticker -->
+<div style="max-width:1400px;margin:auto;padding:0 16px">
+    <div class="ticker">
+        <div class="ticker-label">🔥 TODAY · 6月3日</div>
+        <div class="ticker-track">
+            <div class="ticker-scroll">
+                <div class="tk-item"><span class="tk-tag tk-red">裁员</span>中美互联网AI提效裁员并行，Meta裁8千人</div>
+                <div class="tk-item"><span class="tk-tag tk-orange">AI</span>豆包6月下旬上线付费内容，免费时代终结</div>
+                <div class="tk-item"><span class="tk-tag tk-green">并购</span>腾讯音乐12.6亿美元完成收购喜马拉雅</div>
+                <div class="tk-item"><span class="tk-tag tk-blue">版权</span>小红书获2026世界杯持权转播商资格</div>
+                <div class="tk-item"><span class="tk-tag tk-pink">外卖</span>美团Q1净亏损68亿，外卖大战持续消耗</div>
+                <div class="tk-item"><span class="tk-tag tk-purple">融资</span>宇树科技IPO各路机构扎堆入局</div>
+                <div class="tk-item"><span class="tk-tag tk-red">大厂</span>互联网大厂梯队重排，AI重塑格局</div>
+                <div class="tk-item"><span class="tk-tag tk-orange">政策</span>高考期间AI工具限制答题功能</div>
+                <div class="tk-item"><span class="tk-tag tk-green">出海</span>腾讯云三产品同日出海</div>
+                <div class="tk-item"><span class="tk-tag tk-blue">财报</span>阿里云AI占外部收入三成</div>
+                <!-- dup -->
+                <div class="tk-item"><span class="tk-tag tk-red">裁员</span>中美互联网AI提效裁员并行，Meta裁8千人</div>
+                <div class="tk-item"><span class="tk-tag tk-orange">AI</span>豆包6月下旬上线付费内容，免费时代终结</div>
+                <div class="tk-item"><span class="tk-tag tk-green">并购</span>腾讯音乐12.6亿美元完成收购喜马拉雅</div>
+                <div class="tk-item"><span class="tk-tag tk-blue">版权</span>小红书获2026世界杯持权转播商资格</div>
+                <div class="tk-item"><span class="tk-tag tk-pink">外卖</span>美团Q1净亏损68亿，外卖大战持续消耗</div>
+                <div class="tk-item"><span class="tk-tag tk-purple">融资</span>宇树科技IPO各路机构扎堆入局</div>
+                <div class="tk-item"><span class="tk-tag tk-red">大厂</span>互联网大厂梯队重排，AI重塑格局</div>
+                <div class="tk-item"><span class="tk-tag tk-orange">政策</span>高考期间AI工具限制答题功能</div>
+                <div class="tk-item"><span class="tk-tag tk-green">出海</span>腾讯云三产品同日出海</div>
+                <div class="tk-item"><span class="tk-tag tk-blue">财报</span>阿里云AI占外部收入三成</div>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">🔥 15+</div>
-                <div class="stat-label">今日热点</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">📊 7</div>
-                <div class="stat-label">核心板块</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">📅 1</div>
-                <div class="stat-label">累计日报</div>
+        </div>
+    </div>
+</div>
+
+<!-- Main 3-column Grid -->
+<div class="main">
+
+    <!-- LEFT SIDEBAR -->
+    <div class="sidebar-left">
+
+        <!-- Tier Tracker -->
+        <div class="card">
+            <div class="card-head">🏆 公司梯队追踪</div>
+            <div class="card-body">
+                <div class="tier-group tier-1">
+                    <div class="tier-lab">T1 大厂</div>
+                    <div class="tier-list">
+                        <span class="co-badge" onclick="filterCo('字节')">字节</span>
+                        <span class="co-badge" onclick="filterCo('拼多多')">拼多多</span>
+                        <span class="co-badge" onclick="filterCo('阿里')">阿里</span>
+                        <span class="co-badge" onclick="filterCo('腾讯')">腾讯</span>
+                        <span class="co-badge" onclick="filterCo('美团')">美团</span>
+                        <span class="co-badge" onclick="filterCo('蚂蚁')">蚂蚁</span>
+                    </div>
+                </div>
+                <div class="tier-group tier-2">
+                    <div class="tier-lab">T2 中厂</div>
+                    <div class="tier-list">
+                        <span class="co-badge" onclick="filterCo('百度')">百度</span>
+                        <span class="co-badge" onclick="filterCo('快手')">快手</span>
+                        <span class="co-badge" onclick="filterCo('京东')">京东</span>
+                        <span class="co-badge" onclick="filterCo('小红书')">小红书</span>
+                        <span class="co-badge" onclick="filterCo('滴滴')">滴滴</span>
+                        <span class="co-badge" onclick="filterCo('网易')">网易</span>
+                    </div>
+                </div>
+                <div class="tier-group tier-3">
+                    <div class="tier-lab">T3 小厂</div>
+                    <div class="tier-list">
+                        <span class="co-badge" onclick="filterCo('DeepSeek')">DeepSeek</span>
+                        <span class="co-badge" onclick="filterCo('宇树')">宇树科技</span>
+                        <span class="co-badge" onclick="filterCo('米哈游')">米哈游</span>
+                        <span class="co-badge" onclick="filterCo('B站')">B站</span>
+                        <span class="co-badge" onclick="filterCo('SHEIN')">SHEIN</span>
+                        <span class="co-badge" onclick="filterCo('携程')">携程</span>
+                        <span class="co-badge" onclick="filterCo('微博')">微博</span>
+                    </div>
+                </div>
             </div>
         </div>
-        <button class="about-toggle" onclick="toggleAbout()">
+
+        <!-- Topic Distribution -->
+        <div class="card">
+            <div class="card-head">📊 话题热度分布</div>
+            <div class="card-body">
+                <div class="topic-row"><span class="topic-ico">🔥</span><span class="topic-name">裁员/人事</span><div class="topic-bar-bg"><div class="topic-fill fill-r" style="width:28%"></div></div><span class="topic-pct">28%</span></div>
+                <div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:22%"></div></div><span class="topic-pct">22%</span></div>
+                <div class="topic-row"><span class="topic-ico">⚔️</span><span class="topic-name">业务竞争</span><div class="topic-bar-bg"><div class="topic-fill fill-pk" style="width:18%"></div></div><span class="topic-pct">18%</span></div>
+                <div class="topic-row"><span class="topic-ico">💰</span><span class="topic-name">融资/并购</span><div class="topic-bar-bg"><div class="topic-fill fill-g" style="width:15%"></div></div><span class="topic-pct">15%</span></div>
+                <div class="topic-row"><span class="topic-ico">🆕</span><span class="topic-name">新产品</span><div class="topic-bar-bg"><div class="topic-fill fill-b" style="width:10%"></div></div><span class="topic-pct">10%</span></div>
+                <div class="topic-row"><span class="topic-ico">📋</span><span class="topic-name">政策监管</span><div class="topic-bar-bg"><div class="topic-fill fill-v" style="width:7%"></div></div><span class="topic-pct">7%</span></div>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="about-toggle" onclick="toggleAbout()">
             💡 了解互联网洞察：为什么做 & 有什么特别 ▼
-        </button>
-    </div>
-
-    <!-- About Content -->
-    <div class="container">
+        </div>
         <div class="about-content" id="aboutContent">
             <div class="about-section">
-                <h3>🎯 为什么要做互联网洞察</h3>
+                <h3>🎯 为什么做</h3>
                 <ul>
-                    <li>国内互联网每天产出海量信息，大厂中厂小厂动态难以系统化追踪</li>
-                    <li>碎片化阅读缺乏结构化框架，容易错过重要信号</li>
-                    <li>缺少从一手来源直接追踪的渠道，信息滞后严重</li>
-                    <li>洞察不能沉淀，难以形成可复用的知识资产</li>
+                    <li>大厂中厂小厂动态难以系统化追踪</li>
+                    <li>碎片化阅读缺乏结构化框架</li>
+                    <li>缺少一手来源直接追踪的渠道</li>
+                    <li>洞察不能沉淀，难以形成知识资产</li>
                 </ul>
             </div>
             <div class="about-section">
-                <h3>✨ 互联网洞察的特别之处</h3>
+                <h3>✨ 特别之处</h3>
                 <ul>
-                    <li>每日聚焦国内互联网10条最重要动态，覆盖大厂·中厂·小厂</li>
+                    <li>每日聚焦10条最重要动态，覆盖大厂·中厂·小厂</li>
                     <li>直接追踪核心公司一手信息源：财报、公告、产品更新</li>
-                    <li>按公司梯队分类追踪：第一梯队（字节/拼多多/阿里/腾讯/美团/蚂蚁）</li>
-                    <li>覆盖7大板块：AI产品、人事变动、业务竞争、融资上市、新产品、政策监管、行业趋势</li>
-                    <li>周报提供结构化的行业全景视角，深度调研输出可落地洞察</li>
+                    <li>按梯队分类追踪7大板块：AI产品、人事、业务竞争、融资上市、新产品、政策监管、行业趋势</li>
                 </ul>
             </div>
         </div>
+    </div>
 
-        <!-- Tab Navigation -->
-        <div class="tab-nav">
-            <button class="tab-btn active" onclick="switchTab('daily')">📰 互联网日报</button>
-            <button class="tab-btn" onclick="switchTab('tracker')">🎯 追踪体系</button>
-            <button class="tab-btn" onclick="switchTab('knowledge')">📚 知识库</button>
+    <!-- CENTER CONTENT -->
+    <div class="center">
+        <!-- Tab Nav -->
+        <div class="tabnav">
+            <button class="tabbtn active" onclick="switchTab('daily',this)">📰 日报</button>
+            <button class="tabbtn" onclick="switchTab('tracker',this)">🎯 追踪</button>
+            <button class="tabbtn" onclick="switchTab('knowledge',this)">📚 知识库</button>
         </div>
 
-        <!-- Daily Tab -->
-        <div class="tab-content active" id="tab-daily">
-            <!-- Ticker -->
-            <div class="ticker-section">
-                <div class="ticker-header">
-                    <div class="ticker-label">🔥 TODAY · 6月3日 互联网热点速览</div>
-                    <div style="font-size:13px;color:var(--text-secondary)">← 滚动浏览 →</div>
+        <!-- DAILY TAB -->
+        <div class="tabpanel active" id="tab-daily">
+            <!-- AI Products - 2 col -->
+            <div class="news-grid">
+                <div class="news-cat-head">🤖 AI产品动态</div>
+                <div class="news-item">
+                    <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-co co-bd">字节</span><span class="ni-date">06-02</span></div>
+                    <div class="ni-title">豆包6月下旬上线付费内容，大模型免费时代终结</div>
+                    <div class="ni-desc">豆包将在6月下旬正式上线付费内容，同期Force大会更新功能。三季度进一步结合抖音电商。月活3.45亿。</div>
+                    <div class="ni-src">澎湃 / 21财经 / 财联社</div>
                 </div>
-                <div class="ticker-track">
-                    <div class="ticker-scroll">
-                        <div class="ticker-item"><span class="ticker-tag tag-red">裁员</span>中美互联网AI提效裁员并行，Meta裁8千人</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-orange">AI产品</span>豆包6月下旬上线付费内容，免费时代终结</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-green">并购</span>腾讯音乐12.6亿美元完成收购喜马拉雅</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-blue">版权</span>小红书获2026世界杯持权转播商资格</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-pink">外卖</span>美团Q1净亏损68亿，外卖大战持续消耗</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-purple">融资</span>宇树科技IPO各路机构扎堆入局</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-red">大厂</span>互联网大厂梯队重排，AI重塑格局</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-orange">AI</span>高考期间AI工具限制答题功能</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-green">出海</span>腾讯云WorkBuddy等三产品同日出海</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-blue">财报</span>阿里云AI占外部收入三成，增长强劲</div>
-                        <!-- Duplicate for seamless scroll -->
-                        <div class="ticker-item"><span class="ticker-tag tag-red">裁员</span>中美互联网AI提效裁员并行，Meta裁8千人</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-orange">AI产品</span>豆包6月下旬上线付费内容，免费时代终结</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-green">并购</span>腾讯音乐12.6亿美元完成收购喜马拉雅</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-blue">版权</span>小红书获2026世界杯持权转播商资格</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-pink">外卖</span>美团Q1净亏损68亿，外卖大战持续消耗</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-purple">融资</span>宇树科技IPO各路机构扎堆入局</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-red">大厂</span>互联网大厂梯队重排，AI重塑格局</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-orange">AI</span>高考期间AI工具限制答题功能</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-green">出海</span>腾讯云WorkBuddy等三产品同日出海</div>
-                        <div class="ticker-item"><span class="ticker-tag tag-blue">财报</span>阿里云AI占外部收入三成，增长强劲</div>
-                    </div>
+                <div class="news-item">
+                    <div class="ni-top"><span class="ni-co co-tx">腾讯</span><span class="ni-co co-al">阿里</span><span class="ni-co co-bd2">百度</span><span class="ni-date">05-27</span></div>
+                    <div class="ni-title">高考期间AI工具限制答题功能</div>
+                    <div class="ni-desc">腾讯元宝去年高考就不答题；百度未收到限制通知；科大讯飞表示应有相关限制。</div>
+                    <div class="ni-src">新浪财经</div>
+                </div>
+                <div class="news-item">
+                    <div class="ni-top"><span class="ni-co co-al">阿里</span><span class="ni-date">05月</span></div>
+                    <div class="ni-title">阿里云外部收入AI占比三成，增长强劲</div>
+                    <div class="ni-desc">云业务增长26%为近三年最高；AI营收3位数增长占云业务20%+；通义全球下载超3亿。</div>
+                    <div class="ni-src">财联社 / Moomoo</div>
+                </div>
+                <div class="news-item">
+                    <div class="ni-top"><span class="ni-co co-bd">字节</span><span class="ni-date">06月</span></div>
+                    <div class="ni-title">字节加速豆包商业化闭环，五月曝光定价策略</div>
+                    <div class="ni-desc">2025年总营收近2000亿美元，净利润下滑超70%，核心原因是AI投入。</div>
+                    <div class="ni-src">新浪财经 / 财联社</div>
                 </div>
             </div>
 
-            <!-- Stats Grid -->
-            <div class="stats-grid">
-                <div class="stats-card">
-                    <div class="stats-card-icon">🔥</div>
-                    <div class="stats-card-number">15</div>
-                    <div class="stats-card-label">今日热点事件</div>
+            <!-- Layoffs - 2 col -->
+            <div class="news-grid">
+                <div class="news-cat-head">🔥 裁员 / 人事变动</div>
+                <div class="news-item">
+                    <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date">06-02</span></div>
+                    <div class="ni-title">中美互联网AI提效裁员并行：Meta裁8千人，国内大厂若隐若现</div>
+                    <div class="ni-desc">Meta裁员8000人占10%，工程产品为重灾区。国内：美团50%/携程20%/百度新浪缩减，公司均回应"不实"。</div>
+                    <div class="ni-src">钛媒体 / 电厂</div>
                 </div>
-                <div class="stats-card">
-                    <div class="stats-card-icon">🇨🇳</div>
-                    <div class="stats-card-number orange">30+</div>
-                    <div class="stats-card-label">追踪公司数量</div>
+                <div class="news-item">
+                    <div class="ni-top"><span class="ni-co co-mt">美团</span><span class="ni-date">06月</span></div>
+                    <div class="ni-title">美团多地客服正式转外包，拒绝者被待岗</div>
+                    <div class="ni-desc">客服部门"结构性升级"由正式转外包，拒绝转外包者被待岗或以"N"补偿离职。</div>
+                    <div class="ni-src">钛媒体 / 电厂</div>
                 </div>
-                <div class="stats-card">
-                    <div class="stats-card-icon">📊</div>
-                    <div class="stats-card-number blue">7</div>
-                    <div class="stats-card-label">核心板块分类</div>
+                <div class="news-item">
+                    <div class="ni-top"><span class="ni-co co-tx">腾讯</span><span class="ni-date">05月</span></div>
+                    <div class="ni-title">腾讯刘炽平：没有大裁员计划，和硅谷不一样</div>
+                    <div class="ni-desc">股东大会上回应裁员问题。但腾讯文档被曝取消北京办公地点，全员沟通7月18日离职。</div>
+                    <div class="ni-src">钛媒体</div>
                 </div>
-                <div class="stats-card">
-                    <div class="stats-card-icon">⏰</div>
-                    <div class="stats-card-number purple">10:00</div>
-                    <div class="stats-card-label">每日更新时间</div>
-                </div>
-                <div class="stats-card">
-                    <div class="stats-card-icon">🔬</div>
-                    <div class="stats-card-number red">1</div>
-                    <div class="stats-card-label">累计日报篇数</div>
-                </div>
-                <div class="stats-card">
-                    <div class="stats-card-icon">🎯</div>
-                    <div class="stats-card-number">3</div>
-                    <div class="stats-card-label">公司梯队层级</div>
+                <div class="news-item">
+                    <div class="ni-top"><span class="ni-co co-bd2">百度</span><span class="ni-date">06月</span></div>
+                    <div class="ni-title">百度年中5月/年尾11月两轮裁员，AI技能测试必须满分</div>
+                    <div class="ni-desc">"三四十岁和二十出头的都一样被裁"。AI测试反复考满分否则每天给上级发邮件。</div>
+                    <div class="ni-src">钛媒体 / 电厂</div>
                 </div>
             </div>
 
-            <!-- Topic Distribution -->
-            <div class="topic-section">
-                <h2>📊 今日话题热度分布</h2>
-                <div class="topic-bar">
-                    <span class="topic-icon">🔥</span>
-                    <span class="topic-name">裁员/人事</span>
-                    <div class="topic-progress"><div class="topic-fill fill-red" style="width:28%"></div></div>
-                    <span class="topic-percent">28%</span>
+            <!-- Competition - 2 col -->
+            <div class="news-grid">
+                <div class="news-cat-head">⚔️ 业务竞争</div>
+                <div class="news-item">
+                    <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-co co-mt">美团</span><span class="ni-date">06月</span></div>
+                    <div class="ni-title">美团Q1净亏损68亿，外卖大战持续消耗利润</div>
+                    <div class="ni-desc">去年同期盈利101亿。从2024年358亿净利润→2025年234亿亏损。称若竞争理性Q2将好转。</div>
+                    <div class="ni-src">财新 / 美团财报</div>
                 </div>
-                <div class="topic-bar">
-                    <span class="topic-icon">🤖</span>
-                    <span class="topic-name">AI产品</span>
-                    <div class="topic-progress"><div class="topic-fill fill-orange" style="width:22%"></div></div>
-                    <span class="topic-percent">22%</span>
-                </div>
-                <div class="topic-bar">
-                    <span class="topic-icon">⚔️</span>
-                    <span class="topic-name">业务竞争</span>
-                    <div class="topic-progress"><div class="topic-fill fill-pink" style="width:18%"></div></div>
-                    <span class="topic-percent">18%</span>
-                </div>
-                <div class="topic-bar">
-                    <span class="topic-icon">💰</span>
-                    <span class="topic-name">融资/并购</span>
-                    <div class="topic-progress"><div class="topic-fill fill-green" style="width:15%"></div></div>
-                    <span class="topic-percent">15%</span>
-                </div>
-                <div class="topic-bar">
-                    <span class="topic-icon">🆕</span>
-                    <span class="topic-name">新产品/出海</span>
-                    <div class="topic-progress"><div class="topic-fill fill-blue" style="width:10%"></div></div>
-                    <span class="topic-percent">10%</span>
-                </div>
-                <div class="topic-bar">
-                    <span class="topic-icon">📋</span>
-                    <span class="topic-name">政策监管</span>
-                    <div class="topic-progress"><div class="topic-fill fill-purple" style="width:7%"></div></div>
-                    <span class="topic-percent">7%</span>
+                <div class="news-item">
+                    <div class="ni-top"><span class="ni-co co-xhs">小红书</span><span class="ni-date">05-28</span></div>
+                    <div class="ni-title">小红书官宣2026世界杯持权转播商，104场免费看</div>
+                    <div class="ni-desc">与央视签约成为美加墨世界杯持权转播商+顶级赛事直播战略合作伙伴。</div>
+                    <div class="ni-src">观察者网 / 中国日报</div>
                 </div>
             </div>
 
-            <!-- Daily Report Card -->
-            <div class="daily-section">
-                <h2>📰 互联网日报</h2>
-                <div class="daily-card">
-                    <div class="daily-card-icon">📅</div>
-                    <div class="daily-card-content">
-                        <div class="daily-card-header">
-                            <span class="badge-date">日报</span>
-                            <span class="badge-new">NEW</span>
-                        </div>
-                        <div class="daily-card-title">2026年6月3日 互联网洞察日报</div>
-                        <div class="daily-card-tags">
-                            <span class="daily-card-tag tag-bytedance">字节跳动</span>
-                            <span class="daily-card-tag tag-tencent">腾讯</span>
-                            <span class="daily-card-tag tag-meituan">美团</span>
-                            <span class="daily-card-tag tag-alibaba">阿里</span>
-                            <span class="daily-card-tag tag-xiaohongshu">小红书</span>
-                        </div>
-                        <div class="daily-card-summary">
-                            豆包6月下旬上线付费内容开启商业化；中美互联网AI提效裁员并行；美团Q1净亏损68亿外卖大战持续消耗；小红书获世界杯转播权；腾讯音乐完成收购喜马拉雅...
-                        </div>
-                    </div>
-                    <div class="daily-card-arrow">→</div>
+            <!-- M&A - 2 col -->
+            <div class="news-grid">
+                <div class="news-cat-head">💰 融资 / 并购</div>
+                <div class="news-item">
+                    <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-co co-tx">腾讯</span><span class="ni-date">05-18</span></div>
+                    <div class="ni-title">腾讯音乐12.6亿美元完成收购喜马拉雅</div>
+                    <div class="ni-desc">186亿对价，现金+1.75亿股A类普通股。市场监管总局附五项限制性承诺批准。</div>
+                    <div class="ni-src">财联社 / 财新 / 钛媒体</div>
+                </div>
+                <div class="news-item">
+                    <div class="ni-top"><span class="ni-date">06-01</span></div>
+                    <div class="ni-title">宇树科技IPO：腾讯、阿里、字节系基金各路机构扎堆入局</div>
+                    <div class="ni-desc">腾讯科技参与上市前融资；原字节财务负责人创办的锦秋基金参与；阿里通过杭州灏月。</div>
+                    <div class="ni-src">21财经</div>
+                </div>
+                <div class="news-item">
+                    <div class="ni-top"><span class="ni-co co-bd">字节系</span><span class="ni-date">05月</span></div>
+                    <div class="ni-title">DeepSeek首轮融资：大基金领投，梁文锋自掏200亿</div>
+                    <div class="ni-desc">国家大基金领投DeepSeek首轮融资。阿里可能出局，早期投资被稀释。</div>
+                    <div class="ni-src">钛媒体 / donews</div>
+                </div>
+                <div class="news-item">
+                    <div class="ni-top"><span class="ni-co co-tx">腾讯</span><span class="ni-date">05月</span></div>
+                    <div class="ni-title">腾讯云WorkBuddy/Miora/TokenHub三产品同日出海</div>
+                    <div class="ni-desc">腾讯云旗下三款产品同日宣布出海，加速国际化布局。</div>
+                    <div class="ni-src">财新</div>
                 </div>
             </div>
 
-            <!-- News by Category -->
-            <div class="news-section">
-                <h2>🔥 今日重点新闻</h2>
-
-                <!-- AI Products -->
-                <div class="news-category">
-                    <div class="news-category-title">🤖 AI产品动态</div>
-                    <div class="news-list">
-                        <div class="news-item">
-                            <div class="news-item-header">
-                                <span class="news-hot">🔥 HOT</span>
-                                <span class="news-company-tag tag-bytedance">字节跳动</span>
-                                <span class="news-date">2026-06-02</span>
-                            </div>
-                            <div class="news-item-title">豆包预计6月下旬正式上线付费内容，大模型免费时代终结</div>
-                            <div class="news-item-summary">字节跳动旗下大模型豆包预计将在6月下旬正式上线付费内容，并于同期举行的Force大会上更新相关功能。若进展顺利，豆包将于三季度进一步结合抖音电商功能。2026年3月豆包月活跃用户达3.45亿。</div>
-                            <div class="news-source">来源：澎湃新闻 / 21财经 / 财联社</div>
-                        </div>
-                        <div class="news-item">
-                            <div class="news-item-header">
-                                <span class="news-company-tag tag-tencent">腾讯</span>
-                                <span class="news-company-tag tag-alibaba">阿里</span>
-                                <span class="news-company-tag tag-baidu">百度</span>
-                                <span class="news-date">2026-05-27</span>
-                            </div>
-                            <div class="news-item-title">高考期间AI工具限制答题功能，豆包、元宝、文心各有回应</div>
-                            <div class="news-item-summary">高考期间多家AI工具对答题功能进行限制。腾讯称去年高考元宝就不答题；百度未收到文心部分功能限制通知；科大讯飞表示大模型应有相关限制。各平台在高考期间均采取了不同程度的答题功能限制。</div>
-                            <div class="news-source">来源：新浪财经</div>
-                        </div>
-                        <div class="news-item">
-                            <div class="news-item-header">
-                                <span class="news-company-tag tag-alibaba">阿里</span>
-                                <span class="news-date">2026-05</span>
-                            </div>
-                            <div class="news-item-title">阿里云外部商业化收入AI占比达三成，通义大模型全球下载量超3亿</div>
-                            <div class="news-item-summary">阿里2026财年Q1财报显示云业务增长26%，为近三年最高水平；AI产品营收持续3位数增长，已占云业务20%以上，通义大模型全球开源下载量超3亿。</div>
-                            <div class="news-source">来源：财联社 / Moomoo</div>
-                        </div>
-                        <div class="news-item">
-                            <div class="news-item-header">
-                                <span class="news-company-tag tag-bytedance">字节跳动</span>
-                                <span class="news-date">2026-06</span>
-                            </div>
-                            <div class="news-item-title">字节跳动加速豆包商业化闭环打造，五月曝光定价策略</div>
-                            <div class="news-item-summary">字节跳动正在加速豆包的商业化闭环打造。此前有报道称2025年字节跳动总营收接近2000亿美元，但净利润同比下滑超70%，核心原因是对AI业务的大量投入。</div>
-                            <div class="news-source">来源：新浪财经 / 财联社</div>
-                        </div>
-                    </div>
+            <!-- Industry - 2 col -->
+            <div class="news-grid">
+                <div class="news-cat-head">🏆 行业格局</div>
+                <div class="news-item">
+                    <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date">04月</span></div>
+                    <div class="ni-title">2026大厂梯队重排：AI重塑格局，电商洗牌加速</div>
+                    <div class="ni-desc">T1字节/拼多多/阿里/腾讯/美团/蚂蚁；T2百度/快手/京东/小红书/滴滴/网易；中腰部剧变。</div>
+                    <div class="ni-src">电子工程专辑 / CBNData</div>
                 </div>
-
-                <!-- Layoffs / Personnel -->
-                <div class="news-category">
-                    <div class="news-category-title">🔥 裁员 / 人事变动</div>
-                    <div class="news-list">
-                        <div class="news-item">
-                            <div class="news-item-header">
-                                <span class="news-hot">🔥 HOT</span>
-                                <span class="news-date">2026-06-02</span>
-                            </div>
-                            <div class="news-item-title">中美互联网公司AI提效裁员并行：Meta裁8000人，国内大厂若隐若现</div>
-                            <div class="news-item-summary">5月20日Meta裁员8000人占全球10%，工程产品团队为"重灾区"。国内方面，美团产品研发岗被曝裁员50%、携程酒旅多部门裁员20%、腾讯文档取消北京办公地点、百度新浪也在进行人员缩减。公司层面均回应"不实"，但员工在社交媒体上的爆料持续流传。</div>
-                            <div class="news-source">来源：钛媒体 / 电厂</div>
-                        </div>
-                        <div class="news-item">
-                            <div class="news-item-header">
-                                <span class="news-company-tag tag-meituan">美团</span>
-                                <span class="news-date">2026-06</span>
-                            </div>
-                            <div class="news-item-title">美团多地客服部门"结构性升级"，正式员工转为外包</div>
-                            <div class="news-item-summary">美团对多地职场客服部门进行"结构性升级"，由正式转为外包，同时结束与部分外包公司合作。已有拒绝转为外包的正式员工被待岗或以"N"补偿离职。</div>
-                            <div class="news-source">来源：钛媒体 / 电厂</div>
-                        </div>
-                        <div class="news-item">
-                            <div class="news-item-header">
-                                <span class="news-company-tag tag-tencent">腾讯</span>
-                                <span class="news-date">2026-05</span>
-                            </div>
-                            <div class="news-item-title">腾讯刘炽平：没有大裁员计划，腾讯和硅谷公司不太一样</div>
-                            <div class="news-item-summary">在2026年腾讯股东大会上，面对"腾讯是否会大裁员"的问题，腾讯总裁刘炽平表示没有大裁员计划，并称腾讯和硅谷公司不太一样。但腾讯旗下腾讯文档被曝将取消北京办公地点。</div>
-                            <div class="news-source">来源：钛媒体</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Business Competition -->
-                <div class="news-category">
-                    <div class="news-category-title">⚔️ 业务竞争 / 外卖大战</div>
-                    <div class="news-list">
-                        <div class="news-item">
-                            <div class="news-item-header">
-                                <span class="news-hot">🔥 HOT</span>
-                                <span class="news-company-tag tag-meituan">美团</span>
-                                <span class="news-date">2026-06</span>
-                            </div>
-                            <div class="news-item-title">美团Q1净亏损68亿，外卖大战持续消耗利润</div>
-                            <div class="news-item-summary">美团2026年Q1净亏损68亿元，而2025年同期盈利101亿元。美团称若竞争环境保持理性，叠加二季度旺季效应，预期2026年Q2外卖业务会明显好于Q1。美团从2024年358亿净利润变成2025年234亿亏损。</div>
-                            <div class="news-source">来源：财新 / 美团财报</div>
-                        </div>
-                        <div class="news-item">
-                            <div class="news-item-header">
-                                <span class="news-company-tag tag-xiaohongshu">小红书</span>
-                                <span class="news-date">2026-05-28</span>
-                            </div>
-                            <div class="news-item-title">小红书官宣成为2026世界杯持权转播商，104场赛事免费看</div>
-                            <div class="news-item-summary">5月27日，小红书与央视总台签约，正式成为2026年美加墨世界杯持权转播商，同时成为央视顶级赛事直播战略合作伙伴。104场赛事全部直播、回看和精彩瞬间可免费观看。</div>
-                            <div class="news-source">来源：观察者网 / 中国日报</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- M&A / Financing -->
-                <div class="news-category">
-                    <div class="news-category-title">💰 融资 / 并购</div>
-                    <div class="news-list">
-                        <div class="news-item">
-                            <div class="news-item-header">
-                                <span class="news-hot">🔥 HOT</span>
-                                <span class="news-company-tag tag-tencent">腾讯</span>
-                                <span class="news-date">2026-05-18</span>
-                            </div>
-                            <div class="news-item-title">腾讯音乐12.6亿美元完成收购喜马拉雅，186亿收购案尘埃落定</div>
-                            <div class="news-item-summary">腾讯音乐（TME）于2026年5月18日以12.6亿美元现金及最多1.75亿股A类普通股（总对价约186亿元）完成对喜马拉雅全资收购。此前市场监管总局附五项限制性承诺批准该交易。</div>
-                            <div class="news-source">来源：财联社 / 财新 / 钛媒体</div>
-                        </div>
-                        <div class="news-item">
-                            <div class="news-item-header">
-                                <span class="news-date">2026-06-01</span>
-                            </div>
-                            <div class="news-item-title">宇树科技IPO资本图谱：腾讯、阿里、字节系基金各路机构扎堆入局</div>
-                            <div class="news-item-summary">2025年6月腾讯科技参与宇树科技上市前最近一次市场化股权融资，原字节跳动财务负责人创办的锦秋基金通过无锡锦秋参与，阿里巴巴通过杭州灏月、蚂蚁集团也参与投资。各路机构扎堆入局。</div>
-                            <div class="news-source">来源：21财经</div>
-                        </div>
-                        <div class="news-item">
-                            <div class="news-item-header">
-                                <span class="news-company-tag tag-bytedance">字节跳动</span>
-                                <span class="news-date">2026-05</span>
-                            </div>
-                            <div class="news-item-title">DeepSeek首轮融资：梁文锋自掏200亿领投，阿里或出局</div>
-                            <div class="news-item-summary">国家大基金领投DeepSeek首轮融资，梁文锋自掏200亿领投。此前阿里曾参与DeepSeek早期投资，但在最新一轮融资中可能出局。</div>
-                            <div class="news-source">来源：钛媒体 / donews</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- New Products / Global -->
-                <div class="news-category">
-                    <div class="news-category-title">🆕 新产品 / 出海</div>
-                    <div class="news-list">
-                        <div class="news-item">
-                            <div class="news-item-header">
-                                <span class="news-company-tag tag-tencent">腾讯</span>
-                                <span class="news-date">2026-05</span>
-                            </div>
-                            <div class="news-item-title">腾讯云WorkBuddy、Miora、TokenHub三款产品同日出海</div>
-                            <div class="news-item-summary">腾讯云旗下WorkBuddy、Miora、TokenHub三款产品同日宣布出海，加速国际化布局。</div>
-                            <div class="news-source">来源：财新</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Industry Rankings -->
-                <div class="news-category">
-                    <div class="news-category-title">🏆 行业格局</div>
-                    <div class="news-list">
-                        <div class="news-item">
-                            <div class="news-item-header">
-                                <span class="news-hot">🔥 HOT</span>
-                                <span class="news-date">2026-04</span>
-                            </div>
-                            <div class="news-item-title">2026互联网大厂梯队最新排名：AI重塑格局，电商洗牌加速</div>
-                            <div class="news-item-summary">第一梯队：字节、拼多多、阿里、腾讯、美团、蚂蚁；第二梯队：百度、快手、京东、小红书、滴滴、网易；美团京东深陷外卖大战，中腰部阵营变化较大。胡润500强：台积电、腾讯、字节位列前三。</div>
-                            <div class="news-source">来源：电子工程专辑 / CBNData / 澎湃新闻</div>
-                        </div>
-                        <div class="news-item">
-                            <div class="news-item-header">
-                                <span class="news-company-tag tag-meituan">美团</span>
-                                <span class="news-company-tag tag-jd">京东</span>
-                                <span class="news-company-tag tag-alibaba">阿里</span>
-                                <span class="news-date">2026-04</span>
-                            </div>
-                            <div class="news-item-title">互联网大厂市值座次重排：腾讯阿里拼多多稳前三，中腰部剧变</div>
-                            <div class="news-item-summary">腾讯、阿里、拼多多市值排名保持稳定，中腰部阵营变化较大：美团京东深陷外卖大战，字节AI业务推动估值持续走高（价值增长1.8万亿达3.4万亿）。</div>
-                            <div class="news-source">来源：CBNData / 澎湃新闻</div>
-                        </div>
-                    </div>
+                <div class="news-item">
+                    <div class="ni-top"><span class="ni-co co-mt">美团</span><span class="ni-co co-jd">京东</span><span class="ni-co co-al">阿里</span><span class="ni-date">04月</span></div>
+                    <div class="ni-title">市值座次重排：前三稳，中腰部剧变</div>
+                    <div class="ni-desc">腾讯阿里拼多多市值前三保持稳定；字节AI估值3.4万亿；美团京东深陷外卖大战。</div>
+                    <div class="ni-src">CBNData / 澎湃</div>
                 </div>
             </div>
         </div>
 
-        <!-- Tracker Tab -->
-        <div class="tab-content" id="tab-tracker">
-            <div class="tier-section">
-                <h2>🏆 国内互联网公司梯队追踪体系</h2>
-                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px">基于2026年最新数据，按市值/估值、业务规模、影响力分层追踪</p>
-
-                <div class="tier-row tier-1">
-                    <span class="tier-label">T1 大厂</span>
-                    <div class="tier-companies">
-                        <span class="company-badge" onclick="filterCompany('字节跳动')">字节跳动</span>
-                        <span class="company-badge" onclick="filterCompany('拼多多')">拼多多</span>
-                        <span class="company-badge" onclick="filterCompany('阿里')">阿里</span>
-                        <span class="company-badge" onclick="filterCompany('腾讯')">腾讯</span>
-                        <span class="company-badge" onclick="filterCompany('美团')">美团</span>
-                        <span class="company-badge" onclick="filterCompany('蚂蚁')">蚂蚁集团</span>
-                    </div>
+        <!-- TRACKER TAB -->
+        <div class="tabpanel" id="tab-tracker">
+            <!-- Company detail cards - 2 col -->
+            <div class="co-grid">
+                <div class="co-card">
+                    <div class="co-head"><span class="co-name">字节跳动</span><span class="co-tier co-bd">T1 大厂</span></div>
+                    <div class="co-body"><ul>
+                        <li>豆包6月下旬上线付费内容，开启商业化闭环</li>
+                        <li>2025年总营收近2000亿美元，净利润下滑超70%</li>
+                        <li>豆包月活3.45亿，Doubao-Seed-2.0通用模型发布</li>
+                        <li>AI业务推动估值3.4万亿，胡润500强第三</li>
+                    </ul></div>
                 </div>
-
-                <div class="tier-row tier-2">
-                    <span class="tier-label">T2 中厂</span>
-                    <div class="tier-companies">
-                        <span class="company-badge" onclick="filterCompany('百度')">百度</span>
-                        <span class="company-badge" onclick="filterCompany('快手')">快手</span>
-                        <span class="company-badge" onclick="filterCompany('京东')">京东</span>
-                        <span class="company-badge" onclick="filterCompany('小红书')">小红书</span>
-                        <span class="company-badge" onclick="filterCompany('滴滴')">滴滴</span>
-                        <span class="company-badge" onclick="filterCompany('网易')">网易</span>
-                    </div>
+                <div class="co-card">
+                    <div class="co-head"><span class="co-name">腾讯</span><span class="co-tier co-tx">T1 大厂</span></div>
+                    <div class="co-body"><ul>
+                        <li>腾讯音乐12.6亿美元完成收购喜马拉雅</li>
+                        <li>刘炽平：没有大裁员计划，和硅谷不一样</li>
+                        <li>腾讯文档被曝取消北京办公地点</li>
+                        <li>混元模型落后豆包和通义，下半年加码AI投入</li>
+                        <li>云WorkBuddy/Miora/TokenHub三产品出海</li>
+                    </ul></div>
                 </div>
-
-                <div class="tier-row tier-3">
-                    <span class="tier-label">T3 小厂</span>
-                    <div class="tier-companies">
-                        <span class="company-badge" onclick="filterCompany('DeepSeek')">DeepSeek</span>
-                        <span class="company-badge" onclick="filterCompany('宇树科技')">宇树科技</span>
-                        <span class="company-badge" onclick="filterCompany('米哈游')">米哈游</span>
-                        <span class="company-badge" onclick="filterCompany('B站')">B站</span>
-                        <span class="company-badge" onclick="filterCompany('SHEIN')">SHEIN</span>
-                        <span class="company-badge" onclick="filterCompany('微众银行')">微众银行</span>
-                        <span class="company-badge" onclick="filterCompany('喜马拉雅')">喜马拉雅*</span>
-                        <span class="company-badge" onclick="filterCompany('微博')">微博</span>
-                        <span class="company-badge" onclick="filterCompany('携程')">携程</span>
-                    </div>
+                <div class="co-card">
+                    <div class="co-head"><span class="co-name">美团</span><span class="co-tier co-mt">T1 大厂</span></div>
+                    <div class="co-body"><ul>
+                        <li>Q1净亏损68亿（去年同期盈利101亿）</li>
+                        <li>产品研发岗被曝裁员50%，公司回应"不实"</li>
+                        <li>多地客服正式转外包，拒绝者被待岗/N补偿</li>
+                        <li>从2024年358亿净利润→2025年234亿亏损</li>
+                    </ul></div>
                 </div>
-
-                <p style="font-size:12px;color:var(--text-secondary);margin-top:12px">* 喜马拉雅已被腾讯音乐收购，列为历史参考</p>
-            </div>
-
-            <!-- Company Detail Cards -->
-            <div class="tier-section" id="companyDetail">
-                <h2>📋 重点公司近期动态一览</h2>
-                <div style="display:grid;gap:16px;margin-top:16px">
-
-                    <div style="background:var(--bg);border-radius:12px;padding:16px">
-                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-                            <span style="font-size:16px;font-weight:700">字节跳动</span>
-                            <span class="news-company-tag tag-bytedance">T1 大厂</span>
-                        </div>
-                        <div style="font-size:14px;color:var(--text-secondary)">
-                            • 豆包6月下旬上线付费内容，开启商业化闭环<br>
-                            • 2025年总营收接近2000亿美元，净利润下滑超70%<br>
-                            • 豆包月活达3.45亿，推出Doubao-Seed-2.0通用模型<br>
-                            • 字节AI业务推动估值持续走高，达3.4万亿元<br>
-                            • 大普微下游客户，加大AI基础设施投入
-                        </div>
-                    </div>
-
-                    <div style="background:var(--bg);border-radius:12px;padding:16px">
-                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-                            <span style="font-size:16px;font-weight:700">腾讯</span>
-                            <span class="news-company-tag tag-tencent">T1 大厂</span>
-                        </div>
-                        <div style="font-size:14px;color:var(--text-secondary)">
-                            • 腾讯音乐12.6亿美元完成收购喜马拉雅（186亿对价）<br>
-                            • 刘炽平：没有大裁员计划，腾讯和硅谷公司不太一样<br>
-                            • 腾讯文档被曝取消北京办公地点<br>
-                            • 腾讯云WorkBuddy/Miora/TokenHub三产品出海<br>
-                            • 混元模型落后于豆包和通义，2025年下半年调整AI投入<br>
-                            • 参与宇树科技IPO前融资
-                        </div>
-                    </div>
-
-                    <div style="background:var(--bg);border-radius:12px;padding:16px">
-                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-                            <span style="font-size:16px;font-weight:700">美团</span>
-                            <span class="news-company-tag tag-meituan">T1 大厂</span>
-                        </div>
-                        <div style="font-size:14px;color:var(--text-secondary)">
-                            • Q1净亏损68亿（去年同期盈利101亿），外卖大战持续消耗<br>
-                            • 产品研发岗被曝裁员50%，公司回应"不实"<br>
-                            • 多地客服部门正式转外包，拒绝者被待岗/N补偿离职<br>
-                            • 从2024年358亿净利润变成2025年234亿亏损<br>
-                            • 称若竞争环境理性，Q2外卖业务将明显好于Q1
-                        </div>
-                    </div>
-
-                    <div style="background:var(--bg);border-radius:12px;padding:16px">
-                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-                            <span style="font-size:16px;font-weight:700">阿里</span>
-                            <span class="news-company-tag tag-alibaba">T1 大厂</span>
-                        </div>
-                        <div style="font-size:14px;color:var(--text-secondary)">
-                            • 阿里云外部收入AI占比达三成，增长强劲<br>
-                            • 2026财年Q4营收2433.8亿，云业务增长26%<br>
-                            • 通义大模型全球下载量超3亿<br>
-                            • 外卖大战投入千亿补贴，利润受拖累<br>
-                            • 通过杭州灏月参与宇树科技IPO
-                        </div>
-                    </div>
-
-                    <div style="background:var(--bg);border-radius:12px;padding:16px">
-                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-                            <span style="font-size:16px;font-weight:700">小红书</span>
-                            <span class="news-company-tag tag-xiaohongshu">T2 中厂</span>
-                        </div>
-                        <div style="font-size:14px;color:var(--text-secondary)">
-                            • 官宣成为2026世界杯持权转播商，104场赛事免费看<br>
-                            • 成为央视顶级赛事直播战略合作伙伴<br>
-                            • 世界杯频道即将开启，支持App/网页/投屏观看<br>
-                            • 市值排名上升，进入第二梯队前列
-                        </div>
-                    </div>
-
-                    <div style="background:var(--bg);border-radius:12px;padding:16px">
-                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-                            <span style="font-size:16px;font-weight:700">百度</span>
-                            <span class="news-company-tag tag-baidu">T2 中厂</span>
-                        </div>
-                        <div style="font-size:14px;color:var(--text-secondary)">
-                            • 组织线上AI技能测试，必须考满分否则每天给上级发邮件<br>
-                            • 年中5月/年尾11月两轮裁员，"三四十岁和二十出头的都一样"<br>
-                            • 文心大模型高考期间不限制答题功能<br>
-                            • 2025年6月开源文心4.5系列10款模型
-                        </div>
-                    </div>
-
-                    <div style="background:var(--bg);border-radius:12px;padding:16px">
-                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-                            <span style="font-size:16px;font-weight:700">携程</span>
-                            <span class="news-company-tag tag-didi" style="background:#f0fdf4;color:#16a34a">T3 小厂</span>
-                        </div>
-                        <div style="font-size:14px;color:var(--text-secondary)">
-                            • 酒旅等多部门被曝裁员20%，产品研发比例更高<br>
-                            • BD部门减员，每个小组背裁员名额<br>
-                            • 公司回应"不实"，称人才盘点为正常流程
-                        </div>
-                    </div>
-
+                <div class="co-card">
+                    <div class="co-head"><span class="co-name">阿里</span><span class="co-tier co-al">T1 大厂</span></div>
+                    <div class="co-body"><ul>
+                        <li>阿里云外部收入AI占比达三成</li>
+                        <li>2026财年Q4营收2433.8亿，云增长26%</li>
+                        <li>通义全球下载超3亿，Qwen3-Max-Thinking发布</li>
+                        <li>外卖大战投入千亿补贴，利润受拖累</li>
+                    </ul></div>
+                </div>
+                <div class="co-card">
+                    <div class="co-head"><span class="co-name">小红书</span><span class="co-tier co-xhs">T2 中厂</span></div>
+                    <div class="co-body"><ul>
+                        <li>官宣2026世界杯持权转播商，104场免费看</li>
+                        <li>成为央视顶级赛事直播战略合作伙伴</li>
+                        <li>世界杯频道即将开启，App/网页/投屏可看</li>
+                    </ul></div>
+                </div>
+                <div class="co-card">
+                    <div class="co-head"><span class="co-name">百度</span><span class="co-tier co-bd2">T2 中厂</span></div>
+                    <div class="co-body"><ul>
+                        <li>组织AI技能测试，必须考满分否则每天给上级发邮件</li>
+                        <li>年中5月/年尾11月两轮裁员</li>
+                        <li>文心大模型高考期间不限制答题</li>
+                        <li>2025年6月开源文心4.5系列10款模型</li>
+                    </ul></div>
+                </div>
+                <div class="co-card">
+                    <div class="co-head"><span class="co-name">拼多多</span><span class="co-tier co-pdd">T1 大厂</span></div>
+                    <div class="co-body"><ul>
+                        <li>市值前三保持稳定，胡润500强排名靠前</li>
+                        <li>电商洗牌加速，Temu出海持续扩张</li>
+                        <li>跨境电商与国内电商双轮驱动</li>
+                    </ul></div>
+                </div>
+                <div class="co-card">
+                    <div class="co-head"><span class="co-name">携程</span><span class="co-tier co-dd">T3 小厂</span></div>
+                    <div class="co-body"><ul>
+                        <li>酒旅等多部门被曝裁员20%，产品研发比例更高</li>
+                        <li>BD部门减员，每个小组背裁员名额</li>
+                        <li>公司回应"不实"</li>
+                    </ul></div>
                 </div>
             </div>
 
             <!-- Tracking Dimensions -->
-            <div class="tier-section">
-                <h2>📊 追踪维度说明</h2>
-                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:16px">
-                    <div style="background:var(--bg);border-radius:12px;padding:16px;text-align:center">
-                        <div style="font-size:24px">🤖</div>
-                        <div style="font-size:14px;font-weight:700;margin-top:8px">AI产品</div>
-                        <div style="font-size:13px;color:var(--text-secondary)">大模型发布/更新、AI助手商业化、AI功能迭代</div>
-                    </div>
-                    <div style="background:var(--bg);border-radius:12px;padding:16px;text-align:center">
-                        <div style="font-size:24px">🔥</div>
-                        <div style="font-size:14px;font-weight:700;margin-top:8px">裁员/人事</div>
-                        <div style="font-size:13px;color:var(--text-secondary)">人员调整、高管变动、组织架构重组、AI提效裁员</div>
-                    </div>
-                    <div style="background:var(--bg);border-radius:12px;padding:16px;text-align:center">
-                        <div style="font-size:24px">⚔️</div>
-                        <div style="font-size:14px;font-weight:700;margin-top:8px">业务竞争</div>
-                        <div style="font-size:13px;color:var(--text-secondary)">外卖大战、即时零售、AI流量入口争夺、版权竞争</div>
-                    </div>
-                    <div style="background:var(--bg);border-radius:12px;padding:16px;text-align:center">
-                        <div style="font-size:24px">💰</div>
-                        <div style="font-size:14px;font-weight:700;margin-top:8px">融资/并购</div>
-                        <div style="font-size:13px;color:var(--text-secondary)">IPO进展、并购交易、融资轮次、估值变化</div>
-                    </div>
-                    <div style="background:var(--bg);border-radius:12px;padding:16px;text-align:center">
-                        <div style="font-size:24px">🆕</div>
-                        <div style="font-size:14px;font-weight:700;margin-top:8px">新产品/出海</div>
-                        <div style="font-size:13px;color:var(--text-secondary)">新产品发布、出海布局、功能上线、版权获取</div>
-                    </div>
-                    <div style="background:var(--bg);border-radius:12px;padding:16px;text-align:center">
-                        <div style="font-size:24px">📋</div>
-                        <div style="font-size:14px;font-weight:700;margin-top:8px">政策监管</div>
-                        <div style="font-size:13px;color:var(--text-secondary)">网信办备案、个人信息保护、跨境监管、反垄断</div>
-                    </div>
-                    <div style="background:var(--bg);border-radius:12px;padding:16px;text-align:center">
-                        <div style="font-size:24px">📈</div>
-                        <div style="font-size:14px;font-weight:700;margin-top:8px">行业趋势</div>
-                        <div style="font-size:13px;color:var(--text-secondary)">市值排名、梯队变化、财报分析、战略转型</div>
+            <div class="card">
+                <div class="card-head">📊 追踪维度说明</div>
+                <div class="card-body">
+                    <div class="dim-grid">
+                        <div class="dim-item"><div class="dim-ico">🤖</div><div class="dim-name">AI产品</div><div class="dim-desc">大模型·AI助手·商业化</div></div>
+                        <div class="dim-item"><div class="dim-ico">🔥</div><div class="dim-name">裁员/人事</div><div class="dim-desc">人员调整·组织重组</div></div>
+                        <div class="dim-item"><div class="dim-ico">⚔️</div><div class="dim-name">业务竞争</div><div class="dim-desc">外卖大战·版权争夺</div></div>
+                        <div class="dim-item"><div class="dim-ico">💰</div><div class="dim-name">融资/并购</div><div class="dim-desc">IPO·并购·估值变化</div></div>
+                        <div class="dim-item"><div class="dim-ico">🆕</div><div class="dim-name">新产品</div><div class="dim-desc">产品发布·出海布局</div></div>
+                        <div class="dim-item"><div class="dim-ico">📋</div><div class="dim-name">政策监管</div><div class="dim-desc">网信办·反垄断·隐私</div></div>
+                        <div class="dim-item"><div class="dim-ico">📈</div><div class="dim-name">行业趋势</div><div class="dim-desc">市值·梯队·财报·转型</div></div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Knowledge Tab -->
-        <div class="tab-content" id="tab-knowledge">
-            <div class="tier-section">
-                <h2>📚 知识库 · 行业背景参考</h2>
-                <div style="display:grid;gap:16px;margin-top:16px">
-
-                    <div class="news-item">
-                        <div style="font-size:16px;font-weight:700;margin-bottom:8px">📖 2026互联网大厂市值座次重排</div>
-                        <div style="font-size:14px;color:var(--text-secondary)">
-                            腾讯、阿里、拼多多市值前三保持稳定；中腰部剧变：美团京东深陷外卖大战致利润大幅下滑；字节AI业务推动估值持续走高达3.4万亿；小红书获世界杯版权加速内容生态布局。
-                        </div>
-                        <div style="font-size:12px;color:var(--text-secondary);margin-top:8px">来源：CBNData / 澎湃新闻 · 2026年4月</div>
-                    </div>
-
-                    <div class="news-item">
-                        <div style="font-size:16px;font-weight:700;margin-bottom:8px">📖 中美互联网公司AI提效裁员全景</div>
-                        <div style="font-size:14px;color:var(--text-secondary)">
-                            Meta裁员8000人占全球10%，亚马逊两轮裁员近3万人，微软自愿买断8500人。国内方面：美团50%/携程20%/百度新浪不同程度缩减。根本原因：行业增长见顶的必然收缩，AI只是让过程更迅猛更精准，也提供了低成本裁员的"幌子"。英伟达黄仁勋批评"AI裁员是懒惰思维"。
-                        </div>
-                        <div style="font-size:12px;color:var(--text-secondary);margin-top:8px">来源：钛媒体 / 电厂 · 2026年6月</div>
-                    </div>
-
-                    <div class="news-item">
-                        <div style="font-size:16px;font-weight:700;margin-bottom:8px">📖 外卖大战：千亿补贴下的利润消耗</div>
-                        <div style="font-size:14px;color:var(--text-secondary)">
-                            2025年至今，阿里巴巴、美团和京东以千亿补贴打响外卖大战。仅美团从2024年358亿净利润变成2025年234亿亏损。2026Q1美团净亏损68亿（去年同期盈利101亿）。即时零售和AI撑起行业半边天，但对利润造成明显拖累。
-                        </div>
-                        <div style="font-size:12px;color:var(--text-secondary);margin-top:8px">来源：财新 / 美团财报 / 钛媒体 · 2026年</div>
-                    </div>
-
-                    <div class="news-item">
-                        <div style="font-size:16px;font-weight:700;margin-bottom:8px">📖 腾讯音乐收购喜马拉雅始末</div>
-                        <div style="font-size:14px;color:var(--text-secondary)">
-                            2025年6月腾讯音乐公告拟收购喜马拉雅，对价12.6亿美元现金+不超过5.1986%股权。2026年5月市场监管总局附五项限制性承诺批准。5月18日正式完成交割，喜马拉雅承诺"四不变"。总对价约186亿元。
-                        </div>
-                        <div style="font-size:12px;color:var(--text-secondary);margin-top:8px">来源：财联社 / 财新 / 钛媒体 · 2025-2026年</div>
-                    </div>
-
-                    <div class="news-item">
-                        <div style="font-size:16px;font-weight:700;margin-bottom:8px">📖 国内AI大模型产品矩阵（2026年6月）</div>
-                        <div style="font-size:14px;color:var(--text-secondary)">
-                            字节：豆包(Doubao-Seed-2.0)月活3.45亿，6月下旬上线付费；腾讯：混元模型+元宝，AI投入2025下半年加码；阿里：通义(Qwen3-Max-Thinking)全球下载超3亿，云收入AI占30%；百度：文心4.5开源10款模型，组织AI技能测试；DeepSeek：首轮融资国家大基金领投。
-                        </div>
-                        <div style="font-size:12px;color:var(--text-secondary);margin-top:8px">来源：知乎专栏 / 财联社 · 2026年6月</div>
-                    </div>
-
-                    <div class="news-item">
-                        <div style="font-size:16px;font-weight:700;margin-bottom:8px">📖 生成式AI备案信息（截至2025年6月）</div>
-                        <div style="font-size:14px;color:var(--text-secondary)">
-                            截至2025年6月30日，累计439款生成式AI服务完成备案，236款AI应用或功能完成登记。国家网信办持续更新备案信息公告。
-                        </div>
-                        <div style="font-size:12px;color:var(--text-secondary);margin-top:8px">来源：国家网信办 · 2025年7月</div>
-                    </div>
+        <!-- KNOWLEDGE TAB -->
+        <div class="tabpanel" id="tab-knowledge">
+            <div class="kn-grid">
+                <div class="kn-item">
+                    <div class="kn-title">📖 2026互联网大厂市值座次重排</div>
+                    <div class="kn-body">腾讯、阿里、拼多多市值前三保持稳定；中腰部剧变：美团京东深陷外卖大战致利润大幅下滑；字节AI业务推动估值持续走高达3.4万亿；小红书获世界杯版权加速内容生态布局。</div>
+                    <div class="kn-src">CBNData / 澎湃 · 2026年4月</div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Calendar Section -->
-        <div class="calendar-section">
-            <div class="calendar-header">
-                <h2>📅 日报日历 · 2026年6月</h2>
-                <div style="display:flex;gap:8px">
-                    <button class="calendar-nav-btn">◀ 上月</button>
-                    <button class="calendar-nav-btn">下月 ▶</button>
+                <div class="kn-item">
+                    <div class="kn-title">📖 中美互联网AI提效裁员全景</div>
+                    <div class="kn-body">Meta裁员8000人占全球10%，亚马逊两轮裁员近3万人，微软自愿买断8500人。国内：美团50%/携程20%/百度新浪不同程度缩减。根本原因：行业增长见顶的必然收缩。英伟达黄仁勋批评"AI裁员是懒惰思维"。</div>
+                    <div class="kn-src">钛媒体 / 电厂 · 2026年6月</div>
                 </div>
-            </div>
-            <div class="calendar-grid">
-                <div class="calendar-day-header">一</div>
-                <div class="calendar-day-header">二</div>
-                <div class="calendar-day-header">三</div>
-                <div class="calendar-day-header">四</div>
-                <div class="calendar-day-header">五</div>
-                <div class="calendar-day-header">六</div>
-                <div class="calendar-day-header">日</div>
-                <!-- Week 1: June starts on Monday -->
-                <div class="calendar-day has-daily">1</div>
-                <div class="calendar-day">2</div>
-                <div class="calendar-day has-daily today">3</div>
-                <div class="calendar-day">4</div>
-                <div class="calendar-day">5</div>
-                <div class="calendar-day">6</div>
-                <div class="calendar-day">7</div>
-                <!-- Week 2 -->
-                <div class="calendar-day">8</div>
-                <div class="calendar-day">9</div>
-                <div class="calendar-day">10</div>
-                <div class="calendar-day">11</div>
-                <div class="calendar-day">12</div>
-                <div class="calendar-day">13</div>
-                <div class="calendar-day">14</div>
-                <!-- Week 3 -->
-                <div class="calendar-day has-weekly">15</div>
-                <div class="calendar-day">16</div>
-                <div class="calendar-day">17</div>
-                <div class="calendar-day">18</div>
-                <div class="calendar-day">19</div>
-                <div class="calendar-day">20</div>
-                <div class="calendar-day">21</div>
-                <!-- Week 4 -->
-                <div class="calendar-day">22</div>
-                <div class="calendar-day">23</div>
-                <div class="calendar-day">24</div>
-                <div class="calendar-day">25</div>
-                <div class="calendar-day">26</div>
-                <div class="calendar-day">27</div>
-                <div class="calendar-day">28</div>
-                <!-- Week 5 -->
-                <div class="calendar-day">29</div>
-                <div class="calendar-day">30</div>
-                <div class="calendar-day"></div>
-                <div class="calendar-day"></div>
-                <div class="calendar-day"></div>
-                <div class="calendar-day"></div>
-                <div class="calendar-day"></div>
-            </div>
-            <div class="calendar-legend">
-                <div class="legend-item"><div class="legend-dot" style="background:var(--accent-green)"></div> 有日报</div>
-                <div class="legend-item"><div class="legend-dot" style="background:var(--accent-purple)"></div> 有周报</div>
-                <div class="legend-item"><div class="legend-dot" style="border:2px solid var(--accent-green);background:transparent"></div> 今天</div>
-                <div class="legend-item">本月2篇</div>
+                <div class="kn-item">
+                    <div class="kn-title">📖 外卖大战：千亿补贴下的利润消耗</div>
+                    <div class="kn-body">2025年至今，阿里巴巴、美团和京东以千亿补贴打响外卖大战。仅美团从2024年358亿净利润→2025年234亿亏损。2026Q1净亏损68亿。即时零售和AI撑起行业半边天，但对利润造成明显拖累。</div>
+                    <div class="kn-src">财新 / 美团财报 · 2026年</div>
+                </div>
+                <div class="kn-item">
+                    <div class="kn-title">📖 腾讯音乐收购喜马拉雅始末</div>
+                    <div class="kn-body">2025年6月公告拟收购，对价12.6亿美元现金+不超过5.1986%股权。2026年5月市场监管总局附五项限制性承诺批准。5月18日正式完成交割，喜马拉雅承诺"四不变"。总对价约186亿元。</div>
+                    <div class="kn-src">财联社 / 财新 · 2025-2026年</div>
+                </div>
+                <div class="kn-item">
+                    <div class="kn-title">📖 国内AI大模型产品矩阵（2026年6月）</div>
+                    <div class="kn-body">字节：豆包Doubao-Seed-2.0月活3.45亿，6月付费；腾讯：混元+元宝；阿里：通义Qwen3全球下载超3亿，云收入AI占30%；百度：文心4.5开源10款模型；DeepSeek：大基金领投首轮融资。</div>
+                    <div class="kn-src">知乎专栏 / 财联社 · 2026年6月</div>
+                </div>
+                <div class="kn-item">
+                    <div class="kn-title">📖 生成式AI备案信息（截至2025年6月）</div>
+                    <div class="kn-body">累计439款生成式AI服务完成备案，236款AI应用或功能完成登记。国家网信办持续更新备案信息公告。</div>
+                    <div class="kn-src">国家网信办 · 2025年7月</div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <a href="https://github.com/daniel-xiaoyan" target="_blank">GitHub</a> · 
-        <a href="#about">项目说明</a> · 
-        <a href="#">更新日志</a>
-        <br>
-        <span style="margin-top:8px;display:inline-block">互联网洞察日报 · 系统化追踪国内互联网动态 · 2026</span>
-    </div>
+    <!-- RIGHT SIDEBAR -->
+    <div class="sidebar-right">
 
-    <script>
-        // Dark Mode Toggle
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            const btn = document.getElementById('darkBtn');
-            btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-        }
+        <!-- Daily Report Card -->
+        <div class="daily-card">
+            <div class="dc-badges"><span class="dc-badge dc-badge-g">📅 日报</span><span class="dc-badge dc-badge-r">NEW</span></div>
+            <div class="dc-title">2026年6月3日 互联网洞察日报</div>
+            <div class="dc-tags">
+                <span class="dc-tag co-bd">字节</span>
+                <span class="dc-tag co-tx">腾讯</span>
+                <span class="dc-tag co-mt">美团</span>
+                <span class="dc-tag co-al">阿里</span>
+                <span class="dc-tag co-xhs">小红书</span>
+            </div>
+            <div class="dc-sum">豆包付费上线·中美AI裁员并行·美团亏损68亿·小红书世界杯版权·腾讯收购喜马拉雅→</div>
+        </div>
 
-        // About Toggle
-        function toggleAbout() {
-            const content = document.getElementById('aboutContent');
-            content.classList.toggle('show');
-        }
-
-        // Tab Switching
-        function switchTab(tab) {
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-            
-            event.target.classList.add('active');
-            document.getElementById('tab-' + tab).classList.add('active');
-        }
-
-        // Search
-        const searchData = [
-            { title: '豆包6月下旬上线付费内容', company: '字节跳动', category: 'AI产品' },
-            { title: '中美互联网AI提效裁员并行', company: '多公司', category: '裁员/人事' },
-            { title: '腾讯音乐12.6亿美元收购喜马拉雅', company: '腾讯', category: '融资/并购' },
-            { title: '小红书获2026世界杯转播权', company: '小红书', category: '新产品/出海' },
-            { title: '美团Q1净亏损68亿', company: '美团', category: '业务竞争' },
-            { title: '宇树科技IPO各路机构扎堆入局', company: '宇树科技', category: '融资/并购' },
-            { title: '腾讯云三产品同日出海', company: '腾讯', category: '新产品/出海' },
-            { title: '阿里云AI占外部收入三成', company: '阿里', category: 'AI产品' },
-            { title: '美团多地客服正式转外包', company: '美团', category: '裁员/人事' },
-            { title: '腾讯刘炽平：没有大裁员计划', company: '腾讯', category: '裁员/人事' },
-            { title: '高考期间AI工具限制答题', company: '多公司', category: '政策监管' },
-            { title: 'DeepSeek首轮融资大基金领投', company: 'DeepSeek', category: '融资/并购' },
-            { title: '2026互联网大厂梯队重排', company: '行业', category: '行业趋势' },
-            { title: '字节跳动2025营收近2000亿美元', company: '字节跳动', category: '行业趋势' },
-            { title: '百度组织AI技能测试必须满分', company: '百度', category: 'AI产品' },
-        ];
-
-        function toggleSearch() {
-            const overlay = document.getElementById('searchOverlay');
-            overlay.classList.toggle('show');
-            if (overlay.classList.contains('show')) {
-                document.getElementById('searchInput').focus();
-            }
-        }
-
-        function handleSearch(query) {
-            const results = document.getElementById('searchResults');
-            if (!query) {
-                results.innerHTML = '';
-                return;
-            }
-            const filtered = searchData.filter(item => 
-                item.title.toLowerCase().includes(query.toLowerCase()) ||
-                item.company.toLowerCase().includes(query.toLowerCase()) ||
-                item.category.toLowerCase().includes(query.toLowerCase())
-            );
-            results.innerHTML = filtered.map(item => `
-                <div class="search-result-item">
-                    <div class="search-result-title">${item.title}</div>
-                    <div class="search-result-source">${item.company} · ${item.category}</div>
+        <!-- Quick Stats -->
+        <div class="card">
+            <div class="card-head">📊 今日概览</div>
+            <div class="card-body">
+                <div class="qs-grid">
+                    <div class="qs-item"><div class="qs-ico">🔥</div><div class="qs-num g">15</div><div class="qs-lab">热点事件</div></div>
+                    <div class="qs-item"><div class="qs-ico">🇨🇳</div><div class="qs-num o">30+</div><div class="qs-lab">追踪公司</div></div>
+                    <div class="qs-item"><div class="qs-ico">📊</div><div class="qs-num b">7</div><div class="qs-lab">核心板块</div></div>
+                    <div class="qs-item"><div class="qs-ico">⏰</div><div class="qs-num v">10:00</div><div class="qs-lab">更新时间</div></div>
                 </div>
-            `).join('');
-        }
+            </div>
+        </div>
 
-        // Close search on click outside
-        document.getElementById('searchOverlay').addEventListener('click', function(e) {
-            if (e.target === this) toggleSearch();
-        });
+        <!-- Calendar -->
+        <div class="card">
+            <div class="card-head">📅 日报日历 · 2026年6月</div>
+            <div class="card-body">
+                <div class="cal-grid">
+                    <div class="cal-hd">一</div><div class="cal-hd">二</div><div class="cal-hd">三</div><div class="cal-hd">四</div><div class="cal-hd">五</div><div class="cal-hd">六</div><div class="cal-hd">日</div>
+                    <div class="cal-d has-d">1</div><div class="cal-d">2</div><div class="cal-d has-d today">3</div><div class="cal-d">4</div><div class="cal-d">5</div><div class="cal-d">6</div><div class="cal-d">7</div>
+                    <div class="cal-d">8</div><div class="cal-d">9</div><div class="cal-d">10</div><div class="cal-d">11</div><div class="cal-d">12</div><div class="cal-d">13</div><div class="cal-d">14</div>
+                    <div class="cal-d has-w">15</div><div class="cal-d">16</div><div class="cal-d">17</div><div class="cal-d">18</div><div class="cal-d">19</div><div class="cal-d">20</div><div class="cal-d">21</div>
+                    <div class="cal-d">22</div><div class="cal-d">23</div><div class="cal-d">24</div><div class="cal-d">25</div><div class="cal-d">26</div><div class="cal-d">27</div><div class="cal-d">28</div>
+                    <div class="cal-d">29</div><div class="cal-d">30</div>
+                </div>
+                <div class="cal-legend">
+                    <div class="cal-leg"><div class="cal-dot" style="background:var(--green)"></div>日报</div>
+                    <div class="cal-leg"><div class="cal-dot" style="background:var(--purple)"></div>周报</div>
+                    <div class="cal-leg"><div class="cal-dot" style="border:2px solid var(--green)"></div>今天</div>
+                </div>
+            </div>
+        </div>
 
-        // Company filter
-        function filterCompany(name) {
-            toggleSearch();
-            document.getElementById('searchInput').value = name;
-            handleSearch(name);
-        }
+        <!-- Hot Companies Quick View -->
+        <div class="card">
+            <div class="card-head">🔥 今日重点公司</div>
+            <div class="card-body" style="font-size:12px;">
+                <div style="display:flex;flex-direction:column;gap:8px;">
+                    <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--bg);border-radius:8px;">
+                        <span style="font-weight:700;width:56px">字节</span>
+                        <span style="color:var(--text-2);flex:1">豆包付费·AI投入</span>
+                        <span style="font-size:10px;padding:2px 6px;border-radius:3px;background:#fef2f2;color:#dc2626;">3条</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--bg);border-radius:8px;">
+                        <span style="font-weight:700;width:56px">腾讯</span>
+                        <span style="color:var(--text-2);flex:1">喜马拉雅·出海·裁员</span>
+                        <span style="font-size:10px;padding:2px 6px;border-radius:3px;background:#eff6ff;color:#2563eb;">3条</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--bg);border-radius:8px;">
+                        <span style="font-weight:700;width:56px">美团</span>
+                        <span style="color:var(--text-2);flex:1">亏损68亿·裁员·转外包</span>
+                        <span style="font-size:10px;padding:2px 6px;border-radius:3px;background:#ecfdf5;color:#059669;">3条</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--bg);border-radius:8px;">
+                        <span style="font-weight:700;width:56px">阿里</span>
+                        <span style="color:var(--text-2);flex:1">云AI收入·外卖补贴</span>
+                        <span style="font-size:10px;padding:2px 6px;border-radius:3px;background:#fff7ed;color:#d97706;">2条</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--bg);border-radius:8px;">
+                        <span style="font-weight:700;width:56px">小红书</span>
+                        <span style="color:var(--text-2);flex:1">世界杯版权·赛事直播</span>
+                        <span style="font-size:10px;padding:2px 6px;border-radius:3px;background:#fff1f2;color:#e11d48;">1条</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--bg);border-radius:8px;">
+                        <span style="font-weight:700;width:56px">百度</span>
+                        <span style="color:var(--text-2);flex:1">裁员·AI测试</span>
+                        <span style="font-size:10px;padding:2px 6px;border-radius:3px;background:#f5f3ff;color:#7c3aed;">1条</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        // ESC key to close search
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.getElementById('searchOverlay').classList.remove('show');
-            }
-        });
-    </script>
+        <!-- Update Info -->
+        <div class="card">
+            <div class="card-body" style="text-align:center;font-size:12px;color:var(--text-3);padding:12px;">
+                ⏰ 2026年6月3日 更新<br>手动编辑 + AI辅助 · 持续迭代中<br>
+                <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a> · <a href="#" onclick="toggleAbout()">项目说明</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    互联网洞察日报 · 系统化追踪国内互联网大厂·中厂·小厂动态 · 2026<br>
+    <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a> · 项目说明 · 更新日志
+</div>
+
+<script>
+    const searchDB = [
+        {t:'豆包6月下旬上线付费内容',co:'字节跳动',cat:'AI产品'},
+        {t:'中美互联网AI提效裁员并行',co:'多公司',cat:'裁员/人事'},
+        {t:'腾讯音乐12.6亿美元收购喜马拉雅',co:'腾讯',cat:'融资/并购'},
+        {t:'小红书获2026世界杯转播权',co:'小红书',cat:'新产品/出海'},
+        {t:'美团Q1净亏损68亿',co:'美团',cat:'业务竞争'},
+        {t:'宇树科技IPO各路机构扎堆入局',co:'宇树科技',cat:'融资/并购'},
+        {t:'腾讯云三产品同日出海',co:'腾讯',cat:'新产品/出海'},
+        {t:'阿里云AI占外部收入三成',co:'阿里',cat:'AI产品'},
+        {t:'美团多地客服正式转外包',co:'美团',cat:'裁员/人事'},
+        {t:'腾讯刘炽平：没有大裁员计划',co:'腾讯',cat:'裁员/人事'},
+        {t:'高考期间AI工具限制答题',co:'多公司',cat:'政策监管'},
+        {t:'DeepSeek首轮融资大基金领投',co:'DeepSeek',cat:'融资/并购'},
+        {t:'2026互联网大厂梯队重排',co:'行业',cat:'行业趋势'},
+        {t:'字节跳动2025营收近2000亿美元',co:'字节跳动',cat:'行业趋势'},
+        {t:'百度组织AI技能测试必须满分',co:'百度',cat:'AI产品'},
+    ];
+
+    function toggleDark() {
+        document.body.classList.toggle('dark');
+        document.getElementById('darkBtn').textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    }
+    function toggleAbout() { document.getElementById('aboutContent').classList.toggle('show'); }
+    function toggleSearch() {
+        const o = document.getElementById('searchOverlay');
+        o.classList.toggle('show');
+        if(o.classList.contains('show')) document.getElementById('searchInput').focus();
+    }
+    function switchTab(id,btn) {
+        document.querySelectorAll('.tabbtn').forEach(b=>b.classList.remove('active'));
+        document.querySelectorAll('.tabpanel').forEach(p=>p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-'+id).classList.add('active');
+    }
+    function handleSearch(q) {
+        const r = document.getElementById('searchResults');
+        if(!q){r.innerHTML='';return;}
+        const f = searchDB.filter(i=>i.t.toLowerCase().includes(q.toLowerCase())||i.co.toLowerCase().includes(q.toLowerCase())||i.cat.toLowerCase().includes(q.toLowerCase()));
+        r.innerHTML = f.map(i=>`<div class="sr-item" onclick="toggleSearch()"><div class="sr-title">${i.t}</div><div class="sr-meta">${i.co} · ${i.cat}</div></div>`).join('');
+    }
+    function filterCo(name) {
+        toggleSearch();
+        document.getElementById('searchInput').value = name;
+        handleSearch(name);
+    }
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('searchOverlay').classList.remove('show');});
+</script>
 </body>
 </html>
