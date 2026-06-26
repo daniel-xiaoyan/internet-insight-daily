@@ -1,0 +1,65 @@
+name: 每日互联网洞察日报自动生成
+
+on:
+  schedule:
+    - cron: '0 18 * * *'
+    - cron: '0 0 * * *'
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: '指定日期（格式：2026-06-26），留空则生成今天'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  generate-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate Daily Report
+        run: |
+          DATE="${{ github.event.inputs.target_date }}"
+          if [ -z "$DATE" ]; then
+            python scripts/generate_daily.py
+          else
+            python scripts/generate_daily.py "$DATE"
+          fi
+
+      - name: Check Changes
+        id: check_changes
+        run: |
+          git add -A
+          git diff --cached --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and Push
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config user.name "xunr-Bot"
+          git config user.email "xunr-bot@internet-insight.daily"
+          DATE_STR=$(python3 -c "import datetime; utc = datetime.datetime.utcnow() + datetime.timedelta(hours=8); print(utc.strftime('%Y-%m-%d'))")
+          git commit -m "feat: auto update ${DATE_STR} internet insight daily"
+          git push
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy Pages
+        uses: actions/deploy-pages@v4
+        id: deployment
