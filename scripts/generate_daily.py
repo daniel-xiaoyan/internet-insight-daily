@@ -283,6 +283,136 @@ def build_hot_companies(news_by_topic):
         </div>"""
     return rows
 
+def render_archive_html(date_str, news_by_topic, all_items):
+    """生成独立归档页 HTML"""
+    dt = datetime.datetime.strptime(date_str, "%Y-%m-%d")
+    weekday = WEEKDAYS[dt.weekday()]
+    news_cards = build_news_cards(news_by_topic)
+    co_cards = build_company_cards(news_by_topic)
+    topic_rows = build_topic_distribution(news_by_topic, all_items)
+    total = len(all_items)
+
+    # 上一天/下一天链接
+    prev_dt = dt - datetime.timedelta(days=1)
+    next_dt = dt + datetime.timedelta(days=1)
+    prev_link = f"../{prev_dt.strftime('%Y-%m')}/{prev_dt.strftime('%Y-%m-%d')}.html"
+    next_link = f"../{next_dt.strftime('%Y-%m')}/{next_dt.strftime('%Y-%m-%d')}.html"
+
+    return f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>{date_str} 互联网洞察日报</title>
+<style>
+:root{{--bg:#f5f6f8;--card:#fff;--text-1:#111827;--text-2:#6b7280;--text-3:#9ca3af;--green:#10b981;--purple:#8b5cf6;--blue:#3b82f6;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--r:12px;--shadow:0 2px 8px rgba(0,0,0,.06)}}
+.dark{{--bg:#0f172a;--card:#1e293b;--text-1:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b}}
+*{{margin:0;padding:0;box-sizing:border-box}}
+body{{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text-1);line-height:1.5}}
+a{{color:var(--purple);text-decoration:none}}
+.header{{background:linear-gradient(135deg,#059669,#7c3aed 60%,#2563eb);padding:24px;position:relative}}
+.dark .header{{background:linear-gradient(135deg,#065f46,#4c1d95 60%,#1e3a5f)}}
+.header-inner{{max-width:960px;margin:auto;position:relative;z-index:1}}
+.nav-row{{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}}
+.back-link{{color:rgba(255,255,255,.8);font-size:13px;display:flex;align-items:center;gap:6px}}
+.back-link:hover{{color:#fff}}
+.date-badge{{font-size:28px;font-weight:800;color:#fff}}
+.date-sub{{font-size:14px;color:rgba(255,255,255,.75);margin-top:4px}}
+.nav-btns{{display:flex;gap:8px}}
+.nav-btn{{padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:12px}}
+.nav-btn:hover{{background:rgba(255,255,255,.35)}}
+.main{{max-width:960px;margin:20px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}}
+.card{{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}}
+.card-head{{padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid var(--bg)}}
+.card-body{{padding:16px}}
+.news-grid{{display:grid;grid-template-columns:1fr 1fr;gap:12px}}
+.news-cat-head{{font-size:13px;font-weight:700;padding:8px 0 4px;display:flex;align-items:center;gap:6px;grid-column:1/-1}}
+.news-item{{background:var(--bg);border-radius:10px;padding:12px}}
+.ni-top{{display:flex;align-items:center;gap:6px;margin-bottom:4px}}
+.ni-hot{{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--red);color:#fff;font-weight:600}}
+.ni-co{{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}}
+.co-bd{{background:#fef2f2;color:#dc2626}}.co-tx{{background:#eff6ff;color:#2563eb}}.co-al{{background:#fff7ed;color:#d97706}}.co-mt{{background:#ecfdf5;color:#059669}}.co-pdd{{background:#fdf2f8;color:#db2777}}.co-bd2{{background:#f5f3ff;color:#7c3aed}}.co-xhs{{background:#fff1f2;color:#e11d48}}.co-dd{{background:#f0fdf4;color:#16a34a}}.co-ks{{background:#fff1f2;color:#f43f5e}}.co-jd{{background:#dbeafe;color:#1d4ed8}}
+.dark .co-bd{{background:#7f1d1d;color:#fca5a5}}.dark .co-tx{{background:#1e3a5f;color:#93c5fd}}.dark .co-al{{background:#78350f;color:#fbbf24}}.dark .co-mt{{background:#064e3b;color:#6ee7b7}}
+.ni-date{{font-size:10px;color:var(--text-3)}}
+.ni-title{{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.4}}
+.ni-desc{{font-size:12px;color:var(--text-2);line-height:1.4}}
+.ni-src{{font-size:10px;color:var(--text-3);margin-top:4px}}
+.co-grid{{display:grid;grid-template-columns:1fr 1fr;gap:12px}}
+.co-card{{background:var(--bg);border-radius:10px;padding:12px}}
+.co-head{{display:flex;align-items:center;gap:6px;margin-bottom:6px}}
+.co-name{{font-size:14px;font-weight:700}}.co-tier{{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}}
+.co-body{{font-size:12px;color:var(--text-2);line-height:1.5}}.co-body li{{margin-left:14px;margin-bottom:2px}}
+.topic-row{{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}}
+.topic-ico{{width:18px;text-align:center}}.topic-name{{min-width:64px}}
+.topic-bar-bg{{flex:1;height:14px;background:var(--bg);border-radius:7px;overflow:hidden}}
+.topic-fill{{height:100%;border-radius:7px}}
+.fill-r{{background:linear-gradient(90deg,#ef4444,#dc2626)}}.fill-o{{background:linear-gradient(90deg,#f59e0b,#d97706)}}.fill-pk{{background:linear-gradient(90deg,#ec4899,#db2777)}}.fill-g{{background:linear-gradient(90deg,#10b981,#059669)}}.fill-b{{background:linear-gradient(90deg,#3b82f6,#2563eb)}}.fill-v{{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}}
+.topic-pct{{min-width:28px;text-align:right;color:var(--text-2)}}
+.footer{{max-width:960px;margin:24px auto;padding:16px;text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--bg)}}
+@media(max-width:640px){{.news-grid,.co-grid{{grid-template-columns:1fr}}}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="nav-row">
+      <a class="back-link" href="../../index.html">← 返回首页</a>
+      <div class="nav-btns">
+        <a class="nav-btn" href="{prev_link}">← 前一天</a>
+        <a class="nav-btn" href="{next_link}">后一天 →</a>
+      </div>
+    </div>
+    <div class="date-badge">🔬 {dt.year}年{dt.month}月{dt.day}日 · {weekday}</div>
+    <div class="date-sub">互联网洞察日报 · 共收录 {total} 条互联网相关新闻</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card"><div class="card-head">📰 今日新闻</div><div class="card-body">
+    {news_cards if news_cards else '<p style="color:var(--text-3);font-size:13px">暂无抓取到新闻</p>'}
+  </div></div>
+
+  {f'<div class="card"><div class="card-head">🏢 重点公司动态</div><div class="card-body">{co_cards}</div></div>' if co_cards else ''}
+
+  {f'<div class="card"><div class="card-head">📊 话题分布</div><div class="card-body">{topic_rows}</div></div>' if topic_rows else ''}
+</div>
+
+<div class="footer">互联网洞察日报 · {date_str} · <a href="../../index.html">返回首页</a> · <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a></div>
+</body>
+</html>"""
+
+
+def save_archive(date_str, news_by_topic, all_items):
+    """保存独立归档页"""
+    dt = datetime.datetime.strptime(date_str, "%Y-%m-%d")
+    month_str = dt.strftime("%Y-%m")
+    archive_dir = REPO_ROOT / "daily-reports" / month_str
+    archive_dir.mkdir(parents=True, exist_ok=True)
+    archive_path = archive_dir / f"{date_str}.html"
+    html = render_archive_html(date_str, news_by_topic, all_items)
+    archive_path.write_text(html, encoding="utf-8")
+    print(f"  OK archive saved: daily-reports/{month_str}/{date_str}.html")
+    return archive_path
+
+
+def scan_archive_dates():
+    """扫描已有归档文件，返回 {month_str: [day_int, ...]} 字典"""
+    reports_dir = REPO_ROOT / "daily-reports"
+    result = {}
+    if not reports_dir.exists():
+        return result
+    for month_dir in sorted(reports_dir.iterdir()):
+        if not month_dir.is_dir(): continue
+        days = []
+        for f in sorted(month_dir.glob("*.html")):
+            try:
+                day = int(f.stem.split("-")[2])
+                days.append(day)
+            except: pass
+        if days:
+            result[month_dir.name] = sorted(days)
+    return result
+
+
 def update_index(date_str, news_by_topic, all_items):
     content = INDEX_PATH.read_text(encoding="utf-8")
     dt = datetime.datetime.strptime(date_str,"%Y-%m-%d")
@@ -307,8 +437,36 @@ def update_index(date_str, news_by_topic, all_items):
     co_cards = build_company_cards(news_by_topic)
     if co_cards:
         content = re.sub(r'(<div class="tabpanel" id="tab-tracker">)[\s\S]*?(</div>\s*<!-- END TRACKER TAB -->)', f'\\g<1>\n          {co_cards}\n        \\g<2>', content, count=1)
-    content = re.sub(r'class="cal-d today"', 'class="cal-d"', content)
-    content = re.sub(rf'class="cal-d( has-[dw]")?">{dt.day}</div>', f'class="cal-d has-d today">{dt.day}</div>', content)
+
+    # 更新日历 - 先清除所有 today 标记，再标注今天
+    content = re.sub(r' today"', '"', content)  # 移除所有today class
+    content = re.sub(rf'(class="cal-d(?:[^"]*)?)">({dt.day})</div>', f'\\g<1> today">\\g<2></div>', content, count=1)
+    # 扫描归档，更新日历上的 has-d 标记
+    archive_dates = scan_archive_dates()
+    month_str = dt.strftime("%Y-%m")
+    if month_str in archive_dates:
+        for day in archive_dates[month_str]:
+            archive_link = f"daily-reports/{month_str}/{month_str}-{day:02d}.html"
+            content = re.sub(
+                rf'(class="cal-d(?:[^"]*)?")(>{day}</div>)',
+                f'\\g<1>\\g<2>',
+                content, count=1
+            )
+        # 为有归档的日期加上 has-d 和链接
+        def mark_has_d(m):
+            full = m.group(0)
+            # 提取日期数字
+            day_match = re.search(r'>(\d+)</div>$', full)
+            if not day_match: return full
+            day_num = int(day_match.group(1))
+            if day_num in archive_dates.get(month_str, []):
+                link = f"daily-reports/{month_str}/{month_str}-{day_num:02d}.html"
+                if "has-d" not in full:
+                    full = full.replace('class="cal-d', 'class="cal-d has-d', 1)
+                return f'<a href="{link}" style="text-decoration:none;color:inherit">{full}</a>'
+            return full
+        content = re.sub(r'<div class="cal-d[^"]*">\d+</div>', mark_has_d, content)
+
     summary_parts = []
     for cat in ["ai","layoff","competition","finance"]:
         if cat in news_by_topic and news_by_topic[cat]:
@@ -317,9 +475,19 @@ def update_index(date_str, news_by_topic, all_items):
     if summary_parts:
         dc_sum = "·".join(summary_parts[:3])+"→"
         content = re.sub(r'(<div class="dc-sum">)[^<]*(</div>)', f'\\g<1>{dc_sum}\\g<2>', content, count=1)
-    content = re.sub(r'📅 (\d+)</div><div class="ts-lab">累计日报', lambda m: f'📅 {int(m.group(1))+1}</div><div class="ts-lab">累计日报', content, count=1)
+
+    # 更新今日日报卡片链接
+    archive_link = f"daily-reports/{dt.strftime('%Y-%m')}/{date_str}.html"
+    content = re.sub(r'(<div class="daily-card"[^>]*>)', f'<a href="{archive_link}" style="text-decoration:none;color:inherit"><div class="daily-card">', content, count=1)
+    content = re.sub(r'(</div>\s*<!-- end daily-card -->)', f'</div></a>\\g<1>', content, count=1)
+
+    # 更新累计日报数
+    total_archives = sum(len(v) for v in scan_archive_dates().values())
+    content = re.sub(r'📅 \d+</div><div class="ts-lab">累计日报', f'📅 {total_archives}</div><div class="ts-lab">累计日报', content, count=1)
+
     INDEX_PATH.write_text(content, encoding="utf-8")
     print(f"  OK index.html updated ({date_str})")
+
 
 def main(target_date=None):
     dt = datetime.datetime.strptime(target_date,"%Y-%m-%d") if target_date else today_cn()
@@ -331,6 +499,7 @@ def main(target_date=None):
     if total == 0:
         print("  WARN: no news found, skip update")
         return
+    save_archive(date_str, news_by_topic, all_items)
     update_index(date_str, news_by_topic, all_items)
     print(f"Done! {date_str} Internet Insight Daily updated with {total} news\n")
 
