@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-06-27 互联网洞察日报</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--text-1:#111827;--text-2:#6b7280;--text-3:#9ca3af;--green:#10b981;--purple:#8b5cf6;--blue:#3b82f6;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--r:12px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+.dark{--bg:#0f172a;--card:#1e293b;--text-1:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text-1);line-height:1.5}
+a{color:var(--purple);text-decoration:none}
+.header{background:linear-gradient(135deg,#059669,#7c3aed 60%,#2563eb);padding:24px;position:relative}
+.dark .header{background:linear-gradient(135deg,#065f46,#4c1d95 60%,#1e3a5f)}
+.header-inner{max-width:960px;margin:auto;position:relative;z-index:1}
+.nav-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.back-link{color:rgba(255,255,255,.8);font-size:13px;display:flex;align-items:center;gap:6px}
+.back-link:hover{color:#fff}
+.date-badge{font-size:28px;font-weight:800;color:#fff}
+.date-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:4px}
+.nav-btns{display:flex;gap:8px}
+.nav-btn{padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:12px}
+.nav-btn:hover{background:rgba(255,255,255,.35)}
+.main{max-width:960px;margin:20px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid var(--bg)}
+.card-body{padding:16px}
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.news-cat-head{font-size:13px;font-weight:700;padding:8px 0 4px;display:flex;align-items:center;gap:6px;grid-column:1/-1}
+.news-item{background:var(--bg);border-radius:10px;padding:12px}
+.ni-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.ni-hot{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--red);color:#fff;font-weight:600}
+.ni-co{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-bd{background:#fef2f2;color:#dc2626}.co-tx{background:#eff6ff;color:#2563eb}.co-al{background:#fff7ed;color:#d97706}.co-mt{background:#ecfdf5;color:#059669}.co-pdd{background:#fdf2f8;color:#db2777}.co-bd2{background:#f5f3ff;color:#7c3aed}.co-xhs{background:#fff1f2;color:#e11d48}.co-dd{background:#f0fdf4;color:#16a34a}.co-ks{background:#fff1f2;color:#f43f5e}.co-jd{background:#dbeafe;color:#1d4ed8}
+.dark .co-bd{background:#7f1d1d;color:#fca5a5}.dark .co-tx{background:#1e3a5f;color:#93c5fd}.dark .co-al{background:#78350f;color:#fbbf24}.dark .co-mt{background:#064e3b;color:#6ee7b7}
+.ni-date{font-size:10px;color:var(--text-3)}
+.ni-title{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.4}
+.ni-desc{font-size:12px;color:var(--text-2);line-height:1.4}
+.ni-src{font-size:10px;color:var(--text-3);margin-top:4px}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.co-card{background:var(--bg);border-radius:10px;padding:12px}
+.co-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.co-name{font-size:14px;font-weight:700}.co-tier{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-body{font-size:12px;color:var(--text-2);line-height:1.5}.co-body li{margin-left:14px;margin-bottom:2px}
+.topic-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.topic-ico{width:18px;text-align:center}.topic-name{min-width:64px}
+.topic-bar-bg{flex:1;height:14px;background:var(--bg);border-radius:7px;overflow:hidden}
+.topic-fill{height:100%;border-radius:7px}
+.fill-r{background:linear-gradient(90deg,#ef4444,#dc2626)}.fill-o{background:linear-gradient(90deg,#f59e0b,#d97706)}.fill-pk{background:linear-gradient(90deg,#ec4899,#db2777)}.fill-g{background:linear-gradient(90deg,#10b981,#059669)}.fill-b{background:linear-gradient(90deg,#3b82f6,#2563eb)}.fill-v{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.topic-pct{min-width:28px;text-align:right;color:var(--text-2)}
+.footer{max-width:960px;margin:24px auto;padding:16px;text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--bg)}
+@media(max-width:640px){.news-grid,.co-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="nav-row">
+      <a class="back-link" href="../../index.html">← 返回首页</a>
+      <div class="nav-btns">
+        <a class="nav-btn" href="../2026-06/2026-06-26.html">← 前一天</a>
+        <a class="nav-btn" href="../2026-06/2026-06-28.html">后一天 →</a>
+      </div>
+    </div>
+    <div class="date-badge">🔬 2026年6月27日 · 周六</div>
+    <div class="date-sub">互联网洞察日报 · 共收录 7 条互联网相关新闻</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card"><div class="card-head">📰 今日新闻</div><div class="card-body">
+    
+          <div class="news-grid">
+            <div class="news-cat-head">🤖 AI产品动态</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">《走进AIE》，谁是下一个主角</div>
+              <div class="ni-desc">一展两地，链接全球 &nbsp; &nbsp;AIE 电子展成为龙头企业的必选舞台
+  全球智能制造产业加速演进，粤港澳大湾区正成为打造世界级科技展会的核心阵地。2026全球智能制造与电子产品博览会（AIE）依托大湾区完备的产业生态，致力于</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">对话张亚勤：AI不是泡沫，但AI公司有泡沫</div>
+              <div class="ni-desc">文 | 海若镜
+  访谈 | 海若镜 巴芮
+  6月盛夏，在清华无锡研究院智能产业创新中心，我们见到了张亚勤院士。他匆匆赶来，一进门，就建议让室内温度降得更低些。
+  访谈中，聊起当下具身智能、AI投资创业热潮，张亚勤也觉得应该降降温，“更</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">8点1氪丨苹果宣布上调iPad及Mac价格；黄仁勋计划把50%或更多现金流返还股东；OpenAI发布首款AI芯片</div>
+              <div class="ni-desc">今日热点导览
+  
+   Anthropic成全球价值最高独角兽，DeepSeek跻身全球独角兽企业前15名
+   建设银行：将于7月24日日终清算时起关闭代理上海黄金交易所个人贵金属交易业务功能
+   马斯克曾直言混动车只是过渡阶段
+  </div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date">06-26</span></div>
+              <div class="ni-title">两个月连获两轮数亿元融资 深度机智以全栈自主路线加速国产物理AI基座模型落地</div>
+              <div class="ni-desc"></div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date">06-25</span></div>
+              <div class="ni-title">WAIC UP!｜AI圈都在聊参数，我们偏不</div>
+              <div class="ni-desc">7月17-7月20</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">💰 融资/并购</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">布局下一代人机交互与具身数据入口，「念象科技」完成近千万元天使轮融资｜36氪首发</div>
+              <div class="ni-desc">文｜胡香赟
+  编辑｜海若镜
+  36氪获悉，专注非侵入式神经接口技术研发与产业化的「念象科技」已完成近千万元天使轮融资。本轮融资由永珺星芒领投，浦东创投、一村资本跟投，募集资金主要用于产品研发、团队扩建、本土sEMG数据集建设。
+  念象</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">信诺维科创板IPO获上市委会议通过</div>
+              <div class="ni-desc">36氪获悉，信诺维科创板IPO获上市委会议通过，拟融资金额29.40亿元。</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+  </div></div>
+
+  
+
+  <div class="card"><div class="card-head">📊 话题分布</div><div class="card-body"><div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:71%"></div></div><span class="topic-pct">71%</span></div><div class="topic-row"><span class="topic-ico">💰</span><span class="topic-name">融资/并购</span><div class="topic-bar-bg"><div class="topic-fill fill-g" style="width:29%"></div></div><span class="topic-pct">29%</span></div></div></div>
+</div>
+
+<div class="footer">互联网洞察日报 · 2026-06-27 · <a href="../../index.html">返回首页</a> · <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a></div>
+</body>
+</html>
