@@ -461,11 +461,14 @@ def update_index(date_str, news_by_topic, all_items):
             day_num = int(day_match.group(1))
             if day_num in archive_dates.get(month_str, []):
                 link = f"daily-reports/{month_str}/{month_str}-{day_num:02d}.html"
-                if "has-d" not in full:
-                    full = full.replace('class="cal-d', 'class="cal-d has-d', 1)
-                return f'<a href="{link}" style="text-decoration:none;color:inherit">{full}</a>'
+                # Replace <div class="cal-d...">N</div> with <a href="..." class="cal-d has-d...">N</a>
+                classes = re.search(r'class="(cal-d[^"]*)"', full)
+                cls = classes.group(1) if classes else "cal-d"
+                if "has-d" not in cls:
+                    cls = cls + " has-d"
+                return f'<a href="{link}" class="{cls}">{day_num}</a>'
             return full
-        content = re.sub(r'<div class="cal-d[^"]*">\d+</div>', mark_has_d, content)
+        content = re.sub(r'<(?:div|a)[^>]*class="cal-d[^"]*"[^>]*>\d+</(?:div|a)>', mark_has_d, content)
 
     summary_parts = []
     for cat in ["ai","layoff","competition","finance"]:
