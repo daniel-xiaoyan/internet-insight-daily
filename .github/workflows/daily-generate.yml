@@ -18,8 +18,10 @@ permissions:
   id-token: write
 
 jobs:
-  generate-and-deploy:
+  generate:
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.check_changes.outputs.changed }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -60,6 +62,13 @@ jobs:
         with:
           path: '.'
 
+  deploy:
+    needs: generate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy Pages
         uses: actions/deploy-pages@v4
         id: deployment
