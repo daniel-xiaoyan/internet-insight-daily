@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-07-02 互联网洞察日报</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--text-1:#111827;--text-2:#6b7280;--text-3:#9ca3af;--green:#10b981;--purple:#8b5cf6;--blue:#3b82f6;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--r:12px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+.dark{--bg:#0f172a;--card:#1e293b;--text-1:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text-1);line-height:1.5}
+a{color:var(--purple);text-decoration:none}
+.header{background:linear-gradient(135deg,#059669,#7c3aed 60%,#2563eb);padding:24px;position:relative}
+.dark .header{background:linear-gradient(135deg,#065f46,#4c1d95 60%,#1e3a5f)}
+.header-inner{max-width:960px;margin:auto;position:relative;z-index:1}
+.nav-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.back-link{color:rgba(255,255,255,.8);font-size:13px;display:flex;align-items:center;gap:6px}
+.back-link:hover{color:#fff}
+.date-badge{font-size:28px;font-weight:800;color:#fff}
+.date-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:4px}
+.nav-btns{display:flex;gap:8px}
+.nav-btn{padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:12px}
+.nav-btn:hover{background:rgba(255,255,255,.35)}
+.main{max-width:960px;margin:20px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid var(--bg)}
+.card-body{padding:16px}
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.news-cat-head{font-size:13px;font-weight:700;padding:8px 0 4px;display:flex;align-items:center;gap:6px;grid-column:1/-1}
+.news-item{background:var(--bg);border-radius:10px;padding:12px}
+.ni-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.ni-hot{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--red);color:#fff;font-weight:600}
+.ni-co{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-bd{background:#fef2f2;color:#dc2626}.co-tx{background:#eff6ff;color:#2563eb}.co-al{background:#fff7ed;color:#d97706}.co-mt{background:#ecfdf5;color:#059669}.co-pdd{background:#fdf2f8;color:#db2777}.co-bd2{background:#f5f3ff;color:#7c3aed}.co-xhs{background:#fff1f2;color:#e11d48}.co-dd{background:#f0fdf4;color:#16a34a}.co-ks{background:#fff1f2;color:#f43f5e}.co-jd{background:#dbeafe;color:#1d4ed8}
+.dark .co-bd{background:#7f1d1d;color:#fca5a5}.dark .co-tx{background:#1e3a5f;color:#93c5fd}.dark .co-al{background:#78350f;color:#fbbf24}.dark .co-mt{background:#064e3b;color:#6ee7b7}
+.ni-date{font-size:10px;color:var(--text-3)}
+.ni-title{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.4}
+.ni-desc{font-size:12px;color:var(--text-2);line-height:1.4}
+.ni-src{font-size:10px;color:var(--text-3);margin-top:4px}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.co-card{background:var(--bg);border-radius:10px;padding:12px}
+.co-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.co-name{font-size:14px;font-weight:700}.co-tier{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-body{font-size:12px;color:var(--text-2);line-height:1.5}.co-body li{margin-left:14px;margin-bottom:2px}
+.topic-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.topic-ico{width:18px;text-align:center}.topic-name{min-width:64px}
+.topic-bar-bg{flex:1;height:14px;background:var(--bg);border-radius:7px;overflow:hidden}
+.topic-fill{height:100%;border-radius:7px}
+.fill-r{background:linear-gradient(90deg,#ef4444,#dc2626)}.fill-o{background:linear-gradient(90deg,#f59e0b,#d97706)}.fill-pk{background:linear-gradient(90deg,#ec4899,#db2777)}.fill-g{background:linear-gradient(90deg,#10b981,#059669)}.fill-b{background:linear-gradient(90deg,#3b82f6,#2563eb)}.fill-v{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.topic-pct{min-width:28px;text-align:right;color:var(--text-2)}
+.footer{max-width:960px;margin:24px auto;padding:16px;text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--bg)}
+@media(max-width:640px){.news-grid,.co-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="nav-row">
+      <a class="back-link" href="../../index.html">← 返回首页</a>
+      <div class="nav-btns">
+        <a class="nav-btn" href="../2026-07/2026-07-01.html">← 前一天</a>
+        <a class="nav-btn" href="../2026-07/2026-07-03.html">后一天 →</a>
+      </div>
+    </div>
+    <div class="date-badge">🔬 2026年7月2日 · 周四</div>
+    <div class="date-sub">互联网洞察日报 · 共收录 12 条互联网相关新闻</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card"><div class="card-head">📰 今日新闻</div><div class="card-body">
+    
+          <div class="news-grid">
+            <div class="news-cat-head">🤖 AI产品动态</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">独家｜清华系初创完成数亿元种子轮融资：我们不想被贴上「世界模型」的标签</div>
+              <div class="ni-desc">文｜周鑫雨
+  编辑｜张雨忻
+  《长安的荔枝》，是 97 年清华博导李一鸣很喜欢的故事。
+  故事里，为了将“一日色变”的鲜荔枝从岭南运到长安，小吏李善德必须解决保鲜、驿站、路线、补给等一系列环环相扣的难题——没有这套完整系统，鲜荔枝寸步</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">硬氪首发 | 清华系芯片企业再获数千万融资，要以新技术突破AI算力瓶颈</div>
+              <div class="ni-desc">硬氪获悉，硅基光子企业「灵动芯光」正式宣布完成数千万元天使++轮融资，本轮融资由磐霖资本领投、同方投资与深天使合作的子基金汇泽天诚跟投。
+  此次募集的资金将全部聚焦于芯片间光互联核心技术研发与产品落地，重点推进 SmartComb多波长密</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">宠物科技品牌宠爱友家，既要做AI硬件也要做食品｜涌现新栏目</div>
+              <div class="ni-desc">文｜梁键强
+  编辑｜王毓婵
+  一句话介绍
+  宠爱友家核心产品包括AI鲜食料理机、AI智能项圈、AI伴宠机器人，以及猫砂盆、饮水机、喂食器等智能用品，致力于用AI连接宠物喂养、健康监测和陪伴多场景。
+  公司围绕智能硬件、功能性食品和营</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">AI尽头的终极能源之战：核聚变、百亿估值神话与投资狂潮</div>
+              <div class="ni-desc">今年夏天，作为一家基金的投资人，你难保不会接到老板的狠话：2026，必须下注一家核聚变企业！
+  可惜他们手里的TS，大概率递不出去。一个2025年刚成立的核聚变企业，起初估值5亿，关完一轮涨到30亿，几个月之后可以再涨两三倍。公司创始人是</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">硬氪首发 | 前存储上市公司老将带队做AI超算设备，年营收已达数千万</div>
+              <div class="ni-desc">硬氪获悉，算力基础设施企业华弘数科近日完成数千万Pre-A轮融资，领投方为吴中金控，此次融资将主要用来发展AI应用和算力落地的生态建设、工厂产能的进一步扩大和基地的建设与推进。
+  华弘数科成立于2021年，总部位于北京，后迁至苏州，专注全</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">Meta考虑出售闲置AI算力使用权以创收</div>
+              <div class="ni-desc">据报道，Meta Platforms正筹划构建一项云基础设施业务，计划出售闲置AI算力和模型的使用权来创收。（界面）</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">💰 融资/并购</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">硬氪首发 | 北航机器人所团队创业，首创智能变刚度关节，完成近亿元天使轮融资</div>
+              <div class="ni-desc">硬氪获悉，近期，航墨科技完成由中投万方、三贤科技、北航天汇、诚美资本、三合投资、常州金控的近亿元天使轮投资，德太资本担任长期战略融资顾问，此次融资主要用来产品研发和市场推广。
+  航墨科技成立于2022年，是一家专注于智能变刚度关节技术及消</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">硬氪首发 | 全球首款近视老花智能变焦眼镜企业融资数千万，韶音、高秉强押注</div>
+              <div class="ni-desc">硬氪获悉，智能眼镜企业「众见科技」已完成数千万元三轮融资，投资方为韶音、高秉强教授旗下高锋耐心基金、昊辰资本、SEEFund、上市公司光峰科技、高秉强教授个人等，此次融资主要用于研发推进，目前初代产品已完成落地。奇域资本将担任独家财务顾问。</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">硬氪前线 | 东昇聚变获数亿元融资，国内唯一布局“氘-氦3”路线核聚变企业</div>
+              <div class="ni-desc">硬氪获悉，核聚变企业东昇聚变近日完成新一轮数亿元融资，由CMC资本旗下华文清能基金及多个一线市场化基金及产业资本等联合领投。
+  东昇聚变成立于2025年7月，总部位于上海，致力于发展以“氘-氦3”为燃料的强磁场紧凑型聚变电站技术。公司集结</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">硬氪首发 | 全尺寸全重量国内率先首飞，北航系全倾转eVTOL企业再获数千万融资</div>
+              <div class="ni-desc">硬氪获悉，eVTOL企业蜻蜓翼行近日完成Pre-A轮数千万元融资，资方为梅花创投。此次融资金额主要用于研发队伍的扩充、样机研制和适航取证。在此之前，已获得普华资本和祥峰投资两轮领投。
+  蜻蜓翼行成立于2024年8月，是一家聚焦未来空中立体</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+  </div></div>
+
+  <div class="card"><div class="card-head">🏢 重点公司动态</div><div class="card-body"><div class="co-grid">
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">百度</span><span class="co-tier co-bd2">T2</span></div>
+          <div class="co-body"><ul><li>百度持续加码AI技术投入，再次引入年轻技术人才</li></ul></div>
+        </div></div></div></div>
+
+  <div class="card"><div class="card-head">📊 话题分布</div><div class="card-body"><div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:67%"></div></div><span class="topic-pct">67%</span></div><div class="topic-row"><span class="topic-ico">💰</span><span class="topic-name">融资/并购</span><div class="topic-bar-bg"><div class="topic-fill fill-g" style="width:33%"></div></div><span class="topic-pct">33%</span></div></div></div>
+</div>
+
+<div class="footer">互联网洞察日报 · 2026-07-02 · <a href="../../index.html">返回首页</a> · <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a></div>
+</body>
+</html>
