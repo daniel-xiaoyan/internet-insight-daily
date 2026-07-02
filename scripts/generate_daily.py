@@ -439,8 +439,18 @@ def update_index(date_str, news_by_topic, all_items):
         content = re.sub(r'(<div class="tabpanel" id="tab-tracker">)[\s\S]*?(</div>\s*<!-- END TRACKER TAB -->)', f'\\g<1>\n          {co_cards}\n        \\g<2>', content, count=1)
 
     # 更新日历 - 先清除所有 today 标记，再标注今天
-    content = re.sub(r' today"', '"', content)  # 移除所有today class
-    content = re.sub(rf'(class="cal-d(?:[^"]*)?)">({dt.day})</div>', f'\\g<1> today">\\g<2></div>', content, count=1)
+    content = re.sub(r'\s*\btoday\b', '', content)  # 移除所有today class
+    # 标注当天: 匹配 <a> 或 <div> 的 cal-d 单元格中当天日期
+    def mark_today(m):
+        cls_part = m.group(1)
+        rest = m.group(2)
+        if 'today' not in cls_part:
+            cls_part = cls_part.rstrip('"') + ' today"'
+        return cls_part + rest
+    content = re.sub(
+        rf'(class="cal-d[^"]*")(>{dt.day}<(?:/a|/div)>)',
+        mark_today, content, count=1
+    )
     # 扫描归档，更新日历上的 has-d 标记
     archive_dates = scan_archive_dates()
     month_str = dt.strftime("%Y-%m")
