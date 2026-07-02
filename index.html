@@ -99,11 +99,11 @@
         .cal-d{display:flex;align-items:center;justify-content:center;width:100%;height:32px;font-size:12px;border-radius:7px;position:relative;color:var(--text-2);text-decoration:none;cursor:default;transition:all .15s}
         a.cal-d{cursor:pointer;color:var(--green);font-weight:700;background:rgba(16,185,129,.1)}
         a.cal-d:hover{background:rgba(16,185,129,.22);transform:scale(1.08)}
-        .cal-d.today{background:var(--green)!important;color:#fff!important;font-weight:700;box-shadow:0 2px 8px rgba(16,185,129,.4)}
+        .cal-d.{background:var(--green)!important;color:#fff!important;font-weight:700;box-shadow:0 2px 8px rgba(16,185,129,.4)}
         .cal-d.has-w{color:var(--purple);font-weight:700;background:rgba(139,92,246,.08)}
         .cal-d::after{content:'';width:4px;height:4px;border-radius:50%;position:absolute;bottom:3px;left:50%;transform:translateX(-50%);opacity:0}
         .cal-d.has-d::after{background:var(--green);opacity:1}
-        .cal-d.today::after{background:#fff;opacity:1}
+        .cal-d.::after{background:#fff;opacity:1}
         .cal-d.has-w::after{background:var(--purple);opacity:1}
         .cal-legend{display:flex;gap:12px;font-size:11px;color:var(--text-3);margin-top:10px;justify-content:center}
         .cal-leg{display:flex;align-items:center;gap:4px}
@@ -150,7 +150,7 @@
             <div class="ts-item"><div class="ts-num">🇨🇳 30+</div><div class="ts-lab">追踪公司</div></div>
             <div class="ts-item"><div class="ts-num">🔥 15+</div><div class="ts-lab">今日热点</div></div>
             <div class="ts-item"><div class="ts-num">📊 7</div><div class="ts-lab">核心板块</div></div>
-            <div class="ts-item"><div class="ts-num">📅 17</div><div class="ts-lab">累计日报</div></div>
+            <div class="ts-item"><div class="ts-num">📅 18</div><div class="ts-lab">累计日报</div></div>
             <div class="ts-item"><div class="ts-num" id="busuanzi_value_site_uv">--</div><div class="ts-lab">访客人数</div></div>
             <div class="ts-item"><div class="ts-num" id="busuanzi_value_site_pv">--</div><div class="ts-lab">访问次数</div></div>
         </div>
@@ -161,20 +161,21 @@
 <!-- Ticker -->
 <div style="max-width:1400px;margin:auto;padding:0 16px">
     <div class="ticker">
-        <div class="ticker-label">🔥 TODAY · 7月2日</div>
+        <div class="ticker-label">🔥 TODAY · 7月3日</div>
         <div class="ticker-track"><div class="ticker-scroll">
-<div class="tk-item"><span class="tk-tag tk-orange">AI产品动态</span>专访美图 CEO 吴欣鸿：做 AI 产品，是一场难以提前策划…</div>
+<div class="tk-item"><span class="tk-tag tk-orange">AI产品动态</span>谁能想到，系统流「爽文」最先被AI Agent实现了</div>
 <div class="tk-item"><span class="tk-tag tk-green">融资</span>36氪首发 | 前大疆科学家创业，半年内连获四轮数亿融资，耀…</div>
-<div class="tk-item"><span class="tk-tag tk-orange">AI产品动态</span>独家｜清华系初创完成数亿元种子轮融资：我们不想被贴上「世界模…</div>
-<div class="tk-item"><span class="tk-tag tk-green">融资</span>硬氪首发 | 北航机器人所团队创业，首创智能变刚度关节，完成…</div>
-<div class="tk-item"><span class="tk-tag tk-orange">AI产品动态</span>硬氪首发 | 清华系芯片企业再获数千万融资，要以新技术突破A…</div>
-<div class="tk-item"><span class="tk-tag tk-green">融资</span>硬氪首发 | 全球首款近视老花智能变焦眼镜企业融资数千万，韶…</div>
+<div class="tk-item"><span class="tk-tag tk-orange">行业格局</span>热门中概股美股盘前普跌，百度跌超3%</div>
+<div class="tk-item"><span class="tk-tag tk-orange">AI产品动态</span>36氪 AI 工具测评，正在找第一批「抢跑者」</div>
+<div class="tk-item"><span class="tk-tag tk-green">融资</span>德国无人机制造商Quantum Systems获得12亿美元…</div>
 <div class="tk-item"><span class="tk-tag tk-orange">AI产品动态</span>专访美图 CEO 吴欣鸿：做 AI 产品，是一场难以提前策划…</div>
+<div class="tk-item"><span class="tk-tag tk-orange">AI产品动态</span>谁能想到，系统流「爽文」最先被AI Agent实现了</div>
 <div class="tk-item"><span class="tk-tag tk-green">融资</span>36氪首发 | 前大疆科学家创业，半年内连获四轮数亿融资，耀…</div>
-<div class="tk-item"><span class="tk-tag tk-orange">AI产品动态</span>独家｜清华系初创完成数亿元种子轮融资：我们不想被贴上「世界模…</div>
-<div class="tk-item"><span class="tk-tag tk-green">融资</span>硬氪首发 | 北航机器人所团队创业，首创智能变刚度关节，完成…</div>
-<div class="tk-item"><span class="tk-tag tk-orange">AI产品动态</span>硬氪首发 | 清华系芯片企业再获数千万融资，要以新技术突破A…</div>
-<div class="tk-item"><span class="tk-tag tk-green">融资</span>硬氪首发 | 全球首款近视老花智能变焦眼镜企业融资数千万，韶…</div>
+<div class="tk-item"><span class="tk-tag tk-orange">行业格局</span>热门中概股美股盘前普跌，百度跌超3%</div>
+<div class="tk-item"><span class="tk-tag tk-orange">AI产品动态</span>36氪 AI 工具测评，正在找第一批「抢跑者」</div>
+<div class="tk-item"><span class="tk-tag tk-green">融资</span>德国无人机制造商Quantum Systems获得12亿美元…</div>
+<div class="tk-item"><span class="tk-tag tk-orange">AI产品动态</span>专访美图 CEO 吴欣鸿：做 AI 产品，是一场难以提前策划…</div>
+      </div>
       </div>
       </div>
       </div>
@@ -212,7 +213,7 @@
         </div></div>
         <div class="card"><div class="card-head">📊 话题热度分布</div><div class="card-body">
             <!-- topic -->
-                    <div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:73%"></div></div><span class="topic-pct">73%</span></div><div class="topic-row"><span class="topic-ico">💰</span><span class="topic-name">融资/并购</span><div class="topic-bar-bg"><div class="topic-fill fill-g" style="width:27%"></div></div><span class="topic-pct">27%</span></div>
+                    <div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:70%"></div></div><span class="topic-pct">70%</span></div><div class="topic-row"><span class="topic-ico">💰</span><span class="topic-name">融资/并购</span><div class="topic-bar-bg"><div class="topic-fill fill-g" style="width:20%"></div></div><span class="topic-pct">20%</span></div>
               <!-- end topic -->
         </div></div>
         <div class="about-toggle" onclick="toggleAbout()">💡 了解互联网洞察 ▼</div>
@@ -234,6 +235,23 @@
             
             <div class="news-item">
               <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">谁能想到，系统流「爽文」最先被AI Agent实现了</div>
+              <div class="ni-desc">撰文｜深海
+  <img dat</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">36氪 AI 工具测评，正在找第一批「抢跑者」</div>
+              <div class="ni-desc">我们是一群每天深度使用 AI 工具的人
+  最近我们碰到一个普遍现象💡 ：很多人在用 AI 工具时，容易陷入自己的信息茧房。
+  不同的人拿到同一个 AI 工具，产出能差出好几个量级。
+  不是不愿意用，可能是你缺一种灵感。
+  自己埋头苦</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
               <div class="ni-title">专访美图 CEO 吴欣鸿：做 AI 产品，是一场难以提前策划的游戏</div>
               <div class="ni-desc">访谈｜周鑫雨 兰杰
   文｜周鑫雨
@@ -243,37 +261,21 @@
               <div class="ni-src">来源：36氪</div>
             </div>
             <div class="news-item">
-              <div class="ni-top"><span class="ni-date"></span></div>
-              <div class="ni-title">独家｜清华系初创完成数亿元种子轮融资：我们不想被贴上「世界模型」的标签</div>
-              <div class="ni-desc">文｜周鑫雨
-  编辑｜张雨忻
-  《长安的荔枝》，是 97 年清华博导李一鸣很喜欢的故事。
-  故事里，为了将“一日色变”的鲜荔枝从岭南运到长安，小吏李善德必须解决保鲜、驿站、路线、补给等一系列环环相扣的难题——没有这套完整系统，鲜荔枝寸步</div>
-              <div class="ni-src">来源：36氪</div>
-            </div>
-            <div class="news-item">
-              <div class="ni-top"><span class="ni-date"></span></div>
-              <div class="ni-title">硬氪首发 | 清华系芯片企业再获数千万融资，要以新技术突破AI算力瓶颈</div>
-              <div class="ni-desc">硬氪获悉，硅基光子企业「灵动芯光」正式宣布完成数千万元天使++轮融资，本轮融资由磐霖资本领投、同方投资与深天使合作的子基金汇泽天诚跟投。
-  此次募集的资金将全部聚焦于芯片间光互联核心技术研发与产品落地，重点推进 SmartComb多波长密</div>
-              <div class="ni-src">来源：36氪</div>
-            </div>
-            <div class="news-item">
-              <div class="ni-top"><span class="ni-date"></span></div>
-              <div class="ni-title">美政府正与AI公司协商自愿性安全标准，最快下周公布</div>
-              <div class="ni-desc">随着美国政府试图为开发前沿人工智能系统的公司建立更可预测的框架，政府方面预计最快将于下周起推出针对先进人工智能模型的自愿性标准。报道称，美政府官员们目前正在与领先的AI企业合作讨论具体框架细节，比如明确AI模型何时应被归类为“前沿”AI、安</div>
-              <div class="ni-src">来源：36氪</div>
-            </div>
-            <div class="news-item">
-              <div class="ni-top"><span class="ni-co co-al">阿里</span><span class="ni-date"></span></div>
-              <div class="ni-title">阿里整合QoderWork、悟空、MuleRun，将推出新的生产力AI产品</div>
-              <div class="ni-desc">36氪获悉，阿里巴巴正在对旗下Agent产品线进行整合：以QoderWork为基础，整合悟空、MuleRun的能力，整合升级成一款更强大的面向企业生产力场景的AI产品。新产品由陈宇森负责。阿里巴巴方面回应称，QoderWork、悟空、Mul</div>
+              <div class="ni-top"><span class="ni-co co-bd">字节</span><span class="ni-co co-ks">快手</span><span class="ni-date"></span></div>
+              <div class="ni-title">可灵AI落地近30亿美元融资，创全球视频大模型公司融资规模新纪录</div>
+              <div class="ni-desc">7月2日，快手旗下视频生成大模型可灵AI落地近30亿美元融资，投后估值有望达到180亿美元。此次融资，可灵AI创下全球视频大模型公司最大额融资纪录，标志着其独立商业化发展进程正式开启。本轮融资由CPE源峰、国方创投、BlueFive、腾讯、</div>
               <div class="ni-src">来源：36氪</div>
             </div>
             <div class="news-item">
               <div class="ni-top"><span class="ni-date">07-02</span></div>
-              <div class="ni-title">AI眼镜不再依赖手机！这次真要单飞了</div>
-              <div class="ni-desc">AI时代自己的操作系统来了</div>
+              <div class="ni-title">论坛预告｜夯！AI企业家论坛首发阵容公开，更有千亿级实业巨头突袭</div>
+              <div class="ni-desc">7月17日至7月20日</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-al">阿里</span><span class="ni-date">07-02</span></div>
+              <div class="ni-title">钉钉A1录音卡入选Gartner AI可穿戴设备报告</div>
+              <div class="ni-desc">AI 硬件的终局不是比拼参数，而是比拼背后有没有一个真正的企业级 AI 协作平台</div>
               <div class="ni-src">来源：量子位</div>
             </div>
           </div>
@@ -291,15 +293,19 @@
             </div>
             <div class="news-item">
               <div class="ni-top"><span class="ni-date"></span></div>
-              <div class="ni-title">硬氪首发 | 北航机器人所团队创业，首创智能变刚度关节，完成近亿元天使轮融资</div>
-              <div class="ni-desc">硬氪获悉，近期，航墨科技完成由中投万方、三贤科技、北航天汇、诚美资本、三合投资、常州金控的近亿元天使轮投资，德太资本担任长期战略融资顾问，此次融资主要用来产品研发和市场推广。
-  航墨科技成立于2022年，是一家专注于智能变刚度关节技术及消</div>
+              <div class="ni-title">德国无人机制造商Quantum Systems获得12亿美元融资</div>
+              <div class="ni-desc">德国国防科技公司Quantum Systems周四表示，已筹集12亿美元新资金，这使这家无人机制造商的估值达到约80亿美元，这也是迄今为止欧洲国防科技公司获得的最大规模私募融资之一。这一估值较一年前高出约八倍。这家总部位于慕尼黑的公司表示，</div>
               <div class="ni-src">来源：36氪</div>
             </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">🏆 行业格局</div>
+            
             <div class="news-item">
-              <div class="ni-top"><span class="ni-date"></span></div>
-              <div class="ni-title">硬氪首发 | 全球首款近视老花智能变焦眼镜企业融资数千万，韶音、高秉强押注</div>
-              <div class="ni-desc">硬氪获悉，智能眼镜企业「众见科技」已完成数千万元三轮融资，投资方为韶音、高秉强教授旗下高锋耐心基金、昊辰资本、SEEFund、上市公司光峰科技、高秉强教授个人等，此次融资主要用于研发推进，目前初代产品已完成落地。奇域资本将担任独家财务顾问。</div>
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-co co-bd2">百度</span><span class="ni-date"></span></div>
+              <div class="ni-title">热门中概股美股盘前普跌，百度跌超3%</div>
+              <div class="ni-desc">36氪获悉，热门中概股美股盘前普跌，截至发稿，百度跌超3%，蔚来、理性汽车、小鹏集团跌超2%，拼多多、网易、阿里巴巴跌超1%。</div>
               <div class="ni-src">来源：36氪</div>
             </div>
           </div>
@@ -310,8 +316,20 @@
         <div class="tabpanel" id="tab-tracker">
           <div class="co-grid">
         <div class="co-card">
+          <div class="co-head"><span class="co-name">字节跳动</span><span class="co-tier co-bd">T1</span></div>
+          <div class="co-body"><ul><li>可灵AI落地近30亿美元融资，创全球视频大模型公司融资规模新纪录</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">快手</span><span class="co-tier co-ks">T2</span></div>
+          <div class="co-body"><ul><li>可灵AI落地近30亿美元融资，创全球视频大模型公司融资规模新纪录</li></ul></div>
+        </div>
+        <div class="co-card">
           <div class="co-head"><span class="co-name">阿里</span><span class="co-tier co-al">T1</span></div>
-          <div class="co-body"><ul><li>阿里整合QoderWork、悟空、MuleRun，将推出新的生产力AI产品</li></ul></div>
+          <div class="co-body"><ul><li>钉钉A1录音卡入选Gartner AI可穿戴设备报告</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">百度</span><span class="co-tier co-bd2">T2</span></div>
+          <div class="co-body"><ul><li>热门中概股美股盘前普跌，百度跌超3%</li></ul></div>
         </div></div>
         </div>
         <!-- END TRACKER TAB -->
@@ -331,11 +349,11 @@
 
     <!-- RIGHT -->
     <div class="sidebar-right">
-        <a href="daily-reports/2026-06/2026-06-26.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-26.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-27.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-27.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-27.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-28.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-28.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-28.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-29.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-29.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-29.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-30.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-30.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-30.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-07/2026-07-01.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-07/2026-07-01.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-07/2026-07-01.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-07/2026-07-02.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-07/2026-07-02.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-07/2026-07-02.html" style="text-decoration:none;color:inherit"><div class="daily-card">
+        <a href="daily-reports/2026-06/2026-06-26.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-26.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-27.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-27.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-27.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-28.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-28.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-28.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-29.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-29.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-29.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-30.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-30.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-06/2026-06-30.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-07/2026-07-01.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-07/2026-07-01.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-07/2026-07-01.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-07/2026-07-02.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-07/2026-07-02.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-07/2026-07-02.html" style="text-decoration:none;color:inherit"><a href="daily-reports/2026-07/2026-07-03.html" style="text-decoration:none;color:inherit"><div class="daily-card">
             <div class="dc-badges"><span class="dc-badge dc-badge-g">📅 日报</span><span class="dc-badge dc-badge-r">NEW</span></div>
-            <div class="dc-title">2026年7月2日 互联网洞察日报</div>
+            <div class="dc-title">2026年7月3日 互联网洞察日报</div>
             <div class="dc-tags"><span class="dc-tag co-bd">字节</span><span class="dc-tag co-tx">腾讯</span><span class="dc-tag co-mt">美团</span><span class="dc-tag co-al">阿里</span><span class="dc-tag co-xhs">小红书</span></div>
-            <div class="dc-sum">专访美图 CEO 吴欣鸿…·36氪首发 | 前大疆科…→</div>
+            <div class="dc-sum">谁能想到，系统流「爽文」…·36氪首发 | 前大疆科…→</div>
         </div>
         <div class="card"><div class="card-head">📊 今日概览</div><div class="card-body"><div class="qs-grid">
             <div class="qs-item"><div class="qs-ico">🔥</div><div class="qs-num g">15</div><div class="qs-lab">热点事件</div></div>
@@ -346,7 +364,7 @@
         <div class="card"><div class="card-head">📅 日报日历 · 2026年6月</div><div class="card-body">
             <div class="cal-grid">
                 <div class="cal-hd">一</div><div class="cal-hd">二</div><div class="cal-hd">三</div><div class="cal-hd">四</div><div class="cal-hd">五</div><div class="cal-hd">六</div><div class="cal-hd">日</div>
-                <a href="daily-reports/2026-07/2026-07-01.html" class="cal-d has-d">1</a><a href="daily-reports/2026-07/2026-07-02.html" class="cal-d today has-d">2</a><div class="cal-d">3</div><div class="cal-d">4</div><div class="cal-d">5</div><div class="cal-d">6</div><div class="cal-d">7</div>
+                <a href="daily-reports/2026-07/2026-07-01.html" class="cal-d has-d">1</a><a href="daily-reports/2026-07/2026-07-02.html" class="cal-d has-d">2</a><a href="daily-reports/2026-07/2026-07-03.html" class="cal-d today has-d">3</a><div class="cal-d">4</div><div class="cal-d">5</div><div class="cal-d">6</div><div class="cal-d">7</div>
                 <div class="cal-d">8</div><div class="cal-d">9</div><div class="cal-d">10</div><div class="cal-d">11</div><div class="cal-d">12</div><div class="cal-d">13</div><div class="cal-d">14</div>
                 <div class="cal-d has-w">15</div><a href="daily-reports/2026-06/2026-06-16.html" class="cal-d has-d">16</a><a href="daily-reports/2026-06/2026-06-17.html" class="cal-d has-d">17</a><a href="daily-reports/2026-06/2026-06-18.html" class="cal-d has-d">18</a><a href="daily-reports/2026-06/2026-06-19.html" class="cal-d has-d">19</a><a href="daily-reports/2026-06/2026-06-20.html" class="cal-d has-d">20</a><a href="daily-reports/2026-06/2026-06-21.html" class="cal-d has-d">21</a>
                 <a href="daily-reports/2026-06/2026-06-22.html" class="cal-d has-d">22</a><a href="daily-reports/2026-06/2026-06-23.html" class="cal-d has-d">23</a><a href="daily-reports/2026-06/2026-06-24.html" class="cal-d has-d">24</a><a href="daily-reports/2026-06/2026-06-25.html" class="cal-d has-d">25</a><a href="daily-reports/2026-06/2026-06-26.html" class="cal-d has-d">26</a><a href="daily-reports/2026-06/2026-06-27.html" class="cal-d has-d">27</a><a href="daily-reports/2026-06/2026-06-28.html" class="cal-d has-d">28</a>
@@ -358,15 +376,27 @@
         <div class="card"><div class="card-head">🔥 今日重点公司</div><div class="card-body" style="font-size:12px;">
             <div style="display:flex;flex-direction:column;gap:8px;">
                     <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--bg);border-radius:8px;">
+            <span style="font-weight:700;width:56px">字节</span>
+            <span style="color:var(--text-2);flex:1;font-size:11px">可灵AI落地近30亿美元融资…</span>
+            <span style="font-size:10px;padding:2px 6px;border-radius:3px;" class="ni-co co-bd">1条</span>
+        </div><div style="display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--bg);border-radius:8px;">
+            <span style="font-weight:700;width:56px">快手</span>
+            <span style="color:var(--text-2);flex:1;font-size:11px">可灵AI落地近30亿美元融资…</span>
+            <span style="font-size:10px;padding:2px 6px;border-radius:3px;" class="ni-co co-bd2">1条</span>
+        </div><div style="display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--bg);border-radius:8px;">
             <span style="font-weight:700;width:56px">阿里</span>
-            <span style="color:var(--text-2);flex:1;font-size:11px">阿里整合QoderWork、…</span>
+            <span style="color:var(--text-2);flex:1;font-size:11px">钉钉A1录音卡入选Gartn…</span>
             <span style="font-size:10px;padding:2px 6px;border-radius:3px;" class="ni-co co-al">1条</span>
+        </div><div style="display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--bg);border-radius:8px;">
+            <span style="font-weight:700;width:56px">百度</span>
+            <span style="color:var(--text-2);flex:1;font-size:11px">热门中概股美股盘前普跌，百度…</span>
+            <span style="font-size:10px;padding:2px 6px;border-radius:3px;" class="ni-co co-bd2">1条</span>
         </div>
                 </div>
         </div></div>
         <!-- end hot companies -->
         <div class="card"><div class="card-body" style="text-align:center;font-size:12px;color:var(--text-3);padding:12px;">
-            ⏰ 2026年7月2日 更新<br>GitHub Actions 每日10:00自动更新<br>
+            ⏰ 2026年7月3日 更新<br>GitHub Actions 每日10:00自动更新<br>
             <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a> · <a href="#" onclick="toggleAbout()">项目说明</a>
         </div></div>
     </div>
