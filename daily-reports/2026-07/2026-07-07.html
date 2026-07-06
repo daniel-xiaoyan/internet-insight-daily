@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-07-07 互联网洞察日报</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--text-1:#111827;--text-2:#6b7280;--text-3:#9ca3af;--green:#10b981;--purple:#8b5cf6;--blue:#3b82f6;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--r:12px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+.dark{--bg:#0f172a;--card:#1e293b;--text-1:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text-1);line-height:1.5}
+a{color:var(--purple);text-decoration:none}
+.header{background:linear-gradient(135deg,#059669,#7c3aed 60%,#2563eb);padding:24px;position:relative}
+.dark .header{background:linear-gradient(135deg,#065f46,#4c1d95 60%,#1e3a5f)}
+.header-inner{max-width:960px;margin:auto;position:relative;z-index:1}
+.nav-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.back-link{color:rgba(255,255,255,.8);font-size:13px;display:flex;align-items:center;gap:6px}
+.back-link:hover{color:#fff}
+.date-badge{font-size:28px;font-weight:800;color:#fff}
+.date-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:4px}
+.nav-btns{display:flex;gap:8px}
+.nav-btn{padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:12px}
+.nav-btn:hover{background:rgba(255,255,255,.35)}
+.main{max-width:960px;margin:20px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid var(--bg)}
+.card-body{padding:16px}
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.news-cat-head{font-size:13px;font-weight:700;padding:8px 0 4px;display:flex;align-items:center;gap:6px;grid-column:1/-1}
+.news-item{background:var(--bg);border-radius:10px;padding:12px}
+.ni-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.ni-hot{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--red);color:#fff;font-weight:600}
+.ni-co{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-bd{background:#fef2f2;color:#dc2626}.co-tx{background:#eff6ff;color:#2563eb}.co-al{background:#fff7ed;color:#d97706}.co-mt{background:#ecfdf5;color:#059669}.co-pdd{background:#fdf2f8;color:#db2777}.co-bd2{background:#f5f3ff;color:#7c3aed}.co-xhs{background:#fff1f2;color:#e11d48}.co-dd{background:#f0fdf4;color:#16a34a}.co-ks{background:#fff1f2;color:#f43f5e}.co-jd{background:#dbeafe;color:#1d4ed8}
+.dark .co-bd{background:#7f1d1d;color:#fca5a5}.dark .co-tx{background:#1e3a5f;color:#93c5fd}.dark .co-al{background:#78350f;color:#fbbf24}.dark .co-mt{background:#064e3b;color:#6ee7b7}
+.ni-date{font-size:10px;color:var(--text-3)}
+.ni-title{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.4}
+.ni-desc{font-size:12px;color:var(--text-2);line-height:1.4}
+.ni-src{font-size:10px;color:var(--text-3);margin-top:4px}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.co-card{background:var(--bg);border-radius:10px;padding:12px}
+.co-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.co-name{font-size:14px;font-weight:700}.co-tier{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-body{font-size:12px;color:var(--text-2);line-height:1.5}.co-body li{margin-left:14px;margin-bottom:2px}
+.topic-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.topic-ico{width:18px;text-align:center}.topic-name{min-width:64px}
+.topic-bar-bg{flex:1;height:14px;background:var(--bg);border-radius:7px;overflow:hidden}
+.topic-fill{height:100%;border-radius:7px}
+.fill-r{background:linear-gradient(90deg,#ef4444,#dc2626)}.fill-o{background:linear-gradient(90deg,#f59e0b,#d97706)}.fill-pk{background:linear-gradient(90deg,#ec4899,#db2777)}.fill-g{background:linear-gradient(90deg,#10b981,#059669)}.fill-b{background:linear-gradient(90deg,#3b82f6,#2563eb)}.fill-v{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.topic-pct{min-width:28px;text-align:right;color:var(--text-2)}
+.footer{max-width:960px;margin:24px auto;padding:16px;text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--bg)}
+@media(max-width:640px){.news-grid,.co-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="nav-row">
+      <a class="back-link" href="../../index.html">← 返回首页</a>
+      <div class="nav-btns">
+        <a class="nav-btn" href="../2026-07/2026-07-06.html">← 前一天</a>
+        <a class="nav-btn" href="../2026-07/2026-07-08.html">后一天 →</a>
+      </div>
+    </div>
+    <div class="date-badge">🔬 2026年7月7日 · 周二</div>
+    <div class="date-sub">互联网洞察日报 · 共收录 7 条互联网相关新闻</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card"><div class="card-head">📰 今日新闻</div><div class="card-body">
+    
+          <div class="news-grid">
+            <div class="news-cat-head">🤖 AI产品动态</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">氪星晚报｜佑驾创新正式发布四轮足机器人；千问大模型升级实时语音识别大模型Fun-ASR-Realtime</div>
+              <div class="ni-desc">大公司：
+  郭明錤爆料最新苹果折叠手机：出货量明显不足，或重现“饥饿营销”
+  知名分析师郭明錤分析指出，苹果可折叠iPhone预计2026年下半年出货，但初期供应可能不足。他称自己的行业调查显示，2026年下半年可折叠iPhone的组装</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">获DCM Ventures投资数百万美元，APTSell希望成为AI版的首席销售官｜涌现新项目</div>
+              <div class="ni-desc">文｜吴思瑾
+  编辑｜邓咏仪
+  01 一句话介绍
+  北京治真治合科技有限公司成立于2024年，旗下产品「APTSell」（AI Power To Sales）希望成为AI版的CSO （Chief Sales Officer，首席销售官）</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">AI 砍掉的第一批大厂人：高薪，高绩效，高P｜深氪</div>
+              <div class="ni-desc">访谈｜任彩茹 兰杰 彭倩
+  文｜任彩茹
+  编辑｜乔芊 杨轩
+  “630”减员，AI是祸首还是替罪羊?
+  “现在公司有（减员）名单，你在这里面。”5月中的一天，林越被组长叫进会议室，对方开门见山。
+  林越的第一反应是平静，他早有预料</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">💰 融资/并购</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">上市前夜 | 哈工大在读博士以百亿市值冲港股IPO，创始三人只剩一人</div>
+              <div class="ni-desc">本文约3600字，建议阅读8分钟
+  作者&nbsp;|&nbsp;彭孝秋
+  
+   编者按：《上市前夜》栏目聚焦企业冲刺资本市场的关键时刻。每一份招股书里，都藏着一家企业上市前的野心、周期与隐忧。这是第二期——珞石机器人。
+  
+  7</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">上市前夜｜4个月净利润38.4亿元，深圳存储黑马冲港股IPO</div>
+              <div class="ni-desc">本文约3400字，建议阅读7分钟
+  作者&nbsp;|&nbsp;彭孝秋
+  
+   编者按：《上市前夜》栏目聚焦企业冲刺资本市场的关键时刻。每一份招股书里，都藏着一家企业上市前的野心、周期与隐忧。这是第一期——深圳宏芯宇电子。
+  
+ </div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">鄂尔多斯、和达金服共同领投，「贻如科技」完成超亿元A轮融资｜36氪首发</div>
+              <div class="ni-desc">36氪获悉，生物基皮革公司「贻如科技」完成超亿元A轮融资，本轮融资由鄂尔多斯集团与和达金服共同领投，巢生资本跟投，易凯资本担任独家财务顾问。本轮资金将主要用于推动公司商业化开拓与产能建设，并依托AI技术加速生物基皮革的技术革新与产品迭代。
+</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">🏆 行业格局</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">跨境电商风向转变：新生代不再只拼价格，开始争“定价权”丨最前线</div>
+              <div class="ni-desc">作者丨欧雪
+  编辑丨最前线
+  6月30日，亚马逊全球开店与福布斯中国联合发布“2026福布斯中国新生代跨境电商30人评选”，30位入选者平均年龄仅35岁，95后已开始崭露头角。
+  入选者既有3D打印、庭院机器人、AI助听器等硬核科技赛</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+  </div></div>
+
+  
+
+  <div class="card"><div class="card-head">📊 话题分布</div><div class="card-body"><div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:43%"></div></div><span class="topic-pct">43%</span></div><div class="topic-row"><span class="topic-ico">💰</span><span class="topic-name">融资/并购</span><div class="topic-bar-bg"><div class="topic-fill fill-g" style="width:43%"></div></div><span class="topic-pct">43%</span></div></div></div>
+</div>
+
+<div class="footer">互联网洞察日报 · 2026-07-07 · <a href="../../index.html">返回首页</a> · <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a></div>
+</body>
+</html>
