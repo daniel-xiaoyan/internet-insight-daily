@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-07-14 互联网洞察日报</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--text-1:#111827;--text-2:#6b7280;--text-3:#9ca3af;--green:#10b981;--purple:#8b5cf6;--blue:#3b82f6;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--r:12px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+.dark{--bg:#0f172a;--card:#1e293b;--text-1:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text-1);line-height:1.5}
+a{color:var(--purple);text-decoration:none}
+.header{background:linear-gradient(135deg,#059669,#7c3aed 60%,#2563eb);padding:24px;position:relative}
+.dark .header{background:linear-gradient(135deg,#065f46,#4c1d95 60%,#1e3a5f)}
+.header-inner{max-width:960px;margin:auto;position:relative;z-index:1}
+.nav-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.back-link{color:rgba(255,255,255,.8);font-size:13px;display:flex;align-items:center;gap:6px}
+.back-link:hover{color:#fff}
+.date-badge{font-size:28px;font-weight:800;color:#fff}
+.date-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:4px}
+.nav-btns{display:flex;gap:8px}
+.nav-btn{padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:12px}
+.nav-btn:hover{background:rgba(255,255,255,.35)}
+.main{max-width:960px;margin:20px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid var(--bg)}
+.card-body{padding:16px}
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.news-cat-head{font-size:13px;font-weight:700;padding:8px 0 4px;display:flex;align-items:center;gap:6px;grid-column:1/-1}
+.news-item{background:var(--bg);border-radius:10px;padding:12px}
+.ni-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.ni-hot{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--red);color:#fff;font-weight:600}
+.ni-co{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-bd{background:#fef2f2;color:#dc2626}.co-tx{background:#eff6ff;color:#2563eb}.co-al{background:#fff7ed;color:#d97706}.co-mt{background:#ecfdf5;color:#059669}.co-pdd{background:#fdf2f8;color:#db2777}.co-bd2{background:#f5f3ff;color:#7c3aed}.co-xhs{background:#fff1f2;color:#e11d48}.co-dd{background:#f0fdf4;color:#16a34a}.co-ks{background:#fff1f2;color:#f43f5e}.co-jd{background:#dbeafe;color:#1d4ed8}
+.dark .co-bd{background:#7f1d1d;color:#fca5a5}.dark .co-tx{background:#1e3a5f;color:#93c5fd}.dark .co-al{background:#78350f;color:#fbbf24}.dark .co-mt{background:#064e3b;color:#6ee7b7}
+.ni-date{font-size:10px;color:var(--text-3)}
+.ni-title{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.4}
+.ni-desc{font-size:12px;color:var(--text-2);line-height:1.4}
+.ni-src{font-size:10px;color:var(--text-3);margin-top:4px}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.co-card{background:var(--bg);border-radius:10px;padding:12px}
+.co-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.co-name{font-size:14px;font-weight:700}.co-tier{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-body{font-size:12px;color:var(--text-2);line-height:1.5}.co-body li{margin-left:14px;margin-bottom:2px}
+.topic-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.topic-ico{width:18px;text-align:center}.topic-name{min-width:64px}
+.topic-bar-bg{flex:1;height:14px;background:var(--bg);border-radius:7px;overflow:hidden}
+.topic-fill{height:100%;border-radius:7px}
+.fill-r{background:linear-gradient(90deg,#ef4444,#dc2626)}.fill-o{background:linear-gradient(90deg,#f59e0b,#d97706)}.fill-pk{background:linear-gradient(90deg,#ec4899,#db2777)}.fill-g{background:linear-gradient(90deg,#10b981,#059669)}.fill-b{background:linear-gradient(90deg,#3b82f6,#2563eb)}.fill-v{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.topic-pct{min-width:28px;text-align:right;color:var(--text-2)}
+.footer{max-width:960px;margin:24px auto;padding:16px;text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--bg)}
+@media(max-width:640px){.news-grid,.co-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="nav-row">
+      <a class="back-link" href="../../index.html">← 返回首页</a>
+      <div class="nav-btns">
+        <a class="nav-btn" href="../2026-07/2026-07-13.html">← 前一天</a>
+        <a class="nav-btn" href="../2026-07/2026-07-15.html">后一天 →</a>
+      </div>
+    </div>
+    <div class="date-badge">🔬 2026年7月14日 · 周二</div>
+    <div class="date-sub">互联网洞察日报 · 共收录 13 条互联网相关新闻</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card"><div class="card-head">📰 今日新闻</div><div class="card-body">
+    
+          <div class="news-grid">
+            <div class="news-cat-head">🤖 AI产品动态</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-co co-bd">字节</span><span class="ni-date"></span></div>
+              <div class="ni-title">氪星晚报 ｜Meta宣布将追加400亿美元投资路易斯安那州数据中心；字节探索自动驾驶，Seed世界模型团队负责；《扩大消费“十五五”规划》：优化入境消费环境，稳步扩大免签国家范围</div>
+              <div class="ni-desc">大公司：
+  洽洽食品：上半年净利润同比预增170.75%—198.96%
+  36氪获悉，洽洽食品披露业绩预告，预计2026年上半年归属于上市公司股东的净利润为2.4亿元—2.65亿元，同比增长170.75%—198.96%。
+  好上好</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-bd">字节</span><span class="ni-date"></span></div>
+              <div class="ni-title">字节探索自动驾驶，Seed世界模型团队负责｜36氪独家</div>
+              <div class="ni-desc">36氪从多位产业人士处获悉，字节跳动正探索进入自动驾驶领域。这一项目目前由Seed旗下周畅的世界模型团队负责。据了解，Seed旗下不仅有周畅的多模态模型、世界模型等团队，还有大语言模型方向。
+  而自动驾驶与世界模型的技术路线有交叠之处。
+</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">AI家庭智能硬件公司获数千万元融资，首款产品今年上线海外｜硬氪首发</div>
+              <div class="ni-desc">作者｜黄楠
+  编辑｜袁斯来
+  硬氪获悉，威联机器人科技（深圳）有限公司（以下简称“MOVA LINCO”）近日完成数千万元天使融资。融资资金将主要用于AI算法底层技术研发、完善产品量产体系，以及全球化渠道布局和家庭AI生态的持续建设。
+</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">对话Om AI赵天成：多年坚守，押注物理AI原生的「流式」未来</div>
+              <div class="ni-desc">一个从未见过监控画面的多模态模型，却比在监控数据上练了多年的小模型“老将”更懂监控。这不是科幻电影，这是2023年Om AI联汇的一场“无心插柳”，也是CEO兼首席科学家赵天成博士更加坚信“多模态训练方式能为物理开放世界带来泛化性”的关键节</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">苹果调整Mac芯片路线图，加速AI芯片研发</div>
+              <div class="ni-desc">当地时间7月12日，科技记者马克·古尔曼发文称，苹果正调整Mac芯片路线图，以适应AI发展需求。苹果将在今年秋季推出M6基础版芯片后，首次跳过M6 Pro、M6 Max和M6 Ultra等高端版本，直接推进M7系列研发，M7预计于2027年</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">英特尔宣布向爱尔兰工厂追加投资50亿欧元，扩大AI芯片产能</div>
+              <div class="ni-desc">英特尔7月13日宣布，将向爱尔兰莱克斯利普（Leixlip）园区追加投资50亿欧元（约57亿美元），扩大先进芯片制造能力，以满足人工智能和高性能计算需求。英特尔表示，此次投资将用于升级现有晶圆厂设施、安装先进制造设备，并扩建自动化生产系统，</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">🔥 裁员/人事</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">大众汽车CEO备忘录称公司或需进一步裁员5万人</div>
+              <div class="ni-desc">据报道，大众汽车首席执行官Oliver Blume致员工的内部备忘录显示，根据旨在使得大众汽车的成本竞争力与其他公司看齐的测算，公司可能需要再裁减约5万个岗位。备忘录称，公司必须进一步降低成本。其测算发现，相较可比公司存在20%的成本劣势，</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">💰 融资/并购</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">头部人形机器人关节公司半年再获新融资，同创伟业领投数亿元｜硬氪首发</div>
+              <div class="ni-desc">作者｜黄楠
+  编辑｜袁斯来
+  硬氪获悉，零差云控（深圳）科技股份有限公司（以下简称“零差云控”）近日完成C++轮融资数亿元，本轮由同创伟业领投、国泰君安创新投资跟投，老股东华控基金追加投资。本轮资金将用于产能扩张和全球市场布局。源式资本</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">*ST岭南：公司股票存在可能因股价低于面值被终止上市的风险</div>
+              <div class="ni-desc">36氪获悉，*ST岭南公告，公司股票于7月13日收盘价为0.96元/股，公司股票收盘价低于1元，公司股票存在可能因股价低于面值被终止上市的风险。</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">🏆 行业格局</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-co co-tx">网易</span><span class="ni-date"></span></div>
+              <div class="ni-title">潜入《遗忘之海》，我才读懂网易的心气</div>
+              <div class="ni-desc">文丨小葵
+  编辑丨果脯
+  7月9日，网易旗下Joker工作室端出了他们打磨了七年的作品——《遗忘之海》，一款海洋奇遇大世界RPG。PC端率先公测，移动端版本将在7月23日与玩家见面。
+  这款怪诞木偶风的航海游戏，还没出海就已经被盯上了</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-bd2">百度</span><span class="ni-date"></span></div>
+              <div class="ni-title">热门中概股美股盘前多数下跌，百度跌超3%</div>
+              <div class="ni-desc">36氪获悉，热门中概股美股盘前多数下跌，截至发稿，百度跌超3%，哔哩哔哩、名创优品跌超2%，拼多多跌超1%；网易涨超2%，京东涨超1%。</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+  </div></div>
+
+  <div class="card"><div class="card-head">🏢 重点公司动态</div><div class="card-body"><div class="co-grid">
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">字节跳动</span><span class="co-tier co-bd">T1</span></div>
+          <div class="co-body"><ul><li>氪星晚报 ｜Meta宣布将追加400亿美元投资路易斯安那州数据中心；字节探索自动…</li><li>字节探索自动驾驶，Seed世界模型团队负责｜36氪独家</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">网易</span><span class="co-tier co-tx">T2</span></div>
+          <div class="co-body"><ul><li>潜入《遗忘之海》，我才读懂网易的心气</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">百度</span><span class="co-tier co-bd2">T2</span></div>
+          <div class="co-body"><ul><li>热门中概股美股盘前多数下跌，百度跌超3%</li></ul></div>
+        </div></div></div></div>
+
+  <div class="card"><div class="card-head">📊 话题分布</div><div class="card-body"><div class="topic-row"><span class="topic-ico">🔥</span><span class="topic-name">裁员/人事</span><div class="topic-bar-bg"><div class="topic-fill fill-r" style="width:8%"></div></div><span class="topic-pct">8%</span></div><div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:62%"></div></div><span class="topic-pct">62%</span></div><div class="topic-row"><span class="topic-ico">💰</span><span class="topic-name">融资/并购</span><div class="topic-bar-bg"><div class="topic-fill fill-g" style="width:15%"></div></div><span class="topic-pct">15%</span></div></div></div>
+</div>
+
+<div class="footer">互联网洞察日报 · 2026-07-14 · <a href="../../index.html">返回首页</a> · <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a></div>
+</body>
+</html>
