@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-08-12 互联网洞察日报</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--text-1:#111827;--text-2:#6b7280;--text-3:#9ca3af;--green:#10b981;--purple:#8b5cf6;--blue:#3b82f6;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--r:12px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+.dark{--bg:#0f172a;--card:#1e293b;--text-1:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text-1);line-height:1.5}
+a{color:var(--purple);text-decoration:none}
+.header{background:linear-gradient(135deg,#059669,#7c3aed 60%,#2563eb);padding:24px;position:relative}
+.dark .header{background:linear-gradient(135deg,#065f46,#4c1d95 60%,#1e3a5f)}
+.header-inner{max-width:960px;margin:auto;position:relative;z-index:1}
+.nav-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.back-link{color:rgba(255,255,255,.8);font-size:13px;display:flex;align-items:center;gap:6px}
+.back-link:hover{color:#fff}
+.date-badge{font-size:28px;font-weight:800;color:#fff}
+.date-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:4px}
+.nav-btns{display:flex;gap:8px}
+.nav-btn{padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:12px}
+.nav-btn:hover{background:rgba(255,255,255,.35)}
+.main{max-width:960px;margin:20px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid var(--bg)}
+.card-body{padding:16px}
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.news-cat-head{font-size:13px;font-weight:700;padding:8px 0 4px;display:flex;align-items:center;gap:6px;grid-column:1/-1}
+.news-item{background:var(--bg);border-radius:10px;padding:12px}
+.ni-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.ni-hot{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--red);color:#fff;font-weight:600}
+.ni-co{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-bd{background:#fef2f2;color:#dc2626}.co-tx{background:#eff6ff;color:#2563eb}.co-al{background:#fff7ed;color:#d97706}.co-mt{background:#ecfdf5;color:#059669}.co-pdd{background:#fdf2f8;color:#db2777}.co-bd2{background:#f5f3ff;color:#7c3aed}.co-xhs{background:#fff1f2;color:#e11d48}.co-dd{background:#f0fdf4;color:#16a34a}.co-ks{background:#fff1f2;color:#f43f5e}.co-jd{background:#dbeafe;color:#1d4ed8}
+.dark .co-bd{background:#7f1d1d;color:#fca5a5}.dark .co-tx{background:#1e3a5f;color:#93c5fd}.dark .co-al{background:#78350f;color:#fbbf24}.dark .co-mt{background:#064e3b;color:#6ee7b7}
+.ni-date{font-size:10px;color:var(--text-3)}
+.ni-title{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.4}
+.ni-desc{font-size:12px;color:var(--text-2);line-height:1.4}
+.ni-src{font-size:10px;color:var(--text-3);margin-top:4px}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.co-card{background:var(--bg);border-radius:10px;padding:12px}
+.co-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.co-name{font-size:14px;font-weight:700}.co-tier{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-body{font-size:12px;color:var(--text-2);line-height:1.5}.co-body li{margin-left:14px;margin-bottom:2px}
+.topic-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.topic-ico{width:18px;text-align:center}.topic-name{min-width:64px}
+.topic-bar-bg{flex:1;height:14px;background:var(--bg);border-radius:7px;overflow:hidden}
+.topic-fill{height:100%;border-radius:7px}
+.fill-r{background:linear-gradient(90deg,#ef4444,#dc2626)}.fill-o{background:linear-gradient(90deg,#f59e0b,#d97706)}.fill-pk{background:linear-gradient(90deg,#ec4899,#db2777)}.fill-g{background:linear-gradient(90deg,#10b981,#059669)}.fill-b{background:linear-gradient(90deg,#3b82f6,#2563eb)}.fill-v{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.topic-pct{min-width:28px;text-align:right;color:var(--text-2)}
+.footer{max-width:960px;margin:24px auto;padding:16px;text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--bg)}
+@media(max-width:640px){.news-grid,.co-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="nav-row">
+      <a class="back-link" href="../../index.html">← 返回首页</a>
+      <div class="nav-btns">
+        <a class="nav-btn" href="../2026-08/2026-08-11.html">← 前一天</a>
+        <a class="nav-btn" href="../2026-08/2026-08-13.html">后一天 →</a>
+      </div>
+    </div>
+    <div class="date-badge">🔬 2026年8月12日 · 周三</div>
+    <div class="date-sub">互联网洞察日报 · 共收录 13 条互联网相关新闻</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card"><div class="card-head">📰 今日新闻</div><div class="card-body">
+    
+          <div class="news-grid">
+            <div class="news-cat-head">🤖 AI产品动态</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-co co-bd2">De</span><span class="ni-co co-bd2">宇树</span><span class="ni-date"></span></div>
+              <div class="ni-title">氪星晚报 ｜DeepSeek招土木工程师，科技大厂争锋延伸至传统资源领域；两大能源央企参投宇树科技；入职未满一年，OpenAI伦理负责人宣布离职</div>
+              <div class="ni-desc">大公司：
+  广聚能源：上修半年度业绩预告，上半年净利润同比预增603.02%—635.24%36氪获悉，广聚能源发布2026年半年度业绩预告修正公告，修正后公司预计2026年半年度归属于上市公司股东的净利润为6555.96万元—6856.</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-bd">字节</span><span class="ni-date"></span></div>
+              <div class="ni-title">继Seed、Flow后，字节又成立一个AI一级部门，直指「数据」｜36氪独家</div>
+              <div class="ni-desc">《智能涌现》从多个独立信源处获悉，字节跳动近期成立了一个新的一级部门——AI 数据与安全，与Seed、Flow、抖音等部门平行，负责人为王赢磊（Adam Wang）。
+  这是继2023年底成立Seed和Flow两个AI一级部门后，字节围绕</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">又融了1亿美金的AI公司，说AlphaFold不是生物世界天花板</div>
+              <div class="ni-desc">文｜胡香赟
+  编辑｜海若镜
+  到了2026年8月，如果一家公司只想用AI“降本增效”，那很难吃到AI最大的红利。
+  这个观点从寻明生科创始人赵伟安口中说出，多少有些反常识，毕竟“降本增效”是过去几年AI制药公司最熟悉的脚本。他坦承，现</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">IBM与Together AI签署2.4亿美元云服务协议</div>
+              <div class="ni-desc">IBM与Together AI签署了一项为期多年、价值2.4亿美元的协议，将在IBM Cloud上部署大规模英伟达HGX B300推理集群，预计于2027年第一季度投入使用。Together AI将利用该集群，为企业客户提供开源模型推理服务</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">强瑞技术：拟定增募资不超10.5亿元用于AI服务器精密液冷部件产品等项目</div>
+              <div class="ni-desc">36氪获悉，强瑞技术公告，公司董事会审议通过2026年度向特定对象发行股票方案，拟募资总额不超过10.5亿元，用于AI服务器精密液冷部件产品及服务器自动化组装、检测设备研发与制造项目、高端半导体设备精密零部件生产制造项目、龙华区总部基地建设</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date">08-11</span></div>
+              <div class="ni-title">一家新能源大厂，如何撑起全球最大AI算力超级单体？</div>
+              <div class="ni-desc">算力竞赛的天平，正在向电力倾斜</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">⚔️ 业务竞争</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-co co-tx">腾讯</span><span class="ni-date"></span></div>
+              <div class="ni-title">柠萌影视：与腾讯计算机重续文学作品版权购买框架协议</div>
+              <div class="ni-desc">36氪获悉，柠萌影视在港交所公告，考虑到原文学作品版权购买框架协议已于2025年12月31日到期，而公司预期不时开展有关交易，因此基于实际业务需要，公司已于2026年8月11日与腾讯计算机重续文学作品版权购买框架协议，据此，代表腾讯集团同意</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">💰 融资/并购</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">自研微米级工业具身机器人，已进入博世产线，「国奥科技」完成近亿元A+轮融资 | 36氪首发</div>
+              <div class="ni-desc">2026年被业界视为“人形机器人量产元年”，然而数量扩张不等于产业成熟，部分企业仍停留在样机和演示阶段，商业化路径尚不清晰。
+  “现在3C大厂基本不会考虑使用泛化的人形机器人。”国奥科技创始人李思阳博士说。
+  在他看来，产量与工业场景落</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">36氪首发 | 前大疆、影石产品负责人做智能两轮，获弘晖、Brizan等超亿元融资</div>
+              <div class="ni-desc">作者&nbsp;|&nbsp;张子怡
+  编辑&nbsp;|&nbsp;袁斯来
+  硬氪近日获悉，智能出行企业「迅路创新」已于年初完成新一轮超亿元融资。本轮融资由老股东Brizan Ventures和新股东弘晖基金领投，红杉资本、顺为资本、</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">36氪首发 | 布局“视触觉+压阻”组合方案，机器人触觉传感企业完成数千万元融资</div>
+              <div class="ni-desc">作者&nbsp;|&nbsp;乔钰杰
+  编辑&nbsp;|&nbsp;袁斯来
+  硬氪获悉，深圳市模量科技有限公司（以下简称“模量科技”）近日完成由猎鹰投资、益华资本投资的数千万元Pre-A轮融资，点石资本担任财务顾问。本轮资金用于研发团</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">🏆 行业格局</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">是蓝海，也是慢海：一个中国电商人在非洲的25年拓荒史</div>
+              <div class="ni-desc">在今年出版的一本新书《How Africa Works》中，作者乔・斯塔威尔将非洲描述为“最后一片蓝海”。基于七年田野调查与文献研究，他认为非洲过去经济落后、工业化水平低，是因为人口密度过低、分布稀疏，导致消费市场分散，并且水电网络等基础设</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-tx">腾讯</span><span class="ni-date"></span></div>
+              <div class="ni-title">热门中概股美股盘前普跌，腾讯音乐跌超11%</div>
+              <div class="ni-desc">36氪获悉，热门中概股美股盘前普跌，截至发稿，腾讯音乐跌超11%，京东、蔚来跌超3%，阿里巴巴、百度、网易、小鹏集团、哔哩哔哩跌超2%，理想汽车跌超1%，拼多多跌0.8%。</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+  </div></div>
+
+  <div class="card"><div class="card-head">🏢 重点公司动态</div><div class="card-body"><div class="co-grid">
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">腾讯</span><span class="co-tier co-tx">T1</span></div>
+          <div class="co-body"><ul><li>热门中概股美股盘前普跌，腾讯音乐跌超11%</li><li>柠萌影视：与腾讯计算机重续文学作品版权购买框架协议</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">DeepSeek</span><span class="co-tier co-bd2">T3</span></div>
+          <div class="co-body"><ul><li>氪星晚报 ｜DeepSeek招土木工程师，科技大厂争锋延伸至传统资源领域；两大能…</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">宇树科技</span><span class="co-tier co-bd2">T3</span></div>
+          <div class="co-body"><ul><li>氪星晚报 ｜DeepSeek招土木工程师，科技大厂争锋延伸至传统资源领域；两大能…</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">字节跳动</span><span class="co-tier co-bd">T1</span></div>
+          <div class="co-body"><ul><li>继Seed、Flow后，字节又成立一个AI一级部门，直指「数据」｜36氪独家</li></ul></div>
+        </div></div></div></div>
+
+  <div class="card"><div class="card-head">📊 话题分布</div><div class="card-body"><div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:54%"></div></div><span class="topic-pct">54%</span></div><div class="topic-row"><span class="topic-ico">⚔️</span><span class="topic-name">业务竞争</span><div class="topic-bar-bg"><div class="topic-fill fill-pk" style="width:8%"></div></div><span class="topic-pct">8%</span></div><div class="topic-row"><span class="topic-ico">💰</span><span class="topic-name">融资/并购</span><div class="topic-bar-bg"><div class="topic-fill fill-g" style="width:23%"></div></div><span class="topic-pct">23%</span></div></div></div>
+</div>
+
+<div class="footer">互联网洞察日报 · 2026-08-12 · <a href="../../index.html">返回首页</a> · <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a></div>
+</body>
+</html>
