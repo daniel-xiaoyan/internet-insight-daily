@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-08-14 互联网洞察日报</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--text-1:#111827;--text-2:#6b7280;--text-3:#9ca3af;--green:#10b981;--purple:#8b5cf6;--blue:#3b82f6;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--r:12px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+.dark{--bg:#0f172a;--card:#1e293b;--text-1:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text-1);line-height:1.5}
+a{color:var(--purple);text-decoration:none}
+.header{background:linear-gradient(135deg,#059669,#7c3aed 60%,#2563eb);padding:24px;position:relative}
+.dark .header{background:linear-gradient(135deg,#065f46,#4c1d95 60%,#1e3a5f)}
+.header-inner{max-width:960px;margin:auto;position:relative;z-index:1}
+.nav-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.back-link{color:rgba(255,255,255,.8);font-size:13px;display:flex;align-items:center;gap:6px}
+.back-link:hover{color:#fff}
+.date-badge{font-size:28px;font-weight:800;color:#fff}
+.date-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:4px}
+.nav-btns{display:flex;gap:8px}
+.nav-btn{padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:12px}
+.nav-btn:hover{background:rgba(255,255,255,.35)}
+.main{max-width:960px;margin:20px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid var(--bg)}
+.card-body{padding:16px}
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.news-cat-head{font-size:13px;font-weight:700;padding:8px 0 4px;display:flex;align-items:center;gap:6px;grid-column:1/-1}
+.news-item{background:var(--bg);border-radius:10px;padding:12px}
+.ni-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.ni-hot{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--red);color:#fff;font-weight:600}
+.ni-co{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-bd{background:#fef2f2;color:#dc2626}.co-tx{background:#eff6ff;color:#2563eb}.co-al{background:#fff7ed;color:#d97706}.co-mt{background:#ecfdf5;color:#059669}.co-pdd{background:#fdf2f8;color:#db2777}.co-bd2{background:#f5f3ff;color:#7c3aed}.co-xhs{background:#fff1f2;color:#e11d48}.co-dd{background:#f0fdf4;color:#16a34a}.co-ks{background:#fff1f2;color:#f43f5e}.co-jd{background:#dbeafe;color:#1d4ed8}
+.dark .co-bd{background:#7f1d1d;color:#fca5a5}.dark .co-tx{background:#1e3a5f;color:#93c5fd}.dark .co-al{background:#78350f;color:#fbbf24}.dark .co-mt{background:#064e3b;color:#6ee7b7}
+.ni-date{font-size:10px;color:var(--text-3)}
+.ni-title{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.4}
+.ni-desc{font-size:12px;color:var(--text-2);line-height:1.4}
+.ni-src{font-size:10px;color:var(--text-3);margin-top:4px}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.co-card{background:var(--bg);border-radius:10px;padding:12px}
+.co-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.co-name{font-size:14px;font-weight:700}.co-tier{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-body{font-size:12px;color:var(--text-2);line-height:1.5}.co-body li{margin-left:14px;margin-bottom:2px}
+.topic-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.topic-ico{width:18px;text-align:center}.topic-name{min-width:64px}
+.topic-bar-bg{flex:1;height:14px;background:var(--bg);border-radius:7px;overflow:hidden}
+.topic-fill{height:100%;border-radius:7px}
+.fill-r{background:linear-gradient(90deg,#ef4444,#dc2626)}.fill-o{background:linear-gradient(90deg,#f59e0b,#d97706)}.fill-pk{background:linear-gradient(90deg,#ec4899,#db2777)}.fill-g{background:linear-gradient(90deg,#10b981,#059669)}.fill-b{background:linear-gradient(90deg,#3b82f6,#2563eb)}.fill-v{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.topic-pct{min-width:28px;text-align:right;color:var(--text-2)}
+.footer{max-width:960px;margin:24px auto;padding:16px;text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--bg)}
+@media(max-width:640px){.news-grid,.co-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="nav-row">
+      <a class="back-link" href="../../index.html">← 返回首页</a>
+      <div class="nav-btns">
+        <a class="nav-btn" href="../2026-08/2026-08-13.html">← 前一天</a>
+        <a class="nav-btn" href="../2026-08/2026-08-15.html">后一天 →</a>
+      </div>
+    </div>
+    <div class="date-badge">🔬 2026年8月14日 · 周五</div>
+    <div class="date-sub">互联网洞察日报 · 共收录 11 条互联网相关新闻</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card"><div class="card-head">📰 今日新闻</div><div class="card-body">
+    
+          <div class="news-grid">
+            <div class="news-cat-head">🤖 AI产品动态</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">氪星晚报｜美国消费者就关税退税起诉丰田和索尼等日本公司；SpaceX AI：推出Grok 4.6；苹果聘请美国航空前高管出任政府事务负责人</div>
+              <div class="ni-desc">大公司：
+  L&amp;T获超10亿美元英伟达B300 AI工厂订单
+  8月13日，印度工程与建筑企业拉森特博洛（L&amp;T）宣布，其旗下Vyoma.AI通过AI基础设施子公司LTN Compute，获得为美国AI云服务商Toget</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-al">阿里</span><span class="ni-date"></span></div>
+              <div class="ni-title">AI究竟能帮游戏做什么？我们和阿里云、TapTap制造聊了聊 | ChinaJoy2026现场局</div>
+              <div class="ni-desc">内容整理 | 刘士武
+  2026 ChinaJoy的主题是“与AI同游”。去年大家还在讨论AI能不能做游戏，今年问题已经变成了如何做，以及做出来之后怎么让更多人玩到。
+  这场对谈是36氪游戏“ChinaJoy现场局·谁在构建AI+数字娱</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-al">阿里</span><span class="ni-co co-bd2">De</span><span class="ni-date"></span></div>
+              <div class="ni-title">8点1氪丨星巴克中国否认为降成本取消14薪；DeepSeek V4 Pro正式版上线；“阿里最年轻P10”林俊旸创业，新公司估值20亿美元</div>
+              <div class="ni-desc">今日热点导览
+  国际能源署：霍尔木兹海峡持续关闭冲击全球石油市场
+  Anthropic将在AI生成文本中嵌入隐形水印
+  C919完成首次国际商业航线飞行
+  三星在半导体研发中引入Claude模型
+  段永平大幅加仓泡泡玛特
+  TO</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">最前线｜3999元起，影石发布X6：全景相机开始把更多创作交给AI</div>
+              <div class="ni-desc">文｜张子怡
+  编辑｜袁斯来
+  &nbsp;8月12日，影石Insta360在其布局全景相机的第十年，发布了新一代旗舰全景相机X6，中国大陆地区售价3999元起。 &nbsp;
+  作为一款带有“十年之作”意味的产品，X6承接了影石过去十</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">Seedance 2.5测评｜ 七维实测，AI视频从片段到叙事，到底进步了多少？</div>
+              <div class="ni-desc">上半场比��是什么？比谁的数据集更干净、谁的视频动作更连贯、谁的分辨率更高。可落到真实创作场景就会发现，AI视频真正的瓶颈，远不止这些参数的比拼。
+  &nbsp;
+  7月31日，Seedance 2.5正式发布上线。
+  为此36氪AI</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">算力受限累谷歌大模型迭代，谷歌联合创始人督战Gemini大模型研发</div>
+              <div class="ni-desc">谷歌大模型因算力受限与内部分歧等因素迭代缓慢。谷歌联合创始人谢尔盖・布林敦促核心AI员工全力投入Gemini大模型研发。布林不断向AI核心员工强调，必须追上行业前沿水平。知情人士表示，布林推动资源向递归自我改进（RSI）方向倾斜，该技术目标</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">🏆 行业格局</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-co co-tx">腾讯</span><span class="ni-date"></span></div>
+              <div class="ni-title">腾讯能不能为存储续命？</div>
+              <div class="ni-desc">文 | 黄绎达
+  编辑 | 张帆
+  8月12日，腾讯公布了2026年二季度财报。
+  财报显示，腾讯在2026Q2实现收入2047.85亿元，同比增11%；同期实现经营利润672.76亿元，同比增长12%；同期Non-IFRS经营利润录</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-jd">京东</span><span class="ni-date"></span></div>
+              <div class="ni-title">热门中概股美股盘前多数下跌，京东跌超2%</div>
+              <div class="ni-desc">36氪获悉，热门中概股美股盘前多数下跌，截至发稿，京东、哔哩哔哩跌超2%，阿里巴巴、爱奇艺跌超1%；名创优品涨超1%。</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-jd">京东</span><span class="ni-date"></span></div>
+              <div class="ni-title">京东健康：上半年累计首发65款新药，与超200家药企在数字营销上达成合作</div>
+              <div class="ni-desc">36氪获悉，京东健康发布2026年中期业绩公告。在业绩发布后的电话会上，京东集团SEC委员、京东健康CEO曹冬表示，差异化供应链能力是京东健康抓住行业长期红利的最大优势，我们有信心进一步扩大市场份额。上半年，京东健康累计首发65款新药，与超</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+  </div></div>
+
+  <div class="card"><div class="card-head">🏢 重点公司动态</div><div class="card-body"><div class="co-grid">
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">阿里</span><span class="co-tier co-al">T1</span></div>
+          <div class="co-body"><ul><li>AI究竟能帮游戏做什么？我们和阿里云、TapTap制造聊了聊 | ChinaJo…</li><li>8点1氪丨星巴克中国否认为降成本取消14薪；DeepSeek V4 Pro正式版…</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">DeepSeek</span><span class="co-tier co-bd2">T3</span></div>
+          <div class="co-body"><ul><li>8点1氪丨星巴克中国否认为降成本取消14薪；DeepSeek V4 Pro正式版…</li><li>深度体验DeepSeek Harness，我原谅它涨价了</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">京东</span><span class="co-tier co-jd">T2</span></div>
+          <div class="co-body"><ul><li>热门中概股美股盘前多数下跌，京东跌超2%</li><li>京东健康：上半年累计首发65款新药，与超200家药企在数字营销上达成合作</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">腾讯</span><span class="co-tier co-tx">T1</span></div>
+          <div class="co-body"><ul><li>腾讯能不能为存储续命？</li></ul></div>
+        </div></div></div></div>
+
+  <div class="card"><div class="card-head">📊 话题分布</div><div class="card-body"><div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:73%"></div></div><span class="topic-pct">73%</span></div></div></div>
+</div>
+
+<div class="footer">互联网洞察日报 · 2026-08-14 · <a href="../../index.html">返回首页</a> · <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a></div>
+</body>
+</html>
