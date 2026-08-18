@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-08-19 互联网洞察日报</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--text-1:#111827;--text-2:#6b7280;--text-3:#9ca3af;--green:#10b981;--purple:#8b5cf6;--blue:#3b82f6;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--r:12px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+.dark{--bg:#0f172a;--card:#1e293b;--text-1:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text-1);line-height:1.5}
+a{color:var(--purple);text-decoration:none}
+.header{background:linear-gradient(135deg,#059669,#7c3aed 60%,#2563eb);padding:24px;position:relative}
+.dark .header{background:linear-gradient(135deg,#065f46,#4c1d95 60%,#1e3a5f)}
+.header-inner{max-width:960px;margin:auto;position:relative;z-index:1}
+.nav-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.back-link{color:rgba(255,255,255,.8);font-size:13px;display:flex;align-items:center;gap:6px}
+.back-link:hover{color:#fff}
+.date-badge{font-size:28px;font-weight:800;color:#fff}
+.date-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:4px}
+.nav-btns{display:flex;gap:8px}
+.nav-btn{padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:12px}
+.nav-btn:hover{background:rgba(255,255,255,.35)}
+.main{max-width:960px;margin:20px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid var(--bg)}
+.card-body{padding:16px}
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.news-cat-head{font-size:13px;font-weight:700;padding:8px 0 4px;display:flex;align-items:center;gap:6px;grid-column:1/-1}
+.news-item{background:var(--bg);border-radius:10px;padding:12px}
+.ni-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.ni-hot{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--red);color:#fff;font-weight:600}
+.ni-co{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-bd{background:#fef2f2;color:#dc2626}.co-tx{background:#eff6ff;color:#2563eb}.co-al{background:#fff7ed;color:#d97706}.co-mt{background:#ecfdf5;color:#059669}.co-pdd{background:#fdf2f8;color:#db2777}.co-bd2{background:#f5f3ff;color:#7c3aed}.co-xhs{background:#fff1f2;color:#e11d48}.co-dd{background:#f0fdf4;color:#16a34a}.co-ks{background:#fff1f2;color:#f43f5e}.co-jd{background:#dbeafe;color:#1d4ed8}
+.dark .co-bd{background:#7f1d1d;color:#fca5a5}.dark .co-tx{background:#1e3a5f;color:#93c5fd}.dark .co-al{background:#78350f;color:#fbbf24}.dark .co-mt{background:#064e3b;color:#6ee7b7}
+.ni-date{font-size:10px;color:var(--text-3)}
+.ni-title{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.4}
+.ni-desc{font-size:12px;color:var(--text-2);line-height:1.4}
+.ni-src{font-size:10px;color:var(--text-3);margin-top:4px}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.co-card{background:var(--bg);border-radius:10px;padding:12px}
+.co-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.co-name{font-size:14px;font-weight:700}.co-tier{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-body{font-size:12px;color:var(--text-2);line-height:1.5}.co-body li{margin-left:14px;margin-bottom:2px}
+.topic-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.topic-ico{width:18px;text-align:center}.topic-name{min-width:64px}
+.topic-bar-bg{flex:1;height:14px;background:var(--bg);border-radius:7px;overflow:hidden}
+.topic-fill{height:100%;border-radius:7px}
+.fill-r{background:linear-gradient(90deg,#ef4444,#dc2626)}.fill-o{background:linear-gradient(90deg,#f59e0b,#d97706)}.fill-pk{background:linear-gradient(90deg,#ec4899,#db2777)}.fill-g{background:linear-gradient(90deg,#10b981,#059669)}.fill-b{background:linear-gradient(90deg,#3b82f6,#2563eb)}.fill-v{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.topic-pct{min-width:28px;text-align:right;color:var(--text-2)}
+.footer{max-width:960px;margin:24px auto;padding:16px;text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--bg)}
+@media(max-width:640px){.news-grid,.co-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="nav-row">
+      <a class="back-link" href="../../index.html">← 返回首页</a>
+      <div class="nav-btns">
+        <a class="nav-btn" href="../2026-08/2026-08-18.html">← 前一天</a>
+        <a class="nav-btn" href="../2026-08/2026-08-20.html">后一天 →</a>
+      </div>
+    </div>
+    <div class="date-badge">🔬 2026年8月19日 · 周三</div>
+    <div class="date-sub">互联网洞察日报 · 共收录 10 条互联网相关新闻</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card"><div class="card-head">📰 今日新闻</div><div class="card-body">
+    
+          <div class="news-grid">
+            <div class="news-cat-head">🤖 AI产品动态</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">平安好医生：企业健管稳健增长，AI业务兑现业绩</div>
+              <div class="ni-desc">8月18日，平安好医生（1833.HK）公布了2026年中期业绩。
+  财报显示，平安好医生在2026年上半年实现收入24.84亿元，同比微降0.7%。作为公司发展的核心着力点，企业健管业务表现亮眼：同期收入同比增速高达65%，强劲增长助推</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-bd2">百度</span><span class="ni-date"></span></div>
+              <div class="ni-title">氪星晚报 ｜小米集团二季度智能电动汽车及AI等创新业务收入249亿元；百度二季度总营收313亿元，AI业务收入占比连续过半；我国在量子技术国际标准领域取得新进展</div>
+              <div class="ni-desc">大公司：
+  小米集体：二季度智能手机全球平均售价同比提升25.9%，创历史新高小米集团发布2026年第二季度财报。报告期内，小米智能手机业务营收421亿元。第二季度，得益于在全球范围内主动调整产品结构，小米手机全球平均售价同比提升25.9</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">AI视频平台生数科技据悉考虑在香港上市</div>
+              <div class="ni-desc">8月18日，获阿里巴巴支持的AI视频平台生数科技据悉考虑在香港上市。（财联社）</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-tx">网易</span><span class="ni-date">08-18</span></div>
+              <div class="ni-title">网易传媒发布”蜜蜂AI” ：从工具到伙伴，让AI更懂人</div>
+              <div class="ni-desc">8月18日，网易传媒举办“蜜蜂AI媒体沟通会”</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-al">阿里</span><span class="ni-date">08-18</span></div>
+              <div class="ni-title">人人都能写好听的歌，阿里发布AI音乐模型HappyShrimp</div>
+              <div class="ni-desc">8月17日，阿里巴巴发布AI音乐模型HappyShrimp</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">💰 融资/并购</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">36氪首发｜给泳池机器人造“眼睛”，前科沃斯员工做芯片获千万元天使融资</div>
+              <div class="ni-desc">文｜张子怡
+  编辑｜袁斯来
+  硬氪获悉，水下感知芯片企业「芯旸微」近日完成千万元天使轮融资，本轮投资方为险峰长青和隐峰资本，资金将主要用于团队建设和人才体系搭建。
+  随着水下机器人从遥控作业走向自主运行，感知成为绕不过去的一道门槛。
+</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">硬氪首发 | 机器人力传感器企业完成数亿元D轮融资，广汽领投、红杉押注，市占率超70%</div>
+              <div class="ni-desc">硬氪获悉，近日国内机器人力传感器企业蓝点触控完成数亿元人民币D轮融资。本轮融资由广汽集团旗下广汽资本领投，德业股份及曦晨资本跟投。融资将主要用于新一代机器人力传感器产品研发、产能扩充及全球化市场布局。
+  从2025年底至今，公司已完成多轮</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-al">阿里</span><span class="ni-date"></span></div>
+              <div class="ni-title">阿里巴巴投资的机器人制造商逐际动力据悉计划在香港IPO</div>
+              <div class="ni-desc">8月18日，知情人士称，逐际动力已经以保密形式提交香港首次公开募股（IPO）申请，拟募资数亿美元，中国机器人企业上市潮由此再添新成员。逐际动力7月完成2亿美元IPO前融资，该轮融资对公司的估值为150亿元人民币（22亿美元）。（财联社）</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">“中科驭数”完成C+轮融资，投后估值近70亿元</div>
+              <div class="ni-desc">36氪获悉，近日，国内DPU芯片企业“中科驭数”正式完成C+轮融资，本轮融资由长江资本、太平科创、尚颀资本、云锋投资、浙江产投、智微资本、建投华科等多家产业资本与政策性基金联合参与，完成后中科驭数投后估值近70亿元。</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">🏆 行业格局</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-co co-bd2">百度</span><span class="ni-date"></span></div>
+              <div class="ni-title">热门中概股美股盘前集体走弱，百度跌超8%</div>
+              <div class="ni-desc">36氪获悉，热门中概股美股盘前集体走弱，截至发稿，百度跌超8%，爱奇艺跌超3%，小马智行跌超2%，“蔚小理”、哔哩哔哩均跌超1%，京东跌0.8%，网易跌0.48%，拼多多跌0.41%，阿里巴巴涨超2%。</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+  </div></div>
+
+  <div class="card"><div class="card-head">🏢 重点公司动态</div><div class="card-body"><div class="co-grid">
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">百度</span><span class="co-tier co-bd2">T2</span></div>
+          <div class="co-body"><ul><li>氪星晚报 ｜小米集团二季度智能电动汽车及AI等创新业务收入249亿元；百度二季度…</li><li>热门中概股美股盘前集体走弱，百度跌超8%</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">阿里</span><span class="co-tier co-al">T1</span></div>
+          <div class="co-body"><ul><li>人人都能写好听的歌，阿里发布AI音乐模型HappyShrimp</li><li>阿里巴巴投资的机器人制造商逐际动力据悉计划在香港IPO</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">网易</span><span class="co-tier co-tx">T2</span></div>
+          <div class="co-body"><ul><li>网易传媒发布”蜜蜂AI” ：从工具到伙伴，让AI更懂人</li></ul></div>
+        </div></div></div></div>
+
+  <div class="card"><div class="card-head">📊 话题分布</div><div class="card-body"><div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:50%"></div></div><span class="topic-pct">50%</span></div><div class="topic-row"><span class="topic-ico">💰</span><span class="topic-name">融资/并购</span><div class="topic-bar-bg"><div class="topic-fill fill-g" style="width:40%"></div></div><span class="topic-pct">40%</span></div></div></div>
+</div>
+
+<div class="footer">互联网洞察日报 · 2026-08-19 · <a href="../../index.html">返回首页</a> · <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a></div>
+</body>
+</html>
