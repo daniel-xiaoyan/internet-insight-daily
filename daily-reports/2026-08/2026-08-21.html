@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-08-21 互联网洞察日报</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--text-1:#111827;--text-2:#6b7280;--text-3:#9ca3af;--green:#10b981;--purple:#8b5cf6;--blue:#3b82f6;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--r:12px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+.dark{--bg:#0f172a;--card:#1e293b;--text-1:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text-1);line-height:1.5}
+a{color:var(--purple);text-decoration:none}
+.header{background:linear-gradient(135deg,#059669,#7c3aed 60%,#2563eb);padding:24px;position:relative}
+.dark .header{background:linear-gradient(135deg,#065f46,#4c1d95 60%,#1e3a5f)}
+.header-inner{max-width:960px;margin:auto;position:relative;z-index:1}
+.nav-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.back-link{color:rgba(255,255,255,.8);font-size:13px;display:flex;align-items:center;gap:6px}
+.back-link:hover{color:#fff}
+.date-badge{font-size:28px;font-weight:800;color:#fff}
+.date-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:4px}
+.nav-btns{display:flex;gap:8px}
+.nav-btn{padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:12px}
+.nav-btn:hover{background:rgba(255,255,255,.35)}
+.main{max-width:960px;margin:20px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid var(--bg)}
+.card-body{padding:16px}
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.news-cat-head{font-size:13px;font-weight:700;padding:8px 0 4px;display:flex;align-items:center;gap:6px;grid-column:1/-1}
+.news-item{background:var(--bg);border-radius:10px;padding:12px}
+.ni-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.ni-hot{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--red);color:#fff;font-weight:600}
+.ni-co{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-bd{background:#fef2f2;color:#dc2626}.co-tx{background:#eff6ff;color:#2563eb}.co-al{background:#fff7ed;color:#d97706}.co-mt{background:#ecfdf5;color:#059669}.co-pdd{background:#fdf2f8;color:#db2777}.co-bd2{background:#f5f3ff;color:#7c3aed}.co-xhs{background:#fff1f2;color:#e11d48}.co-dd{background:#f0fdf4;color:#16a34a}.co-ks{background:#fff1f2;color:#f43f5e}.co-jd{background:#dbeafe;color:#1d4ed8}
+.dark .co-bd{background:#7f1d1d;color:#fca5a5}.dark .co-tx{background:#1e3a5f;color:#93c5fd}.dark .co-al{background:#78350f;color:#fbbf24}.dark .co-mt{background:#064e3b;color:#6ee7b7}
+.ni-date{font-size:10px;color:var(--text-3)}
+.ni-title{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.4}
+.ni-desc{font-size:12px;color:var(--text-2);line-height:1.4}
+.ni-src{font-size:10px;color:var(--text-3);margin-top:4px}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.co-card{background:var(--bg);border-radius:10px;padding:12px}
+.co-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.co-name{font-size:14px;font-weight:700}.co-tier{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-body{font-size:12px;color:var(--text-2);line-height:1.5}.co-body li{margin-left:14px;margin-bottom:2px}
+.topic-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.topic-ico{width:18px;text-align:center}.topic-name{min-width:64px}
+.topic-bar-bg{flex:1;height:14px;background:var(--bg);border-radius:7px;overflow:hidden}
+.topic-fill{height:100%;border-radius:7px}
+.fill-r{background:linear-gradient(90deg,#ef4444,#dc2626)}.fill-o{background:linear-gradient(90deg,#f59e0b,#d97706)}.fill-pk{background:linear-gradient(90deg,#ec4899,#db2777)}.fill-g{background:linear-gradient(90deg,#10b981,#059669)}.fill-b{background:linear-gradient(90deg,#3b82f6,#2563eb)}.fill-v{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.topic-pct{min-width:28px;text-align:right;color:var(--text-2)}
+.footer{max-width:960px;margin:24px auto;padding:16px;text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--bg)}
+@media(max-width:640px){.news-grid,.co-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="nav-row">
+      <a class="back-link" href="../../index.html">← 返回首页</a>
+      <div class="nav-btns">
+        <a class="nav-btn" href="../2026-08/2026-08-20.html">← 前一天</a>
+        <a class="nav-btn" href="../2026-08/2026-08-22.html">后一天 →</a>
+      </div>
+    </div>
+    <div class="date-badge">🔬 2026年8月21日 · 周五</div>
+    <div class="date-sub">互联网洞察日报 · 共收录 12 条互联网相关新闻</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card"><div class="card-head">📰 今日新闻</div><div class="card-body">
+    
+          <div class="news-grid">
+            <div class="news-cat-head">🤖 AI产品动态</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">AI席卷一切，但游戏行业的巨变才刚刚开始</div>
+              <div class="ni-desc">文丨刘士武
+  每年暑期，都是游戏展会扎堆的日子，其中最受人关注的便是连续举办二十余年的ChinaJoy。
+  这几年的游戏圈有两个大趋势，一个是国游的崛起，尤其是独游和3A级大作，另一个则是AI技术迅速深入游戏开发甚至体验的各个流程。对于</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-al">阿里</span><span class="ni-date"></span></div>
+              <div class="ni-title">阿里吴泳铭：预计下季度AI相关产品ARR将接近100亿美元</div>
+              <div class="ni-desc">36氪获悉，8月20日，阿里巴巴集团发布2027财年第一季度财报。在分析师电话会上，集团CEO吴泳铭表示，预计下季度AI相关产品年化收入（ARR）将接近100亿美元。本季度，阿里AI相关产品ARR已经突破495亿元人民币（73亿美元）。未来</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-al">阿里</span><span class="ni-date"></span></div>
+              <div class="ni-title">阿里吴泳铭：AI算力Capex投资回报确定性非常高，Capex投入三年内回本</div>
+              <div class="ni-desc">36氪获悉，8月20日，阿里巴巴集团发布2027财年第一季度财报。在分析师电话会上，集团CEO吴泳铭表示，AI算力Capex投资回报确定性非常高，Capex投入可三年内回本。考虑到AI相关产品毛利率还在提升，未来有望缩短到2.5年回本甚至2</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-al">阿里</span><span class="ni-date"></span></div>
+              <div class="ni-title">吴泳铭：阿里AI年化收入突破495亿元</div>
+              <div class="ni-desc">36氪获悉，8月20日，阿里巴巴集团发布2027财年第一季度财报。在分析师电话会上，集团CEO吴泳铭表示，AI已成为阿里云加速增长的核心引擎。本季度，阿里AI相关产品年化收入（ARR）突破495亿元人民币（73亿美元），在阿里云外部商业化收</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-al">阿里</span><span class="ni-date"></span></div>
+              <div class="ni-title">阿里吴泳铭：平头哥AI芯片下半年将持续放量</div>
+              <div class="ni-desc">36氪获悉，8月20日，阿里巴巴集团发布2027财年第一季度财报。在分析师电话会上，集团CEO吴泳铭表示，平头哥已建立覆盖GPU、CPU、网络芯片的全栈自研芯片组合。真武芯片到8月初已经服务了超过650家客户。基于新一代平头哥芯片真武M89</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date">08-20</span></div>
+              <div class="ni-title">这届“WRC必看”：全栈AI、20+超难家务，8.99万带回家</div>
+              <div class="ni-desc"></div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">💰 融资/并购</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">硬氪独家 | 清华，中科院具身大脑企业融资10亿，已获得数亿海外订单</div>
+              <div class="ni-desc">硬氪获悉，近日具身智能企业中科第五纪连续完成A1轮、A2轮融资，总融资金额超过十亿元。其中A1轮由锡高投、中国银行旗下中银AIC基金、三锋投资联合投资；A2轮由芯能创投、中银AIC基金、中山创投、鸿瑞达投资、博彦科技、金创投(浙江省新能源汽</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">一年四轮融资近10亿，这家中性原子量子公司具备超千比特规模整机交付能力丨36氪首发</div>
+              <div class="ni-desc">原子矩阵自主研发的中性原子量子计算机局部细节图（图源/企业）</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-bd2">宇树</span><span class="ni-date"></span></div>
+              <div class="ni-title">8点1氪丨买火车票放零食被要求让座，12306回应；宇树科技上市庆功照流出；章子怡套现3个亿</div>
+              <div class="ni-desc">今日热点导览
+  
+   智谱：GLM-5.3 API即日起正式上线
+   宇树创始人王兴兴身家超1300亿
+   2026七夕档票房破亿
+   迪士尼与旗下美国广播公司起诉美联邦通讯委员会
+   比尔盖茨名下豪华度假村因维护不善面临1亿美</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">🏆 行业格局</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-co co-al">阿里</span><span class="ni-date"></span></div>
+              <div class="ni-title">热门中概股美股盘前多数下跌，阿里巴巴跌近6%</div>
+              <div class="ni-desc">36氪获悉，热门中概股美股盘前多数下跌，截至发稿，阿里巴巴跌近6%，哔哩哔哩跌超4%，网易跌超3%，微博跌超2%，拼多多跌超1%，京东跌0.92%，蔚来跌0.42%，百度跌0.23%；爱奇艺涨0.88%，理想汽车涨0.87%，小鹏集团涨0.</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+  </div></div>
+
+  <div class="card"><div class="card-head">🏢 重点公司动态</div><div class="card-body"><div class="co-grid">
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">阿里</span><span class="co-tier co-al">T1</span></div>
+          <div class="co-body"><ul><li>阿里吴泳铭：预计下季度AI相关产品ARR将接近100亿美元</li><li>阿里吴泳铭：AI算力Capex投资回报确定性非常高，Capex投入三年内回本</li><li>吴泳铭：阿里AI年化收入突破495亿元</li><li>阿里吴泳铭：平头哥AI芯片下半年将持续放量</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">宇树科技</span><span class="co-tier co-bd2">T3</span></div>
+          <div class="co-body"><ul><li>8点1氪丨买火车票放零食被要求让座，12306回应；宇树科技上市庆功照流出；章子…</li></ul></div>
+        </div></div></div></div>
+
+  <div class="card"><div class="card-head">📊 话题分布</div><div class="card-body"><div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:67%"></div></div><span class="topic-pct">67%</span></div><div class="topic-row"><span class="topic-ico">💰</span><span class="topic-name">融资/并购</span><div class="topic-bar-bg"><div class="topic-fill fill-g" style="width:25%"></div></div><span class="topic-pct">25%</span></div></div></div>
+</div>
+
+<div class="footer">互联网洞察日报 · 2026-08-21 · <a href="../../index.html">返回首页</a> · <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a></div>
+</body>
+</html>
