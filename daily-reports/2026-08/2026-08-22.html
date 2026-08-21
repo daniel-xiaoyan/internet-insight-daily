@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-08-22 互联网洞察日报</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--text-1:#111827;--text-2:#6b7280;--text-3:#9ca3af;--green:#10b981;--purple:#8b5cf6;--blue:#3b82f6;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--r:12px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+.dark{--bg:#0f172a;--card:#1e293b;--text-1:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text-1);line-height:1.5}
+a{color:var(--purple);text-decoration:none}
+.header{background:linear-gradient(135deg,#059669,#7c3aed 60%,#2563eb);padding:24px;position:relative}
+.dark .header{background:linear-gradient(135deg,#065f46,#4c1d95 60%,#1e3a5f)}
+.header-inner{max-width:960px;margin:auto;position:relative;z-index:1}
+.nav-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.back-link{color:rgba(255,255,255,.8);font-size:13px;display:flex;align-items:center;gap:6px}
+.back-link:hover{color:#fff}
+.date-badge{font-size:28px;font-weight:800;color:#fff}
+.date-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:4px}
+.nav-btns{display:flex;gap:8px}
+.nav-btn{padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:12px}
+.nav-btn:hover{background:rgba(255,255,255,.35)}
+.main{max-width:960px;margin:20px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid var(--bg)}
+.card-body{padding:16px}
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.news-cat-head{font-size:13px;font-weight:700;padding:8px 0 4px;display:flex;align-items:center;gap:6px;grid-column:1/-1}
+.news-item{background:var(--bg);border-radius:10px;padding:12px}
+.ni-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.ni-hot{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--red);color:#fff;font-weight:600}
+.ni-co{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-bd{background:#fef2f2;color:#dc2626}.co-tx{background:#eff6ff;color:#2563eb}.co-al{background:#fff7ed;color:#d97706}.co-mt{background:#ecfdf5;color:#059669}.co-pdd{background:#fdf2f8;color:#db2777}.co-bd2{background:#f5f3ff;color:#7c3aed}.co-xhs{background:#fff1f2;color:#e11d48}.co-dd{background:#f0fdf4;color:#16a34a}.co-ks{background:#fff1f2;color:#f43f5e}.co-jd{background:#dbeafe;color:#1d4ed8}
+.dark .co-bd{background:#7f1d1d;color:#fca5a5}.dark .co-tx{background:#1e3a5f;color:#93c5fd}.dark .co-al{background:#78350f;color:#fbbf24}.dark .co-mt{background:#064e3b;color:#6ee7b7}
+.ni-date{font-size:10px;color:var(--text-3)}
+.ni-title{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.4}
+.ni-desc{font-size:12px;color:var(--text-2);line-height:1.4}
+.ni-src{font-size:10px;color:var(--text-3);margin-top:4px}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.co-card{background:var(--bg);border-radius:10px;padding:12px}
+.co-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.co-name{font-size:14px;font-weight:700}.co-tier{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-body{font-size:12px;color:var(--text-2);line-height:1.5}.co-body li{margin-left:14px;margin-bottom:2px}
+.topic-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.topic-ico{width:18px;text-align:center}.topic-name{min-width:64px}
+.topic-bar-bg{flex:1;height:14px;background:var(--bg);border-radius:7px;overflow:hidden}
+.topic-fill{height:100%;border-radius:7px}
+.fill-r{background:linear-gradient(90deg,#ef4444,#dc2626)}.fill-o{background:linear-gradient(90deg,#f59e0b,#d97706)}.fill-pk{background:linear-gradient(90deg,#ec4899,#db2777)}.fill-g{background:linear-gradient(90deg,#10b981,#059669)}.fill-b{background:linear-gradient(90deg,#3b82f6,#2563eb)}.fill-v{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.topic-pct{min-width:28px;text-align:right;color:var(--text-2)}
+.footer{max-width:960px;margin:24px auto;padding:16px;text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--bg)}
+@media(max-width:640px){.news-grid,.co-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="nav-row">
+      <a class="back-link" href="../../index.html">← 返回首页</a>
+      <div class="nav-btns">
+        <a class="nav-btn" href="../2026-08/2026-08-21.html">← 前一天</a>
+        <a class="nav-btn" href="../2026-08/2026-08-23.html">后一天 →</a>
+      </div>
+    </div>
+    <div class="date-badge">🔬 2026年8月22日 · 周六</div>
+    <div class="date-sub">互联网洞察日报 · 共收录 11 条互联网相关新闻</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card"><div class="card-head">📰 今日新闻</div><div class="card-body">
+    
+          <div class="news-grid">
+            <div class="news-cat-head">🤖 AI产品动态</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">氪星晚报｜中科曙光超节点产品亮相安徽算力大会；广州市中级人民法院依法受理恒大地产集团有限公司破产清算案；科大讯飞：将于今年全球1024开发者节推出全新主力通用大模型</div>
+              <div class="ni-desc">大公司：
+  苹果裁撤60名VR团队员工 战略重心或转向AI眼镜
+  据报道，苹果已对Vision业务团队进行人员调整，至少60名隶属于Vision小组、从事VR相关开发的员工遭到裁员，苹果官方尚未对该消息作出回应。报道指出，本次裁员背后是</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">日本最年轻华人终身教授创业AI+新材料，自研200+物理模型，研发周期缩至两月丨36氪首发</div>
+              <div class="ni-desc">图源/企业
+  
+   <p</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-bd">字节</span><span class="ni-date"></span></div>
+              <div class="ni-title">专访任利锋：那个曾做出抖音的人，如今在工厂里做AI</div>
+              <div class="ni-desc">文｜温丽虹
+  编辑｜张雨忻
+  位于北京海淀的互联网金融中心，任利锋创办的“数美万物”在这里有3个办公地点。其中的一间不是办公室而是实验室，他们采购来市面上主流的3D打印机，在实验室桌面上次第排开，每天打印自研生成式3D模型生成的东西。经</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">WPS Comate百城AI智能体赋能计划正式启动</div>
+              <div class="ni-desc">36氪获悉，8月21日，“WPS Comate百城AI智能体赋能计划”正式启动。该计划由金山办公联合各地国资委、大数据局、经信局、金融监管机构及其下辖的数字科技公司、行业协会等，面向企业数字化及AI业务负责人开设专项培训，通过产品培训加AI</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">超算互联网发布科学智能体共创计划阶段成果：已汇聚智能体500余个</div>
+              <div class="ni-desc">36氪获悉，曙光智算副总裁兼首席技术官吕灼恒在2026科学智能大会上透露，国家超算互联网自7月发布“科学计算智能体生态共创与开发者招募合作计划”以来，已吸引近300名来自高校、科研院所、企业及个人开发者加入。目前超算互联网已汇聚技能1700</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">半导体行业繁荣带动税收超预期，韩国拟设“未来应对基金”投资青年、AI等领域</div>
+              <div class="ni-desc">韩国企划预算处8月21日发布声明称，得益于半导体行业的蓬勃发展，韩国税收收入超预期，预计明年税收收入也将大幅增长。韩国政府计划新设“未来应对基金”，持续积累这部分额外税收，并将其作为战略投资和财政稳定的平台。声明称，韩国政府已选定四个领域作</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">💰 融资/并购</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">卫星终端量产、数据平台开放，「天行探索」完成数千万天使+轮融资｜36氪首发</div>
+              <div class="ni-desc">36氪获悉，卫星互联网连接与数据服务提供商北京天行探索科技有限公司（以下简称“天行探索”）已完成数千万天使+轮融资，由陆石投资和梅花创投共同出资。这也是陆石投资继天使轮独家投资后的连续加注。
+  本轮资金将主要用于产品研发与生产，以及多体制</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">🏆 行业格局</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-co co-ks">快手</span><span class="ni-date"></span></div>
+              <div class="ni-title">成本超12亿的《诡秘之主》，能否成为快手自研游戏的破局点？</div>
+              <div class="ni-desc">文丨果脯
+  由同名IP小说改编的MMO网游《诡秘之主》，今天终于端上桌了。
+  自2023年首曝以来，《诡秘之主》游戏就已经收获了大量关注，其首曝视频在B站获得了超600万的播放量，不久后的实机场景演示更是突破700万。
+  上线前，这款</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-tx">网易</span><span class="ni-date"></span></div>
+              <div class="ni-title">热门中概股美股盘前多数上涨，网易涨超7%</div>
+              <div class="ni-desc">36氪获悉，热门中概股美股盘前多数上涨，截至发稿，网易涨超7%，百度涨超3%，爱奇艺、哔哩哔哩、小鹏集团、富途控股涨超2%，老虎证券、蔚来、理想汽车涨超1%；阿里巴巴跌近3%，微博跌0.14%。</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+  </div></div>
+
+  <div class="card"><div class="card-head">🏢 重点公司动态</div><div class="card-body"><div class="co-grid">
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">快手</span><span class="co-tier co-ks">T2</span></div>
+          <div class="co-body"><ul><li>成本超12亿的《诡秘之主》，能否成为快手自研游戏的破局点？</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">网易</span><span class="co-tier co-tx">T2</span></div>
+          <div class="co-body"><ul><li>热门中概股美股盘前多数上涨，网易涨超7%</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">字节跳动</span><span class="co-tier co-bd">T1</span></div>
+          <div class="co-body"><ul><li>专访任利锋：那个曾做出抖音的人，如今在工厂里做AI</li></ul></div>
+        </div></div></div></div>
+
+  <div class="card"><div class="card-head">📊 话题分布</div><div class="card-body"><div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:73%"></div></div><span class="topic-pct">73%</span></div><div class="topic-row"><span class="topic-ico">💰</span><span class="topic-name">融资/并购</span><div class="topic-bar-bg"><div class="topic-fill fill-g" style="width:9%"></div></div><span class="topic-pct">9%</span></div></div></div>
+</div>
+
+<div class="footer">互联网洞察日报 · 2026-08-22 · <a href="../../index.html">返回首页</a> · <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a></div>
+</body>
+</html>
