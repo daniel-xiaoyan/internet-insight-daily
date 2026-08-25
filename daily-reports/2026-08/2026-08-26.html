@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-08-26 互联网洞察日报</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--text-1:#111827;--text-2:#6b7280;--text-3:#9ca3af;--green:#10b981;--purple:#8b5cf6;--blue:#3b82f6;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--r:12px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+.dark{--bg:#0f172a;--card:#1e293b;--text-1:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text-1);line-height:1.5}
+a{color:var(--purple);text-decoration:none}
+.header{background:linear-gradient(135deg,#059669,#7c3aed 60%,#2563eb);padding:24px;position:relative}
+.dark .header{background:linear-gradient(135deg,#065f46,#4c1d95 60%,#1e3a5f)}
+.header-inner{max-width:960px;margin:auto;position:relative;z-index:1}
+.nav-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.back-link{color:rgba(255,255,255,.8);font-size:13px;display:flex;align-items:center;gap:6px}
+.back-link:hover{color:#fff}
+.date-badge{font-size:28px;font-weight:800;color:#fff}
+.date-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:4px}
+.nav-btns{display:flex;gap:8px}
+.nav-btn{padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:12px}
+.nav-btn:hover{background:rgba(255,255,255,.35)}
+.main{max-width:960px;margin:20px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid var(--bg)}
+.card-body{padding:16px}
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.news-cat-head{font-size:13px;font-weight:700;padding:8px 0 4px;display:flex;align-items:center;gap:6px;grid-column:1/-1}
+.news-item{background:var(--bg);border-radius:10px;padding:12px}
+.ni-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.ni-hot{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--red);color:#fff;font-weight:600}
+.ni-co{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-bd{background:#fef2f2;color:#dc2626}.co-tx{background:#eff6ff;color:#2563eb}.co-al{background:#fff7ed;color:#d97706}.co-mt{background:#ecfdf5;color:#059669}.co-pdd{background:#fdf2f8;color:#db2777}.co-bd2{background:#f5f3ff;color:#7c3aed}.co-xhs{background:#fff1f2;color:#e11d48}.co-dd{background:#f0fdf4;color:#16a34a}.co-ks{background:#fff1f2;color:#f43f5e}.co-jd{background:#dbeafe;color:#1d4ed8}
+.dark .co-bd{background:#7f1d1d;color:#fca5a5}.dark .co-tx{background:#1e3a5f;color:#93c5fd}.dark .co-al{background:#78350f;color:#fbbf24}.dark .co-mt{background:#064e3b;color:#6ee7b7}
+.ni-date{font-size:10px;color:var(--text-3)}
+.ni-title{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.4}
+.ni-desc{font-size:12px;color:var(--text-2);line-height:1.4}
+.ni-src{font-size:10px;color:var(--text-3);margin-top:4px}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.co-card{background:var(--bg);border-radius:10px;padding:12px}
+.co-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.co-name{font-size:14px;font-weight:700}.co-tier{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-body{font-size:12px;color:var(--text-2);line-height:1.5}.co-body li{margin-left:14px;margin-bottom:2px}
+.topic-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.topic-ico{width:18px;text-align:center}.topic-name{min-width:64px}
+.topic-bar-bg{flex:1;height:14px;background:var(--bg);border-radius:7px;overflow:hidden}
+.topic-fill{height:100%;border-radius:7px}
+.fill-r{background:linear-gradient(90deg,#ef4444,#dc2626)}.fill-o{background:linear-gradient(90deg,#f59e0b,#d97706)}.fill-pk{background:linear-gradient(90deg,#ec4899,#db2777)}.fill-g{background:linear-gradient(90deg,#10b981,#059669)}.fill-b{background:linear-gradient(90deg,#3b82f6,#2563eb)}.fill-v{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.topic-pct{min-width:28px;text-align:right;color:var(--text-2)}
+.footer{max-width:960px;margin:24px auto;padding:16px;text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--bg)}
+@media(max-width:640px){.news-grid,.co-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="nav-row">
+      <a class="back-link" href="../../index.html">← 返回首页</a>
+      <div class="nav-btns">
+        <a class="nav-btn" href="../2026-08/2026-08-25.html">← 前一天</a>
+        <a class="nav-btn" href="../2026-08/2026-08-27.html">后一天 →</a>
+      </div>
+    </div>
+    <div class="date-badge">🔬 2026年8月26日 · 周三</div>
+    <div class="date-sub">互联网洞察日报 · 共收录 15 条互联网相关新闻</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card"><div class="card-head">📰 今日新闻</div><div class="card-body">
+    
+          <div class="news-grid">
+            <div class="news-cat-head">🤖 AI产品动态</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">从课件到具身智能实验室，AI开始帮老师生成教学应用</div>
+              <div class="ni-desc">文｜杨媛
+  编辑｜彭孝秋
+  一个中学生想理解具身智能，不一定要先从“感知”、“决策、“执行”这些抽象概念开始。在飞象老师的“具身智能实验室”里，机器人本身成为学习对象。学生可以在仿真或任务驱动环境中，通过路线规划、行为控制和任务协作，观</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-bd">字节</span><span class="ni-date"></span></div>
+              <div class="ni-title">字节探索自动驾驶， Seed世界模型团队负责｜36氪独家</div>
+              <div class="ni-desc">36氪从多位产业人士处获悉，字节跳动正探索进入自动驾驶领域。这一项目目前由Seed旗下周畅的世界模型团队负责。据了解，Seed旗下不仅有周畅的多模态模型、世界模型等团队，还有大语言模型方向。
+  而自动驾驶与世界模型的技术路线有交叠之处。
+</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">这场AI大赛上，年轻人把「人味」拉满了</div>
+              <div class="ni-desc"><img data-img-size-val="900,46" src="http</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-tx">腾讯</span><span class="ni-date"></span></div>
+              <div class="ni-title">重组AI游戏部门？腾讯相关人士回应</div>
+              <div class="ni-desc">据媒体报道，针对腾讯互动娱乐事业群（IEG）重组AI游戏部门一事，腾讯相关人士称，该报道内容存在大量失实，所谓“成立新部门”系误读。近日有消息称，IEG正在重组AI游戏部门，将IEG CROS（腾讯游戏技术中台）旗下的ARC Lab与游戏A</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date">08-25</span></div>
+              <div class="ni-title">AI4S开始进入「项目时代」：紫东太初把AI从做Task推向做Project</div>
+              <div class="ni-desc">AI科研能力从工具级转向系统级</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date">08-25</span></div>
+              <div class="ni-title">人民教育音像数字出版社与小猿达成合作 “中小学课本学习智能体”首落小猿AI学习机</div>
+              <div class="ni-desc">2026年8月21日，小猿学习机在京举办“中小学课本学习智能体”首发上线活动。</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">💰 融资/并购</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">硬氪首发 | 深圳具身基础设施公司获近亿元融资，拿下60%估值百亿头部机器人公司客户</div>
+              <div class="ni-desc">图源企业官方
+  作者&nbsp;|&nbsp</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">36氪首发｜东方非遗香氛品牌「呈白」完成数千万元Pre-A轮融资，上影新视野独家投资</div>
+              <div class="ni-desc">36氪获悉，东方非遗香氛品牌「呈白」近日完成数千万元Pre-A轮融资，由上影新视野基金独家投资，领甪资本担任长期财务顾问。本轮融资资金将主要用于非遗香及非遗器的研发、重点渠道开拓与核心人才引进，并有计划地铺垫品牌基础声量。
+  「呈白」创立</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">8点1氪丨“敌敌畏消杀餐厅”事件已成立联合调查组；小鹏机器人首轮融资超9亿美元；东方甄选薪酬少发4个亿</div>
+              <div class="ni-desc">今日热点导览
+  
+   英伟达AI芯片价格或将上涨约17%，服务器厂商通知客户
+   12306回应无座票二等座同价：无座票全称为“无固定座位票”
+   8月以来金饰克价上涨超百元，金条投资热度升温
+   19至34岁韩国人人均负债近8万</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">在轨3年、全栈自研，宇航级热控方案供应商「锐莱热控」获A+轮数千万融资｜36氪首发</div>
+              <div class="ni-desc">热管理正从卫星的辅助分系统，成为制约星座规模化、商业化落地的核心变量。
+  36氪获悉，宇航级热控方案供应商锐莱热控科技（北京）有限公司（以下简称“锐莱热控”）已于近期完成A+轮数千万融资。本轮融资由英诺天使基金、方广资本、集萃华财、湘江信</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">🏆 行业格局</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-co co-tx">网易</span><span class="ni-date"></span></div>
+              <div class="ni-title">热门中概股美股盘前涨跌不一，网易涨超3%</div>
+              <div class="ni-desc">36氪获悉，热门中概股美股盘前涨跌不一，截至发稿，网易涨超3%，富途控股涨超2%，老虎证券、爱奇艺涨超1%；新东方跌超1%，京东跌0.68%，阿里巴巴跌0.44%，百度跌0.02%。</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-tx">腾讯</span><span class="ni-date"></span></div>
+              <div class="ni-title">茅台数科与腾讯云达成合作</div>
+              <div class="ni-desc">36氪获悉，近日，贵州爱茅台数字科技有限公司（简称"茅台数科"）与腾讯云达成合作，将推动WorkBuddy、CodeBuddy等AI工具在公司所有办公场景普及。</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-tx">腾讯</span><span class="ni-date"></span></div>
+              <div class="ni-title">腾讯云与卡尔动力达成战略合作</div>
+              <div class="ni-desc">36氪获悉，腾讯云与卡尔动力在北京签署战略合作协议。双方将进一步围绕自动驾驶货运模型的训练、推理、数据处理与持续迭代开展合作，为卡尔动力L4级自动驾驶干线货运的规模化运营提供支撑。</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+  </div></div>
+
+  <div class="card"><div class="card-head">🏢 重点公司动态</div><div class="card-body"><div class="co-grid">
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">腾讯</span><span class="co-tier co-tx">T1</span></div>
+          <div class="co-body"><ul><li>重组AI游戏部门？腾讯相关人士回应</li><li>茅台数科与腾讯云达成合作</li><li>腾讯云与卡尔动力达成战略合作</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">字节跳动</span><span class="co-tier co-bd">T1</span></div>
+          <div class="co-body"><ul><li>字节探索自动驾驶， Seed世界模型团队负责｜36氪独家</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">网易</span><span class="co-tier co-tx">T2</span></div>
+          <div class="co-body"><ul><li>热门中概股美股盘前涨跌不一，网易涨超3%</li></ul></div>
+        </div></div></div></div>
+
+  <div class="card"><div class="card-head">📊 话题分布</div><div class="card-body"><div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:53%"></div></div><span class="topic-pct">53%</span></div><div class="topic-row"><span class="topic-ico">💰</span><span class="topic-name">融资/并购</span><div class="topic-bar-bg"><div class="topic-fill fill-g" style="width:27%"></div></div><span class="topic-pct">27%</span></div></div></div>
+</div>
+
+<div class="footer">互联网洞察日报 · 2026-08-26 · <a href="../../index.html">返回首页</a> · <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a></div>
+</body>
+</html>
