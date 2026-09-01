@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-09-02 互联网洞察日报</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--text-1:#111827;--text-2:#6b7280;--text-3:#9ca3af;--green:#10b981;--purple:#8b5cf6;--blue:#3b82f6;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--r:12px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+.dark{--bg:#0f172a;--card:#1e293b;--text-1:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text-1);line-height:1.5}
+a{color:var(--purple);text-decoration:none}
+.header{background:linear-gradient(135deg,#059669,#7c3aed 60%,#2563eb);padding:24px;position:relative}
+.dark .header{background:linear-gradient(135deg,#065f46,#4c1d95 60%,#1e3a5f)}
+.header-inner{max-width:960px;margin:auto;position:relative;z-index:1}
+.nav-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.back-link{color:rgba(255,255,255,.8);font-size:13px;display:flex;align-items:center;gap:6px}
+.back-link:hover{color:#fff}
+.date-badge{font-size:28px;font-weight:800;color:#fff}
+.date-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:4px}
+.nav-btns{display:flex;gap:8px}
+.nav-btn{padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:12px}
+.nav-btn:hover{background:rgba(255,255,255,.35)}
+.main{max-width:960px;margin:20px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid var(--bg)}
+.card-body{padding:16px}
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.news-cat-head{font-size:13px;font-weight:700;padding:8px 0 4px;display:flex;align-items:center;gap:6px;grid-column:1/-1}
+.news-item{background:var(--bg);border-radius:10px;padding:12px}
+.ni-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.ni-hot{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--red);color:#fff;font-weight:600}
+.ni-co{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-bd{background:#fef2f2;color:#dc2626}.co-tx{background:#eff6ff;color:#2563eb}.co-al{background:#fff7ed;color:#d97706}.co-mt{background:#ecfdf5;color:#059669}.co-pdd{background:#fdf2f8;color:#db2777}.co-bd2{background:#f5f3ff;color:#7c3aed}.co-xhs{background:#fff1f2;color:#e11d48}.co-dd{background:#f0fdf4;color:#16a34a}.co-ks{background:#fff1f2;color:#f43f5e}.co-jd{background:#dbeafe;color:#1d4ed8}
+.dark .co-bd{background:#7f1d1d;color:#fca5a5}.dark .co-tx{background:#1e3a5f;color:#93c5fd}.dark .co-al{background:#78350f;color:#fbbf24}.dark .co-mt{background:#064e3b;color:#6ee7b7}
+.ni-date{font-size:10px;color:var(--text-3)}
+.ni-title{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.4}
+.ni-desc{font-size:12px;color:var(--text-2);line-height:1.4}
+.ni-src{font-size:10px;color:var(--text-3);margin-top:4px}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.co-card{background:var(--bg);border-radius:10px;padding:12px}
+.co-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.co-name{font-size:14px;font-weight:700}.co-tier{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-body{font-size:12px;color:var(--text-2);line-height:1.5}.co-body li{margin-left:14px;margin-bottom:2px}
+.topic-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.topic-ico{width:18px;text-align:center}.topic-name{min-width:64px}
+.topic-bar-bg{flex:1;height:14px;background:var(--bg);border-radius:7px;overflow:hidden}
+.topic-fill{height:100%;border-radius:7px}
+.fill-r{background:linear-gradient(90deg,#ef4444,#dc2626)}.fill-o{background:linear-gradient(90deg,#f59e0b,#d97706)}.fill-pk{background:linear-gradient(90deg,#ec4899,#db2777)}.fill-g{background:linear-gradient(90deg,#10b981,#059669)}.fill-b{background:linear-gradient(90deg,#3b82f6,#2563eb)}.fill-v{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.topic-pct{min-width:28px;text-align:right;color:var(--text-2)}
+.footer{max-width:960px;margin:24px auto;padding:16px;text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--bg)}
+@media(max-width:640px){.news-grid,.co-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="nav-row">
+      <a class="back-link" href="../../index.html">← 返回首页</a>
+      <div class="nav-btns">
+        <a class="nav-btn" href="../2026-09/2026-09-01.html">← 前一天</a>
+        <a class="nav-btn" href="../2026-09/2026-09-03.html">后一天 →</a>
+      </div>
+    </div>
+    <div class="date-badge">🔬 2026年9月2日 · 周三</div>
+    <div class="date-sub">互联网洞察日报 · 共收录 13 条互联网相关新闻</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card"><div class="card-head">📰 今日新闻</div><div class="card-body">
+    
+          <div class="news-grid">
+            <div class="news-cat-head">🤖 AI产品动态</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">2连板龙版传媒：AI视频业务未产生营业收入</div>
+              <div class="ni-desc">36氪获悉，龙版传媒发布异动公告，公司股票在8月31日、9月1日连续两个交易日收盘价格涨幅偏离值累计超过20%，属于异常波动情况。经公司自查并向公司控股股东黑龙江出版集团有限公司核实，不存在应披露而未披露的重大事项。公司主营业务为出版、印刷</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">OneRail联合英伟达推出面向零售商的人工智能平台，助力其更快做出配送决策</div>
+              <div class="ni-desc">物流企业OneRail即将推出一款平台，该平台采用英伟达人工智能软件，助力零售商大规模快速选定最高效的配送方案。这款名为OmniStar的全新平台，依托OneRail的专有数据，让零售商借助人工智能评估全部配送选项，为每一笔独立订单筛选最优</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date">09-01</span></div>
+              <div class="ni-title">3秒出片比播放还快，MiniMax打开了AI视频的实时商业化路径</div>
+              <div class="ni-desc"></div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date">09-01</span></div>
+              <div class="ni-title">自进化WAM来了！清华AIR联手域变换提出具身In-Context Causal Learning</div>
+              <div class="ni-desc">参数冻结，能力暴涨</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date">09-01</span></div>
+              <div class="ni-title">AIVC只是前菜！复旦提出生命算子，统一生命建模</div>
+              <div class="ni-desc">连发六篇Nature期刊，复旦Neolab打通全尺度生命推演</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date">08-31</span></div>
+              <div class="ni-title">VC疯了！200万现金冠军奖，又花4000万造了一座AI「创业乌托邦」</div>
+              <div class="ni-desc">划重点：这次不是你挨家敲门，是VC排队来看你。</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">💰 融资/并购</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">众筹超千万美金，桌面CNC品牌完成数亿元天使轮系列融资，红杉、蓝驰等押注｜产品观察</div>
+              <div class="ni-desc">作者｜黄楠
+  编辑｜袁斯来
+  智能硬件赛道融资遇冷时，一家CNC公司却拿下了头部机构的数亿融资。
+  硬氪独家获悉，桌面CNC品牌巢匠科技NestWorks（以下简称NestWorks）日前已完成数亿元天使轮及天使+轮融资，投资方为红杉</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">硬氪首发 | 前META、XREAL产品负责人创业可穿戴硬件，获美国顶级VC千万美金种子轮融资</div>
+              <div class="ni-desc">硬氪获悉，近日可穿戴AI硬件Nirva完成千万美金种子轮融资，由美国顶级VC光速（Lightspeed）领投，South Park Commons跟投，由深渡资本担任长期独家财务顾问。此次融资主要用来扩充团队、量产准备和新品研发。
+  这是</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-mt">美团</span><span class="ni-date"></span></div>
+              <div class="ni-title">硬氪首发 | 核聚变企业完成12亿融资，美团龙珠、高瓴加持，投后估值超百亿</div>
+              <div class="ni-desc">硬氪获悉，近日核聚变企业「诺瓦聚变」完成总额12亿元Pre-A系列融资，美团龙珠、高瓴资本持续加码布局，联想创投、国中资本作为全新战略投资方入局。本轮融资将为下一步并行推进Q&gt;1净聚变能输出验证及商业电站配套提供充足的资金储备。
+  </div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">硬氪首发 | 异构智算平台天使轮融资千万，瞄准英伟达和国产GPU算力调度</div>
+              <div class="ni-desc">硬氪获悉，近日异构智算平台与梯度Token工厂技术服务商博伦智汇完成千万级天使轮融资，投后估值约1.5亿元。本轮融资由专注AI及AI Infra赛道、同时布局过大模型训练框架的一线产业基金投资，将主要用于异构智算核心技术迭代、算力基础设施产</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">🏆 行业格局</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-co co-mt">美团</span><span class="ni-date"></span></div>
+              <div class="ni-title">美团副总裁陶雪璇：今年是大众点评境外业务增速迅猛的一年</div>
+              <div class="ni-desc">作者｜任彩茹
+  编辑｜乔芊
+  2026 年 8 月26日，大众点评在马来西亚吉隆坡举办了最新的境外“必吃榜”“必玩榜”的颁奖典礼。今年“必吃榜”境外共新增了20个城市，并首次上线了覆盖港澳台及海外 33 个城市和地区的“必玩榜”。这也是</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-jd">京东</span><span class="ni-date"></span></div>
+              <div class="ni-title">热门中概股美股盘前集体走弱，京东跌超2%</div>
+              <div class="ni-desc">36氪获悉，热门中概股美股盘前集体走弱，截至发稿，京东跌超2%，阿里巴巴、拼多多、网易、哔哩哔哩跌超1%，蔚来跌0.96%，小鹏集团跌0.44%，百度跌0.4%，理想汽车跌0.33%。</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+  </div></div>
+
+  <div class="card"><div class="card-head">🏢 重点公司动态</div><div class="card-body"><div class="co-grid">
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">美团</span><span class="co-tier co-mt">T1</span></div>
+          <div class="co-body"><ul><li>硬氪首发 | 核聚变企业完成12亿融资，美团龙珠、高瓴加持，投后估值超百亿</li><li>美团副总裁陶雪璇：今年是大众点评境外业务增速迅猛的一年</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">京东</span><span class="co-tier co-jd">T2</span></div>
+          <div class="co-body"><ul><li>热门中概股美股盘前集体走弱，京东跌超2%</li></ul></div>
+        </div></div></div></div>
+
+  <div class="card"><div class="card-head">📊 话题分布</div><div class="card-body"><div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:54%"></div></div><span class="topic-pct">54%</span></div><div class="topic-row"><span class="topic-ico">💰</span><span class="topic-name">融资/并购</span><div class="topic-bar-bg"><div class="topic-fill fill-g" style="width:31%"></div></div><span class="topic-pct">31%</span></div></div></div>
+</div>
+
+<div class="footer">互联网洞察日报 · 2026-09-02 · <a href="../../index.html">返回首页</a> · <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a></div>
+</body>
+</html>
