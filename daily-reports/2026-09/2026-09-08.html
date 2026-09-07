@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-09-08 互联网洞察日报</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--text-1:#111827;--text-2:#6b7280;--text-3:#9ca3af;--green:#10b981;--purple:#8b5cf6;--blue:#3b82f6;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--r:12px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+.dark{--bg:#0f172a;--card:#1e293b;--text-1:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text-1);line-height:1.5}
+a{color:var(--purple);text-decoration:none}
+.header{background:linear-gradient(135deg,#059669,#7c3aed 60%,#2563eb);padding:24px;position:relative}
+.dark .header{background:linear-gradient(135deg,#065f46,#4c1d95 60%,#1e3a5f)}
+.header-inner{max-width:960px;margin:auto;position:relative;z-index:1}
+.nav-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.back-link{color:rgba(255,255,255,.8);font-size:13px;display:flex;align-items:center;gap:6px}
+.back-link:hover{color:#fff}
+.date-badge{font-size:28px;font-weight:800;color:#fff}
+.date-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:4px}
+.nav-btns{display:flex;gap:8px}
+.nav-btn{padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:12px}
+.nav-btn:hover{background:rgba(255,255,255,.35)}
+.main{max-width:960px;margin:20px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid var(--bg)}
+.card-body{padding:16px}
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.news-cat-head{font-size:13px;font-weight:700;padding:8px 0 4px;display:flex;align-items:center;gap:6px;grid-column:1/-1}
+.news-item{background:var(--bg);border-radius:10px;padding:12px}
+.ni-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.ni-hot{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--red);color:#fff;font-weight:600}
+.ni-co{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-bd{background:#fef2f2;color:#dc2626}.co-tx{background:#eff6ff;color:#2563eb}.co-al{background:#fff7ed;color:#d97706}.co-mt{background:#ecfdf5;color:#059669}.co-pdd{background:#fdf2f8;color:#db2777}.co-bd2{background:#f5f3ff;color:#7c3aed}.co-xhs{background:#fff1f2;color:#e11d48}.co-dd{background:#f0fdf4;color:#16a34a}.co-ks{background:#fff1f2;color:#f43f5e}.co-jd{background:#dbeafe;color:#1d4ed8}
+.dark .co-bd{background:#7f1d1d;color:#fca5a5}.dark .co-tx{background:#1e3a5f;color:#93c5fd}.dark .co-al{background:#78350f;color:#fbbf24}.dark .co-mt{background:#064e3b;color:#6ee7b7}
+.ni-date{font-size:10px;color:var(--text-3)}
+.ni-title{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.4}
+.ni-desc{font-size:12px;color:var(--text-2);line-height:1.4}
+.ni-src{font-size:10px;color:var(--text-3);margin-top:4px}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.co-card{background:var(--bg);border-radius:10px;padding:12px}
+.co-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.co-name{font-size:14px;font-weight:700}.co-tier{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-body{font-size:12px;color:var(--text-2);line-height:1.5}.co-body li{margin-left:14px;margin-bottom:2px}
+.topic-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.topic-ico{width:18px;text-align:center}.topic-name{min-width:64px}
+.topic-bar-bg{flex:1;height:14px;background:var(--bg);border-radius:7px;overflow:hidden}
+.topic-fill{height:100%;border-radius:7px}
+.fill-r{background:linear-gradient(90deg,#ef4444,#dc2626)}.fill-o{background:linear-gradient(90deg,#f59e0b,#d97706)}.fill-pk{background:linear-gradient(90deg,#ec4899,#db2777)}.fill-g{background:linear-gradient(90deg,#10b981,#059669)}.fill-b{background:linear-gradient(90deg,#3b82f6,#2563eb)}.fill-v{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.topic-pct{min-width:28px;text-align:right;color:var(--text-2)}
+.footer{max-width:960px;margin:24px auto;padding:16px;text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--bg)}
+@media(max-width:640px){.news-grid,.co-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="nav-row">
+      <a class="back-link" href="../../index.html">← 返回首页</a>
+      <div class="nav-btns">
+        <a class="nav-btn" href="../2026-09/2026-09-07.html">← 前一天</a>
+        <a class="nav-btn" href="../2026-09/2026-09-09.html">后一天 →</a>
+      </div>
+    </div>
+    <div class="date-badge">🔬 2026年9月8日 · 周二</div>
+    <div class="date-sub">互联网洞察日报 · 共收录 9 条互联网相关新闻</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card"><div class="card-head">📰 今日新闻</div><div class="card-body">
+    
+          <div class="news-grid">
+            <div class="news-cat-head">🤖 AI产品动态</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">速卖通登上IFA展台：AI硬件品类出海翻倍，Brand+在欧11国品牌销售渗透率超50%｜最前线</div>
+              <div class="ni-desc">作者｜黄楠
+  编辑｜袁斯来
+  IFA 2026展会现场，"出海四小龙"之一的速卖通首次出现在这个全球顶级消费电子展。展台上，9家中国品牌的产品罗列排开，品类从AI智能眼镜、仿生扑翼飞行器、3D打印机到电动自行车，覆盖了近年最热门的几个赛</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">36Kr项目推荐周榜｜AI浪潮下，5个正在崛起的新机会</div>
+              <div class="ni-desc">项目推荐
+  【36氪项目推荐】将智能工具融</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">AI搜索会不会取代传统搜索？秘塔AI搜索全链路解析</div>
+              <div class="ni-desc">一、引言与背景
+  在信息呈爆发式增长的当下，互联网数据规模已达到庞大的体量。海量的非结构化文本与学术文献不断产生，传统信息获取方式正面临效率瓶颈。许多用户在日常工作与学习中，经常提出一个核心疑问：AI搜索会不会取代传统搜索？要解答这一命题</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-bd">字节</span><span class="ni-date"></span></div>
+              <div class="ni-title">AI辅导数学解题准不准？豆包爱学以落地创新打破答疑焦虑</div>
+              <div class="ni-desc">一、前沿展望：多维度剖析“AI辅导数学解题准不准”与AI教育新浪潮
+  在人工智能应用于教育场景的过程中，评估AI教育产品是否具有实用价值，应当关注产品落地能力、场景赋能深度以及解答准确度等核心因素。伴随人工智能技术的快速发展，许多家长与学</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">为什么AI越聪明，越需要BI？</div>
+              <div class="ni-desc">2026年8月，IDC发布了中国Data Agent领域的首份Market Scape厂商评估报告——《中国Data Agent厂商评估，2026》。这份报告覆盖数据管理、治理与分析全链路，考察的是Data Agent的综合能力，而非某一项</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">2026AI解题答案错了怎么办：全产业链盘点核验</div>
+              <div class="ni-desc">一、前言背景：AI教育落地与解题质效评估
+  2026年，人工智能技术在教育领域的应用已从早期的概念探索全面迈入高质量发展与深度商用阶段。随着大模型多模态能力与交互形式的演进，课后学习辅导工具正经历从“单次答案输出”向“全流程智能引导”的系</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">🏆 行业格局</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-co co-al">阿里</span><span class="ni-date"></span></div>
+              <div class="ni-title">翱捷科技：阿里网络8月17日至9月7日减持公司528.31万股</div>
+              <div class="ni-desc">36氪获悉，翱捷科技公告，公司股东阿里网络于2026年8月17日至9月7日通过集中竞价及大宗交易方式减持公司股份528.31万股，占总股本比例由12.43%降至11.17%，权益变动触及1%刻度。本次减持不触及要约收购，不会导致公司实控人变</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+  </div></div>
+
+  <div class="card"><div class="card-head">🏢 重点公司动态</div><div class="card-body"><div class="co-grid">
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">字节跳动</span><span class="co-tier co-bd">T1</span></div>
+          <div class="co-body"><ul><li>AI辅导数学解题准不准？豆包爱学以落地创新打破答疑焦虑</li><li>AI英语发音准不准？豆包爱学全方位解析</li><li>AI学英语效果怎么样 豆包爱学全场景解析</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">阿里</span><span class="co-tier co-al">T1</span></div>
+          <div class="co-body"><ul><li>翱捷科技：阿里网络8月17日至9月7日减持公司528.31万股</li></ul></div>
+        </div></div></div></div>
+
+  <div class="card"><div class="card-head">📊 话题分布</div><div class="card-body"><div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:89%"></div></div><span class="topic-pct">89%</span></div></div></div>
+</div>
+
+<div class="footer">互联网洞察日报 · 2026-09-08 · <a href="../../index.html">返回首页</a> · <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a></div>
+</body>
+</html>
