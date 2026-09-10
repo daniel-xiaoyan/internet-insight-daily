@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-09-11 互联网洞察日报</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--text-1:#111827;--text-2:#6b7280;--text-3:#9ca3af;--green:#10b981;--purple:#8b5cf6;--blue:#3b82f6;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--r:12px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+.dark{--bg:#0f172a;--card:#1e293b;--text-1:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text-1);line-height:1.5}
+a{color:var(--purple);text-decoration:none}
+.header{background:linear-gradient(135deg,#059669,#7c3aed 60%,#2563eb);padding:24px;position:relative}
+.dark .header{background:linear-gradient(135deg,#065f46,#4c1d95 60%,#1e3a5f)}
+.header-inner{max-width:960px;margin:auto;position:relative;z-index:1}
+.nav-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.back-link{color:rgba(255,255,255,.8);font-size:13px;display:flex;align-items:center;gap:6px}
+.back-link:hover{color:#fff}
+.date-badge{font-size:28px;font-weight:800;color:#fff}
+.date-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:4px}
+.nav-btns{display:flex;gap:8px}
+.nav-btn{padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:12px}
+.nav-btn:hover{background:rgba(255,255,255,.35)}
+.main{max-width:960px;margin:20px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid var(--bg)}
+.card-body{padding:16px}
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.news-cat-head{font-size:13px;font-weight:700;padding:8px 0 4px;display:flex;align-items:center;gap:6px;grid-column:1/-1}
+.news-item{background:var(--bg);border-radius:10px;padding:12px}
+.ni-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.ni-hot{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--red);color:#fff;font-weight:600}
+.ni-co{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-bd{background:#fef2f2;color:#dc2626}.co-tx{background:#eff6ff;color:#2563eb}.co-al{background:#fff7ed;color:#d97706}.co-mt{background:#ecfdf5;color:#059669}.co-pdd{background:#fdf2f8;color:#db2777}.co-bd2{background:#f5f3ff;color:#7c3aed}.co-xhs{background:#fff1f2;color:#e11d48}.co-dd{background:#f0fdf4;color:#16a34a}.co-ks{background:#fff1f2;color:#f43f5e}.co-jd{background:#dbeafe;color:#1d4ed8}
+.dark .co-bd{background:#7f1d1d;color:#fca5a5}.dark .co-tx{background:#1e3a5f;color:#93c5fd}.dark .co-al{background:#78350f;color:#fbbf24}.dark .co-mt{background:#064e3b;color:#6ee7b7}
+.ni-date{font-size:10px;color:var(--text-3)}
+.ni-title{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.4}
+.ni-desc{font-size:12px;color:var(--text-2);line-height:1.4}
+.ni-src{font-size:10px;color:var(--text-3);margin-top:4px}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.co-card{background:var(--bg);border-radius:10px;padding:12px}
+.co-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.co-name{font-size:14px;font-weight:700}.co-tier{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-body{font-size:12px;color:var(--text-2);line-height:1.5}.co-body li{margin-left:14px;margin-bottom:2px}
+.topic-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.topic-ico{width:18px;text-align:center}.topic-name{min-width:64px}
+.topic-bar-bg{flex:1;height:14px;background:var(--bg);border-radius:7px;overflow:hidden}
+.topic-fill{height:100%;border-radius:7px}
+.fill-r{background:linear-gradient(90deg,#ef4444,#dc2626)}.fill-o{background:linear-gradient(90deg,#f59e0b,#d97706)}.fill-pk{background:linear-gradient(90deg,#ec4899,#db2777)}.fill-g{background:linear-gradient(90deg,#10b981,#059669)}.fill-b{background:linear-gradient(90deg,#3b82f6,#2563eb)}.fill-v{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.topic-pct{min-width:28px;text-align:right;color:var(--text-2)}
+.footer{max-width:960px;margin:24px auto;padding:16px;text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--bg)}
+@media(max-width:640px){.news-grid,.co-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="nav-row">
+      <a class="back-link" href="../../index.html">← 返回首页</a>
+      <div class="nav-btns">
+        <a class="nav-btn" href="../2026-09/2026-09-10.html">← 前一天</a>
+        <a class="nav-btn" href="../2026-09/2026-09-12.html">后一天 →</a>
+      </div>
+    </div>
+    <div class="date-badge">🔬 2026年9月11日 · 周五</div>
+    <div class="date-sub">互联网洞察日报 · 共收录 12 条互联网相关新闻</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card"><div class="card-head">📰 今日新闻</div><div class="card-body">
+    
+          <div class="news-grid">
+            <div class="news-cat-head">🤖 AI产品动态</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">硬氪直击IFA——AI硬件不再只会回答问题</div>
+              <div class="ni-desc">如果说过去两年的消费电子展，所有产品都急着证明自己“接入了AI”，那么到了IFA 2026，一个变化正在发生：AI不再只是被塞进电视、冰箱和电脑里的附加功能，而是开始成为硬件运行的底层逻辑。
+  9月4日至8日，IFA 2026在德国柏林举</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">成立不到一年，AI潮玩品牌「IPTAG」完成千万级战略融资｜36氪首发</div>
+              <div class="ni-desc">文｜李小霞
+  36氪获悉，AI潮玩与高端收藏卡品牌IPTAG宣布已完成千万级战略融资，由高投集团策源资本旗下成都策源高都共创股权投资基金（简称“策源高都基金”）独家投资。
+  本轮融资主要用于AI技术研发、优质IP合作拓展、产品体验升级以</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-dd">滴滴</span><span class="ni-date"></span></div>
+              <div class="ni-title">一年卖出数十万台E-bike后，这家公司要做AI移动出行｜36氪首发</div>
+              <div class="ni-desc">作者&nbsp;|&nbsp;张子怡
+  编辑&nbsp;|&nbsp;袁斯来
+  硬氪获悉，智能轻出行企业大鱼智行近期完成近亿元Pre-B轮融资，本轮由同鑫资本领投，多家机构跟投。融资资金将主要用于新品研发、智能化技术升级、全球品牌建设及</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date">09-10</span></div>
+              <div class="ni-title">ECCV上，顶尖学者们开始研究如何让AI做生意了</div>
+              <div class="ni-desc">多模态AI大牛轮番登台，全球64支团队组团解题</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date">09-10</span></div>
+              <div class="ni-title">全球首个3D原生城市世界模型ABot-Earth 0.7发布，构建AI理解真实世界的入口</div>
+              <div class="ni-desc">9月10日，阿里巴巴集团旗下高德正式发布全球首个3D原生城市世界模型ABot-Earth 0.7。</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date">09-10</span></div>
+              <div class="ni-title">营销科技巨头蓝色光标与全球达人营销AI平台AhaCreator达成深度合作，让品牌更高效连接全球500万创作者</div>
+              <div class="ni-desc">从一次投放到一套增长系统，AI 让海外达人营销可规模化复制</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">💰 融资/并购</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">*ST清越：收到上交所终止上市事先告知书</div>
+              <div class="ni-desc">36氪获悉，*ST清越公告，公司于2026年9月10日收到上交所上市公司管理二部下发的《终止上市事先告知书》。截至2026年9月10日，公司股票已连续20个交易日每日收盘价均低于1元，触及终止上市情形。上交所将按规定作出终止上市决定，公司可</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">沃森生物：子公司新冠mRNA疫苗获批上市</div>
+              <div class="ni-desc">36氪获悉，沃森生物公告，公司全资子公司玉溪沃森收到国家药监局批准颁发的“新型冠状病毒mRNA疫苗”《药品注册证书》。该疫苗为基于mRNA平台技术迭代开发的第三代新冠疫苗，抗原序列基于OmicronJN.1毒株S蛋白设计，用于18周岁及以上</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">传月之暗面拟赴香港、上海双重上市，知情人士：消息不实</div>
+              <div class="ni-desc">有报道称，国内头部大模型企业月之暗面正考虑在香港和上海两地上市，以借此获得更多资金。对此，知情人士称，该消息不实。（财联社）</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">马斯克旗下隧道公司Boring完成30亿美元融资，估值升至230亿美元</div>
+              <div class="ni-desc">马斯克旗下隧道网络公司The Boring Company当地时间周四宣布，公司已完成30亿美元融资，估值达到230亿美元，新注入的资金将用于加快地下交通网络的扩张。该公司周四还宣布，已达成一项协议，将在阿联酋境内建设总长超过150公里的隧</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+  </div></div>
+
+  <div class="card"><div class="card-head">🏢 重点公司动态</div><div class="card-body"><div class="co-grid">
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">滴滴</span><span class="co-tier co-dd">T2</span></div>
+          <div class="co-body"><ul><li>一年卖出数十万台E-bike后，这家公司要做AI移动出行｜36氪首发</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">京东</span><span class="co-tier co-jd">T2</span></div>
+          <div class="co-body"><ul><li>打造10万卡国产算力集群推出JoyAI世界模型，京东发布物理AI建设最新成果</li></ul></div>
+        </div></div></div></div>
+
+  <div class="card"><div class="card-head">📊 话题分布</div><div class="card-body"><div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:67%"></div></div><span class="topic-pct">67%</span></div><div class="topic-row"><span class="topic-ico">💰</span><span class="topic-name">融资/并购</span><div class="topic-bar-bg"><div class="topic-fill fill-g" style="width:33%"></div></div><span class="topic-pct">33%</span></div></div></div>
+</div>
+
+<div class="footer">互联网洞察日报 · 2026-09-11 · <a href="../../index.html">返回首页</a> · <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a></div>
+</body>
+</html>
