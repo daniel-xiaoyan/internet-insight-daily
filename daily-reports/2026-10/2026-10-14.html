@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-10-14 互联网洞察日报</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--text-1:#111827;--text-2:#6b7280;--text-3:#9ca3af;--green:#10b981;--purple:#8b5cf6;--blue:#3b82f6;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--r:12px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+.dark{--bg:#0f172a;--card:#1e293b;--text-1:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text-1);line-height:1.5}
+a{color:var(--purple);text-decoration:none}
+.header{background:linear-gradient(135deg,#059669,#7c3aed 60%,#2563eb);padding:24px;position:relative}
+.dark .header{background:linear-gradient(135deg,#065f46,#4c1d95 60%,#1e3a5f)}
+.header-inner{max-width:960px;margin:auto;position:relative;z-index:1}
+.nav-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.back-link{color:rgba(255,255,255,.8);font-size:13px;display:flex;align-items:center;gap:6px}
+.back-link:hover{color:#fff}
+.date-badge{font-size:28px;font-weight:800;color:#fff}
+.date-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:4px}
+.nav-btns{display:flex;gap:8px}
+.nav-btn{padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:12px}
+.nav-btn:hover{background:rgba(255,255,255,.35)}
+.main{max-width:960px;margin:20px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid var(--bg)}
+.card-body{padding:16px}
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.news-cat-head{font-size:13px;font-weight:700;padding:8px 0 4px;display:flex;align-items:center;gap:6px;grid-column:1/-1}
+.news-item{background:var(--bg);border-radius:10px;padding:12px}
+.ni-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.ni-hot{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--red);color:#fff;font-weight:600}
+.ni-co{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-bd{background:#fef2f2;color:#dc2626}.co-tx{background:#eff6ff;color:#2563eb}.co-al{background:#fff7ed;color:#d97706}.co-mt{background:#ecfdf5;color:#059669}.co-pdd{background:#fdf2f8;color:#db2777}.co-bd2{background:#f5f3ff;color:#7c3aed}.co-xhs{background:#fff1f2;color:#e11d48}.co-dd{background:#f0fdf4;color:#16a34a}.co-ks{background:#fff1f2;color:#f43f5e}.co-jd{background:#dbeafe;color:#1d4ed8}
+.dark .co-bd{background:#7f1d1d;color:#fca5a5}.dark .co-tx{background:#1e3a5f;color:#93c5fd}.dark .co-al{background:#78350f;color:#fbbf24}.dark .co-mt{background:#064e3b;color:#6ee7b7}
+.ni-date{font-size:10px;color:var(--text-3)}
+.ni-title{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.4}
+.ni-desc{font-size:12px;color:var(--text-2);line-height:1.4}
+.ni-src{font-size:10px;color:var(--text-3);margin-top:4px}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.co-card{background:var(--bg);border-radius:10px;padding:12px}
+.co-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.co-name{font-size:14px;font-weight:700}.co-tier{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-body{font-size:12px;color:var(--text-2);line-height:1.5}.co-body li{margin-left:14px;margin-bottom:2px}
+.topic-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.topic-ico{width:18px;text-align:center}.topic-name{min-width:64px}
+.topic-bar-bg{flex:1;height:14px;background:var(--bg);border-radius:7px;overflow:hidden}
+.topic-fill{height:100%;border-radius:7px}
+.fill-r{background:linear-gradient(90deg,#ef4444,#dc2626)}.fill-o{background:linear-gradient(90deg,#f59e0b,#d97706)}.fill-pk{background:linear-gradient(90deg,#ec4899,#db2777)}.fill-g{background:linear-gradient(90deg,#10b981,#059669)}.fill-b{background:linear-gradient(90deg,#3b82f6,#2563eb)}.fill-v{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.topic-pct{min-width:28px;text-align:right;color:var(--text-2)}
+.footer{max-width:960px;margin:24px auto;padding:16px;text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--bg)}
+@media(max-width:640px){.news-grid,.co-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="nav-row">
+      <a class="back-link" href="../../index.html">← 返回首页</a>
+      <div class="nav-btns">
+        <a class="nav-btn" href="../2026-10/2026-10-13.html">← 前一天</a>
+        <a class="nav-btn" href="../2026-10/2026-10-15.html">后一天 →</a>
+      </div>
+    </div>
+    <div class="date-badge">🔬 2026年10月14日 · 周三</div>
+    <div class="date-sub">互联网洞察日报 · 共收录 12 条互联网相关新闻</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card"><div class="card-head">📰 今日新闻</div><div class="card-body">
+    
+          <div class="news-grid">
+            <div class="news-cat-head">🤖 AI产品动态</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-co co-bd">字节</span><span class="ni-date"></span></div>
+              <div class="ni-title">百万token做赌注，字节把AI游戏这条路打通关了！</div>
+              <div class="ni-desc">文丨句号&nbsp;
+  编辑丨果脯&nbsp;
+  “没有人类了！” &nbsp;
+  字面意义上的，字节跳动用Seedance模型开发了一款“全AI”游戏。9月23日，朝夕光年旗下的江南工作室在steam平台发布《不问凡尘》EA版本，8</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">AI气象大模型公司获厚雪数千万投资，已建成自有卫星星座丨36氪首发</div>
+              <div class="ni-desc">图源/企业
+  
+   本</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">华为投后，一盛新材再获元禾璞华等近亿融资，热控材料站上AI风口丨36氪首发</div>
+              <div class="ni-desc">图源/企业
+  
+   本</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">复旦师生Pre-A轮融资超10亿，想让AI懂人的情绪与处境</div>
+              <div class="ni-desc">文 | 孙小雯 海若镜编辑 | 海若镜
+  人的喜怒哀乐忧惧，对AI来说，重要吗？
+  与人交谈时，我们会留意他的语气、停顿、表情，边听边想对方的真实所思。但当交流被整理成提示词文本，很多情绪信息会被过滤掉。
+  模思智能，这家由邱锡鹏教授</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-bd">字节</span><span class="ni-date"></span></div>
+              <div class="ni-title">8点1氪丨尊界SUV将给赛力斯生产？江淮汽车回应；字节跳动再现亿级爆款应用；Meta推出具备“前沿级能力”的Muse Wonder AI模型</div>
+              <div class="ni-desc">尊界品牌或将放弃SUV车型规划？
+  今日热点导览
+  
+   何立峰会见苹果公司执行董事长蒂姆·库克
+   宇树科技王兴兴：过去犯的最大错误是对AI还不够相信
+   贵州茅台，重夺A股“股王”
+   汽车坠百米悬崖车主奇迹生还，领克回应
+</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">36氪首发 | 获数千万融资，ModCraft想让AI通过Mod理解游戏设计</div>
+              <div class="ni-desc">文丨二几
+  36氪获悉，AI游戏Mod创作与内容平台ModCraft已完成数千万人民币种子轮融资，投资方包括商汤国香资本、L2F光源创业者基金。融资资金将主要用于AI模型训练以及平台增长。
+  从产品来看，ModCraft目前提供两大服务</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">💰 融资/并购</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">36氪首发丨达晨投过的老牌减速器厂商完成数亿元B轮融资，已供货多家头部机器人企业</div>
+              <div class="ni-desc">作者&nbsp;|&nbsp;乔钰杰
+  编辑&nbsp;|&nbsp;袁斯来
+  
+   本文约1500字，建议阅读3分钟
+  
+  硬氪获悉，近日，浙江三凯机电有限公司（以下简称“三凯机电”）宣布完成数亿元B轮股权融资。本轮融资由工业母</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-bd2">百度</span><span class="ni-date"></span></div>
+              <div class="ni-title">深度云海完成千万级天使轮融资，前百度搜索团队创办｜36氪首发</div>
+              <div class="ni-desc">文｜王欣逸
+  36氪获悉，近日，专注做GEO的AI营销公司深度云海智能科技（上海）有限公司（以下简称“深度云海”）已完成千万级天使轮融资，华工科技（000988.SZ）领投，本轮资金主要用于自研技术底座迭代、海外市场拓展、产品升级以及AI</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">太空经济2026年投资有望首次突破千亿美元，SpaceX上市为重要推手</div>
+              <div class="ni-desc">太空资本公司的三季度支出最新分析预测，受SpaceX巨额IPO、国防开支以及太空基础设施建设带动，2026年太空经济年度投资额有望史上首次突破1000亿美元。报告除测算投资总量外，还指出达到独角兽企业级别的太空公司数量创下新高。太空资本首席</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">🏆 行业格局</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-co co-al">阿里</span><span class="ni-date"></span></div>
+              <div class="ni-title">热门中概股美股盘前多数下跌，阿里巴巴跌超1%</div>
+              <div class="ni-desc">36氪获悉，热门中概股美股盘前多数下跌，截至发稿，阿里巴巴、百度跌超1%，小鹏集团跌0.62%，蔚来跌0.58%，网易跌0.14%，哔哩哔哩跌0.07%，理想汽车涨0.53%，拼多多涨0.31%，京东涨0.19%。</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+  </div></div>
+
+  <div class="card"><div class="card-head">🏢 重点公司动态</div><div class="card-body"><div class="co-grid">
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">字节跳动</span><span class="co-tier co-bd">T1</span></div>
+          <div class="co-body"><ul><li>百万token做赌注，字节把AI游戏这条路打通关了！</li><li>8点1氪丨尊界SUV将给赛力斯生产？江淮汽车回应；字节跳动再现亿级爆款应用；Me…</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">DeepSeek</span><span class="co-tier co-bd2">T3</span></div>
+          <div class="co-body"><ul><li>梁文锋投了Swin Transformer作者！DeepSeek开始布局具身大脑</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">百度</span><span class="co-tier co-bd2">T2</span></div>
+          <div class="co-body"><ul><li>深度云海完成千万级天使轮融资，前百度搜索团队创办｜36氪首发</li></ul></div>
+        </div>
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">阿里</span><span class="co-tier co-al">T1</span></div>
+          <div class="co-body"><ul><li>热门中概股美股盘前多数下跌，阿里巴巴跌超1%</li></ul></div>
+        </div></div></div></div>
+
+  <div class="card"><div class="card-head">📊 话题分布</div><div class="card-body"><div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:67%"></div></div><span class="topic-pct">67%</span></div><div class="topic-row"><span class="topic-ico">💰</span><span class="topic-name">融资/并购</span><div class="topic-bar-bg"><div class="topic-fill fill-g" style="width:25%"></div></div><span class="topic-pct">25%</span></div></div></div>
+</div>
+
+<div class="footer">互联网洞察日报 · 2026-10-14 · <a href="../../index.html">返回首页</a> · <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a></div>
+</body>
+</html>
