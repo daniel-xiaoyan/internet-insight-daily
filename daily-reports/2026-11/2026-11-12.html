@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-11-12 互联网洞察日报</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--text-1:#111827;--text-2:#6b7280;--text-3:#9ca3af;--green:#10b981;--purple:#8b5cf6;--blue:#3b82f6;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--r:12px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+.dark{--bg:#0f172a;--card:#1e293b;--text-1:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text-1);line-height:1.5}
+a{color:var(--purple);text-decoration:none}
+.header{background:linear-gradient(135deg,#059669,#7c3aed 60%,#2563eb);padding:24px;position:relative}
+.dark .header{background:linear-gradient(135deg,#065f46,#4c1d95 60%,#1e3a5f)}
+.header-inner{max-width:960px;margin:auto;position:relative;z-index:1}
+.nav-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.back-link{color:rgba(255,255,255,.8);font-size:13px;display:flex;align-items:center;gap:6px}
+.back-link:hover{color:#fff}
+.date-badge{font-size:28px;font-weight:800;color:#fff}
+.date-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:4px}
+.nav-btns{display:flex;gap:8px}
+.nav-btn{padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:12px}
+.nav-btn:hover{background:rgba(255,255,255,.35)}
+.main{max-width:960px;margin:20px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid var(--bg)}
+.card-body{padding:16px}
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.news-cat-head{font-size:13px;font-weight:700;padding:8px 0 4px;display:flex;align-items:center;gap:6px;grid-column:1/-1}
+.news-item{background:var(--bg);border-radius:10px;padding:12px}
+.ni-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.ni-hot{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--red);color:#fff;font-weight:600}
+.ni-co{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-bd{background:#fef2f2;color:#dc2626}.co-tx{background:#eff6ff;color:#2563eb}.co-al{background:#fff7ed;color:#d97706}.co-mt{background:#ecfdf5;color:#059669}.co-pdd{background:#fdf2f8;color:#db2777}.co-bd2{background:#f5f3ff;color:#7c3aed}.co-xhs{background:#fff1f2;color:#e11d48}.co-dd{background:#f0fdf4;color:#16a34a}.co-ks{background:#fff1f2;color:#f43f5e}.co-jd{background:#dbeafe;color:#1d4ed8}
+.dark .co-bd{background:#7f1d1d;color:#fca5a5}.dark .co-tx{background:#1e3a5f;color:#93c5fd}.dark .co-al{background:#78350f;color:#fbbf24}.dark .co-mt{background:#064e3b;color:#6ee7b7}
+.ni-date{font-size:10px;color:var(--text-3)}
+.ni-title{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.4}
+.ni-desc{font-size:12px;color:var(--text-2);line-height:1.4}
+.ni-src{font-size:10px;color:var(--text-3);margin-top:4px}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.co-card{background:var(--bg);border-radius:10px;padding:12px}
+.co-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.co-name{font-size:14px;font-weight:700}.co-tier{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-body{font-size:12px;color:var(--text-2);line-height:1.5}.co-body li{margin-left:14px;margin-bottom:2px}
+.topic-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.topic-ico{width:18px;text-align:center}.topic-name{min-width:64px}
+.topic-bar-bg{flex:1;height:14px;background:var(--bg);border-radius:7px;overflow:hidden}
+.topic-fill{height:100%;border-radius:7px}
+.fill-r{background:linear-gradient(90deg,#ef4444,#dc2626)}.fill-o{background:linear-gradient(90deg,#f59e0b,#d97706)}.fill-pk{background:linear-gradient(90deg,#ec4899,#db2777)}.fill-g{background:linear-gradient(90deg,#10b981,#059669)}.fill-b{background:linear-gradient(90deg,#3b82f6,#2563eb)}.fill-v{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.topic-pct{min-width:28px;text-align:right;color:var(--text-2)}
+.footer{max-width:960px;margin:24px auto;padding:16px;text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--bg)}
+@media(max-width:640px){.news-grid,.co-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="nav-row">
+      <a class="back-link" href="../../index.html">← 返回首页</a>
+      <div class="nav-btns">
+        <a class="nav-btn" href="../2026-11/2026-11-11.html">← 前一天</a>
+        <a class="nav-btn" href="../2026-11/2026-11-13.html">后一天 →</a>
+      </div>
+    </div>
+    <div class="date-badge">🔬 2026年11月12日 · 周四</div>
+    <div class="date-sub">互联网洞察日报 · 共收录 12 条互联网相关新闻</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card"><div class="card-head">📰 今日新闻</div><div class="card-body">
+    
+          <div class="news-grid">
+            <div class="news-cat-head">🤖 AI产品动态</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">对话英矽智能任峰：年轻的AI4S创业者，我羡慕你们的野心和创造力</div>
+              <div class="ni-desc">文｜胡香赟
+  编辑｜海若镜
+  2026年，51岁的任峰身边，开始出现越来越多30岁出头的年轻同行。
+  任峰是英矽智能（03696.HK）的联席首席执行官。今年上半年，英矽智能正式宣布盈利，依托生成式AI平台Pharma.AI开发的35</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">Sixth Street首席执行官对AI热潮保持谨慎，警告称投机行为盛行</div>
+              <div class="ni-desc">Sixth Street Partners首席执行官Alan Waxman表示，他看到人工智能热潮中动荡的迹象日益增多，因此该公司基本保持观望。人工智能领域的资本支出规模空前，并且“由于人工智能不断发展，没有人真正了解其单位经济效益”，Wa</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">AI加速渗透证券行业，数字化转型进入应用阶段</div>
+              <div class="ni-desc">近期，多家上市券商在三季度业绩说明会上回应AI赋能相关问题，财富管理成为高频应用场景。与此同时，AI在投研、机构交易、投行业务、合规风控及运营管理等环节的应用不断拓展。行业数字化建设逐步进入业务流程改造和实际应用阶段。业内人士认为，AI有助</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">AI算力公司CoreWeave股价飙升，债务担忧缓解</div>
+              <div class="ni-desc">人工智能（AI）算力提供商CoreWeave Inc．股价飙升，此前该公司缓解了投资者对其沉重债务负担的担忧，并释放出尽管数据中心热潮面临诸多阻力、营收增长依然强劲的信号。CoreWeave预计今年营收130亿至133亿美元，高于公司此前给</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date">11-11</span></div>
+              <div class="ni-title">双11直播间爆改AI秀场，罗永浩上手TRAE，秒变AI Coding的大众嘴替</div>
+              <div class="ni-desc">价格、门槛全打穿</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-al">阿里</span><span class="ni-date">11-11</span></div>
+              <div class="ni-title">卷起来了！11月11日，大模型厂商在天猫打5折</div>
+              <div class="ni-desc">大模型厂商智谱、MiniMax、千问办公、阿里云、Qoder都在天猫打5折。</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">💰 融资/并购</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">36氪首发丨国产半导体模块厂商获近亿元 B 轮融资，营收大幅增长，海外占比近半</div>
+              <div class="ni-desc">作者&nbsp;|&nbsp;乔钰杰
+  编辑&nbsp;|&nbsp;袁斯来
+  
+   本文约3800字，建议阅读9分钟
+  
+  硬氪获悉，国产碳化硅（SiC）功率模块厂商利普思半导体（以下简称“利普思”）近日完成近亿元B轮融资，新投</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">36氪首发丨交大团队获中网投与清华系资本领投亿元级融资，以“原子+光子芯片”切入量子计算</div>
+              <div class="ni-desc">图源/企业
+  
+   <p</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-al">阿里</span><span class="ni-date"></span></div>
+              <div class="ni-title">8点1氪丨英伟达及黄仁勋遭股东集体诉讼，市值两天蒸发2.85万亿；Anthropic正式启动IPO路演；阿里拟分拆平头哥独立上市</div>
+              <div class="ni-desc">今日热点导览
+  外交部：中美双方就两国元首年内互动安排保持着沟通
+  全球芯片LOF于11月10日下午开市起停牌至收市
+  董明珠回应格力电器业绩下滑&nbsp;
+  宝马选定LG新能源、三星SDI供应下一代动力电池
+  百事公司北美业务</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">光通信行业“砍单”传闻不断，上市公司回应称“近期市场并没有不利变化”</div>
+              <div class="ni-desc">作为AI赛道主线之一，11月11日，包括“易中天”、剑桥科技、源杰科技等在内的多只光通信龙头股涨停或大涨超过10%，引起市场广泛关注。近期市场上有关光通信行业“砍单”的传闻不断，有上市公司高管对记者表示“近期市场并没有不利变化”。与此同时，</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">上市公司“链”上发力深度参与产业并购基金</div>
+              <div class="ni-desc">今年以来，上市公司参与设立产业并购基金的热情持续升温。据同花顺iFinD统计，截至11月11日，年内上市公司披露参与设立产业并购基金393单，同比增长超30%。从人工智能到具身智能、生物医药，一批链主企业正以产业并购基金为支点，把资本的触角</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">CoreWeave据悉寻求通过投资级贷款融资至少40亿美元</div>
+              <div class="ni-desc">据报道，CoreWeave寻求通过投资级贷款融资至少40亿美元，摩根士丹利和三菱日联金融集团正在牵头这项潜在的融资，将分阶段向投资者提供银团贷款。（界面）</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+  </div></div>
+
+  <div class="card"><div class="card-head">🏢 重点公司动态</div><div class="card-body"><div class="co-grid">
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">阿里</span><span class="co-tier co-al">T1</span></div>
+          <div class="co-body"><ul><li>卷起来了！11月11日，大模型厂商在天猫打5折</li><li>8点1氪丨英伟达及黄仁勋遭股东集体诉讼，市值两天蒸发2.85万亿；Anthrop…</li></ul></div>
+        </div></div></div></div>
+
+  <div class="card"><div class="card-head">📊 话题分布</div><div class="card-body"><div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:50%"></div></div><span class="topic-pct">50%</span></div><div class="topic-row"><span class="topic-ico">💰</span><span class="topic-name">融资/并购</span><div class="topic-bar-bg"><div class="topic-fill fill-g" style="width:50%"></div></div><span class="topic-pct">50%</span></div></div></div>
+</div>
+
+<div class="footer">互联网洞察日报 · 2026-11-12 · <a href="../../index.html">返回首页</a> · <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a></div>
+</body>
+</html>
