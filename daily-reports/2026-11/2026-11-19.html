@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-11-19 互联网洞察日报</title>
+<style>
+:root{--bg:#f5f6f8;--card:#fff;--text-1:#111827;--text-2:#6b7280;--text-3:#9ca3af;--green:#10b981;--purple:#8b5cf6;--blue:#3b82f6;--red:#ef4444;--orange:#f59e0b;--pink:#ec4899;--r:12px;--shadow:0 2px 8px rgba(0,0,0,.06)}
+.dark{--bg:#0f172a;--card:#1e293b;--text-1:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text-1);line-height:1.5}
+a{color:var(--purple);text-decoration:none}
+.header{background:linear-gradient(135deg,#059669,#7c3aed 60%,#2563eb);padding:24px;position:relative}
+.dark .header{background:linear-gradient(135deg,#065f46,#4c1d95 60%,#1e3a5f)}
+.header-inner{max-width:960px;margin:auto;position:relative;z-index:1}
+.nav-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.back-link{color:rgba(255,255,255,.8);font-size:13px;display:flex;align-items:center;gap:6px}
+.back-link:hover{color:#fff}
+.date-badge{font-size:28px;font-weight:800;color:#fff}
+.date-sub{font-size:14px;color:rgba(255,255,255,.75);margin-top:4px}
+.nav-btns{display:flex;gap:8px}
+.nav-btn{padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;font-size:12px}
+.nav-btn:hover{background:rgba(255,255,255,.35)}
+.main{max-width:960px;margin:20px auto;padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:12px 16px;font-size:14px;font-weight:700;border-bottom:1px solid var(--bg)}
+.card-body{padding:16px}
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.news-cat-head{font-size:13px;font-weight:700;padding:8px 0 4px;display:flex;align-items:center;gap:6px;grid-column:1/-1}
+.news-item{background:var(--bg);border-radius:10px;padding:12px}
+.ni-top{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.ni-hot{font-size:10px;padding:1px 6px;border-radius:3px;background:var(--red);color:#fff;font-weight:600}
+.ni-co{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-bd{background:#fef2f2;color:#dc2626}.co-tx{background:#eff6ff;color:#2563eb}.co-al{background:#fff7ed;color:#d97706}.co-mt{background:#ecfdf5;color:#059669}.co-pdd{background:#fdf2f8;color:#db2777}.co-bd2{background:#f5f3ff;color:#7c3aed}.co-xhs{background:#fff1f2;color:#e11d48}.co-dd{background:#f0fdf4;color:#16a34a}.co-ks{background:#fff1f2;color:#f43f5e}.co-jd{background:#dbeafe;color:#1d4ed8}
+.dark .co-bd{background:#7f1d1d;color:#fca5a5}.dark .co-tx{background:#1e3a5f;color:#93c5fd}.dark .co-al{background:#78350f;color:#fbbf24}.dark .co-mt{background:#064e3b;color:#6ee7b7}
+.ni-date{font-size:10px;color:var(--text-3)}
+.ni-title{font-size:13px;font-weight:600;margin-bottom:3px;line-height:1.4}
+.ni-desc{font-size:12px;color:var(--text-2);line-height:1.4}
+.ni-src{font-size:10px;color:var(--text-3);margin-top:4px}
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.co-card{background:var(--bg);border-radius:10px;padding:12px}
+.co-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.co-name{font-size:14px;font-weight:700}.co-tier{font-size:10px;padding:1px 6px;border-radius:3px;font-weight:600}
+.co-body{font-size:12px;color:var(--text-2);line-height:1.5}.co-body li{margin-left:14px;margin-bottom:2px}
+.topic-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.topic-ico{width:18px;text-align:center}.topic-name{min-width:64px}
+.topic-bar-bg{flex:1;height:14px;background:var(--bg);border-radius:7px;overflow:hidden}
+.topic-fill{height:100%;border-radius:7px}
+.fill-r{background:linear-gradient(90deg,#ef4444,#dc2626)}.fill-o{background:linear-gradient(90deg,#f59e0b,#d97706)}.fill-pk{background:linear-gradient(90deg,#ec4899,#db2777)}.fill-g{background:linear-gradient(90deg,#10b981,#059669)}.fill-b{background:linear-gradient(90deg,#3b82f6,#2563eb)}.fill-v{background:linear-gradient(90deg,#8b5cf6,#7c3aed)}
+.topic-pct{min-width:28px;text-align:right;color:var(--text-2)}
+.footer{max-width:960px;margin:24px auto;padding:16px;text-align:center;font-size:12px;color:var(--text-3);border-top:1px solid var(--bg)}
+@media(max-width:640px){.news-grid,.co-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-inner">
+    <div class="nav-row">
+      <a class="back-link" href="../../index.html">← 返回首页</a>
+      <div class="nav-btns">
+        <a class="nav-btn" href="../2026-11/2026-11-18.html">← 前一天</a>
+        <a class="nav-btn" href="../2026-11/2026-11-20.html">后一天 →</a>
+      </div>
+    </div>
+    <div class="date-badge">🔬 2026年11月19日 · 周四</div>
+    <div class="date-sub">互联网洞察日报 · 共收录 11 条互联网相关新闻</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card"><div class="card-head">📰 今日新闻</div><div class="card-body">
+    
+          <div class="news-grid">
+            <div class="news-cat-head">🤖 AI产品动态</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">欧洲央行行长拉加德：AI股票估值“非常激进”，最终可能出现调整</div>
+              <div class="ni-desc">欧洲央行行长克里斯蒂娜·拉加德表示，人工智能公司的高估值最终可能回落。尽管“过去几周出现了显著的价格回调”，拉加德仍将人工智能股的估值水平描述为“非常激进”。她周三表示，虽然欧洲央行并未将当前状况称为泡沫，但这种局面不太可能持续。市场“最终</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">英伟达RTX Spark迷你AI工作站上市，最高支持本地运行1200亿参数大模型</div>
+              <div class="ni-desc">英伟达宣布，搭载RTX Spark平台的紧凑型桌面电脑正式上市，目前华硕、戴尔和微星已推出相关产品，宏碁、技嘉和惠普等厂商的产品将陆续推出。该系列设备搭载20核英伟达Grace CPU、基于Blackwell架构的RTX GPU，配备最高1</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">OpenAI总裁：网络安全业务的规模可能超过编程业务</div>
+              <div class="ni-desc">OpenAI总裁布罗克曼和首席财务官萨拉·弗里尔接受采访时表示，他们认为网络安全将是比编程更大的公司机遇。多位与布罗克曼交流的人士表示，他目前对网络安全领域充满热情。（新浪财经）</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date">11-18</span></div>
+              <div class="ni-title">GPT-6.2难产！OpenAI怕了</div>
+              <div class="ni-desc">OpenAI也终于活成了2022年谷歌的样子</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date">11-18</span></div>
+              <div class="ni-title">全球首个医疗健康AI独立评测与分析平台InclusionMed正式上线</div>
+              <div class="ni-desc">近日，全球首个医疗健康 AI 独立评测与分析平台InclusionMed 正式上线</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-co co-xhs">小红</span><span class="ni-date">11-18</span></div>
+              <div class="ni-title">潜伏小红书48h：AI时代，顶尖技术人才都在聊什么？</div>
+              <div class="ni-desc">小红书校招沙龙，一群技术高手认真对待年轻人的野心</div>
+              <div class="ni-src">来源：量子位</div>
+            </div>
+          </div>
+
+          <div class="news-grid">
+            <div class="news-cat-head">💰 融资/并购</div>
+            
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-hot">🔥</span><span class="ni-date"></span></div>
+              <div class="ni-title">解决超纯净高温合金“卡脖子”问题，「航宇星瑞」完成超亿元A轮融资｜36氪首发</div>
+              <div class="ni-desc">高温合金是航空发动机、燃气轮机等装备的核心材料，用量可占整机重量的40%—60%，被誉为“先进发动机的基石”。
+  随着航空发动机、燃气轮机等装备需求的增加，国内高温合金行业市场规模快速上升，产量从2018年的2.2万吨增长到2025年的6</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">硬氪首发丨玻璃基板装备企业获近亿元融资，英诺基金连续三轮加注</div>
+              <div class="ni-desc">作者&nbsp;|&nbsp;邱晓芬
+  编辑&nbsp;|&nbsp;袁斯来
+  硬氪获悉，玻璃基板装备企业「深微芯创」连续完成三轮融资，累计近亿元。投资方包括深产投及老股东英诺基金等。其中，英诺基金连投三轮。本轮融资将主要用于核心装备研</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">SpaceX 400亿美元GPU融资安排表外操作，最快本周向投资者发售</div>
+              <div class="ni-desc">据知情人士透露，阿波罗资管正在为SpaceX安排一笔规模高达400亿美元的融资，这笔融资最快本周推向市场，但不会计入SpaceX自身资产负债表。资金将注入一家特殊目的载体（SPV）。通过这种方式，SpaceX不用把这笔资金体现在自身财报，转</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+            <div class="news-item">
+              <div class="ni-top"><span class="ni-date"></span></div>
+              <div class="ni-title">SpaceX的400亿美元芯片融资或不计入资产负债表</div>
+              <div class="ni-desc">据报道，SpaceX从阿波罗全球管理获得的400亿美元融资将通过一个特殊目的实体（SPV）运作，从而使这笔债务不计入SpaceX的资产负债表。（界面）</div>
+              <div class="ni-src">来源：36氪</div>
+            </div>
+          </div>
+  </div></div>
+
+  <div class="card"><div class="card-head">🏢 重点公司动态</div><div class="card-body"><div class="co-grid">
+        <div class="co-card">
+          <div class="co-head"><span class="co-name">小红书</span><span class="co-tier co-xhs">T2</span></div>
+          <div class="co-body"><ul><li>潜伏小红书48h：AI时代，顶尖技术人才都在聊什么？</li></ul></div>
+        </div></div></div></div>
+
+  <div class="card"><div class="card-head">📊 话题分布</div><div class="card-body"><div class="topic-row"><span class="topic-ico">🤖</span><span class="topic-name">AI产品动态</span><div class="topic-bar-bg"><div class="topic-fill fill-o" style="width:64%"></div></div><span class="topic-pct">64%</span></div><div class="topic-row"><span class="topic-ico">💰</span><span class="topic-name">融资/并购</span><div class="topic-bar-bg"><div class="topic-fill fill-g" style="width:36%"></div></div><span class="topic-pct">36%</span></div></div></div>
+</div>
+
+<div class="footer">互联网洞察日报 · 2026-11-19 · <a href="../../index.html">返回首页</a> · <a href="https://github.com/daniel-xiaoyan/internet-insight-daily" target="_blank">GitHub</a></div>
+</body>
+</html>
